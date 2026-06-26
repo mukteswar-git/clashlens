@@ -8,7 +8,17 @@ ClashLens is a web application being built with Next.js, TypeScript, and Tailwin
 
 🚧 Currently under development.
 
+- [x] UI/UX Design Completed
+- [ ] Landing Page Development
+- [ ] Dashboard Development
+- [ ] Clash of Clans API Integration
+- [ ] Analytics Engine
+
 The project foundation has been set up and development of Phase 1 is in progress.
+
+## 🎨 Design
+
+🔗 **Figma:** https://www.figma.com/design/fRU9Ly1t93PMJQLs2VOckH/MDev?node-id=0-1&t=HGOHCZ7XpHUQBjuC-1
 
 ## Planned Features
 
@@ -83,7 +93,7 @@ http://localhost:3000
 
 ### Phase 1 — MVP
 
-* [ ] Project setup
+* [x] Project setup
 * [ ] Landing page
 * [ ] Clan search
 * [ ] Clash of Clans API integration
