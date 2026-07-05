@@ -7,8 +7,8 @@ export function Logo() {
       <Image
         src="/logo/logo.svg"
         alt="ClashLens"
-        width={180}
-        height={150}
+        width={150}
+        height={40}
         priority
       />
     </Link>
