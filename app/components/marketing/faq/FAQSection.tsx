@@ -12,7 +12,7 @@ export function FAQSection() {
   const leftColumnFaqs = faqs.slice(0, midpoint);
   const rightColumnFaqs = faqs.slice(midpoint);
   return (
-    <section className="pb-20 lg:pb-28">
+    <section className="pb-20 lg:pb-28" id="faq">
       {/* Left Background Image */}
       <Image
         src="/images/faq/baloon.webp"

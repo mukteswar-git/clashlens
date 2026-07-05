@@ -7,7 +7,7 @@ import { BarChart3 } from "lucide-react";
 
 export function FeaturesSection() {
   return (
-    <section className="py-20 lg:py-28 relative -mt-12 z-10">
+    <section className="py-20 lg:py-28 relative -mt-12 z-10" id="features">
       {/* Left Background Image */}
       <Image
         src="/images/features/trophy-bg.webp"
