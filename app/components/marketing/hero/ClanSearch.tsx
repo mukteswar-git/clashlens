@@ -2,6 +2,7 @@
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Hash, Search } from "lucide-react";
+import { toast } from "sonner";
 
 export function ClanSearch() {
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -41,7 +42,17 @@ export function ClanSearch() {
         "
       />
 
-      <Button type="submit" size="lg" className="h-12 rounded-xl px-6">
+      <Button
+        type="submit"
+        size="lg"
+        className="h-12 rounded-xl px-6"
+        onClick={() =>
+          toast("🚧 Coming Soon", {
+            description:
+              "Clan analytics dashboard is currently under development.",
+          })
+        }
+      >
         <Search className="size-5" />
         Analyze Clan
       </Button>

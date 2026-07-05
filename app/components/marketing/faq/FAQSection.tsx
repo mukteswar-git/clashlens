@@ -17,17 +17,17 @@ export function FAQSection() {
       <Image
         src="/images/faq/baloon.webp"
         alt=""
-        width={200}
-        height={200}
-        className="pointer-events-none absolute left-80 -z-10 select-none blur-[1px]"
+        width={300}
+        height={300}
+        className="pointer-events-none absolute left-80 -z-10 w-50 h-auto select-none blur-[1px]"
       />
       {/* Right Background Image */}
       <Image
         src="/images/faq/town-hall.webp"
         alt=""
         width={300}
-        height={200}
-        className="pointer-events-none absolute right-60 -z-10 select-none blur-[1px]"
+        height={300}
+        className="pointer-events-none absolute right-60 -z-10 w-70 h-auto select-none blur-[1px]"
       />
       <Container>
         {/* Section Header */}
@@ -45,7 +45,8 @@ export function FAQSection() {
 
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
             Everything you need to know about ClashLens. Can&apos;t find the
-            answer you&apos;re looking for? <span className="font-bold text-accent">Contact us</span> anytime.
+            answer you&apos;re looking for?{" "}
+            <span className="font-bold text-accent">Contact us</span> anytime.
           </p>
         </div>
 

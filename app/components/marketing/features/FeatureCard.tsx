@@ -51,9 +51,9 @@ export function FeatureCard({
           <Image
             src={image}
             alt={title}
-            width={80}
-            height={20}
-            className="object-contain"
+            width={60}
+            height={60}
+            className="h-20 w-auto object-contain"
           />
         </div>
       </div>

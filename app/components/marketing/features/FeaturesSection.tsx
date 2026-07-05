@@ -12,17 +12,17 @@ export function FeaturesSection() {
       <Image
         src="/images/features/trophy-bg.webp"
         alt=""
-        width={320}
-        height={320}
-        className="pointer-events-none absolute left-50 -z-10 select-none blur-[1px]"
+        width={300}
+        height={300}
+        className="pointer-events-none absolute left-50 -z-10 w-80 h-auto select-none blur-[1px]"
       />
       {/* Right Background Image */}
       <Image
         src="/images/features/baloon.webp"
         alt=""
-        width={200}
-        height={280}
-        className="pointer-events-none absolute right-60 -z-10 select-none blur-[1px]"
+        width={300}
+        height={300}
+        className="pointer-events-none absolute right-60 -z-10 w-50 h-auto select-none blur-[1px]"
       />
       <Container className="max-w-6xl flex flex-col gap-8">
         {/* Section Header */}
