@@ -1,4 +1,4 @@
-import { Logo } from "../Logo";
+import { Logo } from "../header/Logo";
 
 export function FooterBrand() {
   return (

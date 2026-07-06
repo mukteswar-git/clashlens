@@ -22,7 +22,7 @@ export const productLinks: FooterLink[] = [
   },
   {
     label: "Analyze Clan",
-    href: "#hero",
+    href: "#home",
     icon: Search,
   },
 ];

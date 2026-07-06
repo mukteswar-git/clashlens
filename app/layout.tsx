@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import { inter } from "./components/ui/fonts";
 import "./globals.css";
-import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { Toaster } from "sonner";
-
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "ClashLens",
@@ -18,8 +15,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
-      <body className={inter.className}>
+    <html lang="en">
+      <body
+        className={cn(
+          inter.className,
+          "min-h-screen bg-background text-foreground",
+        )}
+      >
         {children}
         <Toaster richColors position="top-center" />
       </body>

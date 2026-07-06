@@ -12,14 +12,28 @@ export function FAQSection() {
   const leftColumnFaqs = faqs.slice(0, midpoint);
   const rightColumnFaqs = faqs.slice(midpoint);
   return (
-    <section className="pb-20 lg:pb-28" id="faq">
+    <section className="pb-16 lg:pb-28" id="faq">
       {/* Left Background Image */}
       <Image
         src="/images/faq/baloon.webp"
         alt=""
         width={300}
         height={300}
-        className="pointer-events-none absolute left-80 -z-10 w-50 h-auto select-none blur-[1px]"
+        className="
+        pointer-events-none 
+        absolute 
+        left-0 
+        sm:left-10 
+        md:left-20
+        lg:left-40 
+        xl:left-80
+        -z-10 
+        w-30 
+        sm:w-35
+        md:w-40 
+        h-auto 
+        select-none 
+        blur-[1px]"
       />
       {/* Right Background Image */}
       <Image
@@ -27,7 +41,21 @@ export function FAQSection() {
         alt=""
         width={300}
         height={300}
-        className="pointer-events-none absolute right-60 -z-10 w-70 h-auto select-none blur-[1px]"
+        className="
+        pointer-events-none 
+        absolute 
+        right-0 
+        sm:right-10
+        md:right-20 
+        lg:right-40 
+        xl:right-80 
+        -z-10 
+        w-40 
+        sm:w-50 
+        md:w-60 
+        h-auto 
+        select-none 
+        blur-[1px]"
       />
       <Container>
         {/* Section Header */}
@@ -38,19 +66,27 @@ export function FAQSection() {
             FAQ
           </Badge>
 
-          <h2 className="mt-6 text-4xl font-extrabold tracking-tight lg:text-5xl">
+          <h2 className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
             Frequently Asked{" "}
             <span className="whitespace-nowrap text-accent">Questions</span>
           </h2>
 
-          <p className="mt-6 text-lg leading-8 text-muted-foreground">
+          <p className="
+            mt-6
+            text-base
+            leading-7
+            text-muted-foreground
+
+            sm:text-lg
+            sm:leading-8
+            ">
             Everything you need to know about ClashLens. Can&apos;t find the
             answer you&apos;re looking for?{" "}
             <span className="font-bold text-accent">Contact us</span> anytime.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 lg:grid-cols-2">
+        <div className="mt-12 lg:mt-16 grid gap-6 lg:grid-cols-2">
           <Accordion type="single" collapsible className="space-y-6">
             {leftColumnFaqs.map((faq) => (
               <FAQCard key={faq.question} faq={faq} />

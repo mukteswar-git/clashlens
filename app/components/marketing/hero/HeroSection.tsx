@@ -7,7 +7,7 @@ import { FeatureHighlights } from "../feature-highlights/FeatureHighlights";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-24 lg:pt-28" id="hero">
+    <section className="relative overflow-hidden pt-16 md:pt-20 lg:pt-28" id="home">
       {/* Background image */}
       <Image
         src="/images/hero/background.webp"
@@ -17,30 +17,29 @@ export function Hero() {
         className="-z-20 object-cover object-bottom select-none pointer-events-none"
       />
       <div className="absolute inset-0 -z-10 bg-linear-to-b from-white via-white/60 to-transparent" />
-      <Container className="flex flex-col gap-20">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+      <Container className="flex flex-col gap-14 lg:gap-20">
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Left */}
-          <div className="max-w-2xl space-y-6">
+          <div className="max-w-2xl space-y-7">
             <Badge icon={<Crown className="size-4 text-badge-icon stroke-2" />}>
               Built for Clash of Clans Leaders
             </Badge>
             <h1
               className="
+                max-w-[9ch]
                 text-4xl
-                max-w-xl
-                sm:text-5xl
-                lg:text-5xl
                 font-bold
-                tracking-tight
                 leading-tight
-                mb-2
-                "
+                tracking-tight
+                sm:max-w-xl
+                sm:text-5xl
+              "
             >
               Understand Your Clan.
               <br />
               <span className="text-accent">Make Smarter Decisions.</span>
             </h1>
-            <p>
+            <p className="max-w-md text-base text-muted-foreground">
               ClashLens helps you track member activity, donations, war
               performance, and clan health with powerful data-driven analytics.
             </p>
@@ -66,7 +65,7 @@ export function Hero() {
               alt="Dashboard Image"
               height={1200}
               width={900}
-              className="h-auto w-[80%] max-w-lg drop-shadow-2xl"
+              className="h-auto w-full max-w-md drop-shadow-2xl"
             />
           </div>
         </div>

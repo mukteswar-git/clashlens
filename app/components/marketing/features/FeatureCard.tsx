@@ -27,7 +27,7 @@ export function FeatureCard({
         </div>
 
         <div className="min-w-0">
-          <h3 className="text-xl font-bold leading-none">{title}</h3>
+          <h3 className="text-xl font-bold leading-tight">{title}</h3>
 
           <p className="mt-2 text-sm leading-6 text-muted-foreground">
             {description}
@@ -36,21 +36,22 @@ export function FeatureCard({
       </div>
 
       {/* Content */}
-      <div className="mt-8 flex items-end justify-between gap-4">
-        <ul className="space-y-4">
+      <div className="mt-8">
+        <ul className="space-y-4 sm:pr-20">
           {bullets.map((bullet) => (
             <li key={bullet} className="flex items-center gap-3">
               <CheckCircle2 className={`h-5 w-5 shrink-0 ${colors.check}`} />
 
-              <span className="leading-none text-md">{bullet}</span>
+              <span className="leading-none text-base">{bullet}</span>
             </li>
           ))}
         </ul>
 
-        <div className="absolute bottom-3 right-3">
+        <div className="absolute bottom-3 right-3 hidden sm:block">
           <Image
             src={image}
-            alt={title}
+            alt=""
+            aria-hidden="true"
             width={60}
             height={60}
             className="h-20 w-auto object-contain"

@@ -18,7 +18,7 @@ export function FeatureHighlightCard({
       </div>
 
       <div className="space-y-1">
-        <h3 className="text-lg font-semibold text-foreground">
+        <h3 className="text-base sm:text-lg font-semibold text-foreground">
           {title}
         </h3>
 
