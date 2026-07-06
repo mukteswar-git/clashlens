@@ -9,16 +9,44 @@ ClashLens is a web application being built with Next.js, TypeScript, and Tailwin
 🚧 Currently under development.
 
 - [x] UI/UX Design Completed
-- [ ] Landing Page Development
+- [x] Landing Page Development
+- [x] Vercel Deployment
 - [ ] Dashboard Development
 - [ ] Clash of Clans API Integration
 - [ ] Analytics Engine
 
-The project foundation has been set up and development of Phase 1 is in progress.
+The responsive landing page has been completed and deployed. Development is now focused on the analytics dashboard and Clash of Clans API integration.
 
 ## 🎨 Design
 
 🔗 **Figma:** https://www.figma.com/design/fRU9Ly1t93PMJQLs2VOckH/MDev?node-id=0-1&t=HGOHCZ7XpHUQBjuC-1
+
+## Live Demo
+
+🌐 https://clashlens.vercel.app
+
+## Screenshots
+
+### Landing Page
+
+![Desktop](docs/screenshots/desktop.png)
+
+### Tablet
+
+![Tablet](docs/screenshots/tablet.png)
+
+### Mobile
+
+![Mobile](docs/screenshots/mobile.png)
+
+## Current Features
+
+- Responsive landing page
+- Mobile navigation
+- Feature showcase
+- FAQ section
+- Modern UI built with Tailwind CSS and shadcn/ui
+- Responsive design for desktop, tablet, and mobile
 
 ## Planned Features
 
@@ -54,12 +82,15 @@ The project foundation has been set up and development of Phase 1 is in progress
 ## Tech Stack
 
 * Next.js 16
+* React 19
 * TypeScript
 * Tailwind CSS 4
-* React 19
+* shadcn/ui
+* Lucide React
 * App Router
 * Route Handlers
 * pnpm
+* Vercel
 
 ## Project Goals
 
@@ -89,18 +120,25 @@ Open:
 http://localhost:3000
 ```
 
+Build for production:
+
+```bash
+pnpm build
+```
+
 ## Roadmap
 
 ### Phase 1 — MVP
 
-* [x] Project setup
-* [ ] Landing page
-* [ ] Clan search
-* [ ] Clash of Clans API integration
-* [ ] Clan dashboard
-* [ ] Member analytics
-* [ ] War analytics
-* [ ] Activity scoring engine
+- [x] Project setup
+- [x] Responsive landing page
+- [x] Vercel deployment
+- [ ] Clan search
+- [ ] Clash of Clans API integration
+- [ ] Clan dashboard
+- [ ] Member analytics
+- [ ] War analytics
+- [ ] Activity scoring engine
 
 ### Phase 2 — Historical Analytics
 
