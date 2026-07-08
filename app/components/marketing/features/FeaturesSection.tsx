@@ -68,7 +68,8 @@ export function FeaturesSection() {
             </span>
           </h2>
 
-          <p className="
+          <p
+            className="
             mt-6
             text-base
             leading-7
@@ -76,7 +77,8 @@ export function FeaturesSection() {
 
             sm:text-lg
             sm:leading-8
-            ">
+            "
+          >
             ClashLens provides all the insights you need to manage your clan
             effectively, improve member performance, and build a stronger clan.
           </p>

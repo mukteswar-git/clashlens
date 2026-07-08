@@ -22,9 +22,7 @@ export function FeatureHighlightCard({
           {title}
         </h3>
 
-        <p className="text-sm text-muted-foreground">
-          {description}
-        </p>
+        <p className="text-sm text-muted-foreground">{description}</p>
       </div>
     </div>
   );

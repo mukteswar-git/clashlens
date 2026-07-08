@@ -5,20 +5,20 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --text: #0F172A;
+  --text: #0f172a;
 
   --primary: oklch(0.3102 0.0976 265.47);
-  --secondary: oklch(0.9683 0.0069 247.90);
-  --accent: oklch(0.7920 0.1603 72.44);
+  --secondary: oklch(0.9683 0.0069 247.9);
+  --accent: oklch(0.792 0.1603 72.44);
   --background: oklch(1 0 0);
-  --foreground:  oklch(0.2077 0.0398 265.75);
+  --foreground: oklch(0.2077 0.0398 265.75);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.2077 0.0398 265.75);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2077 0.0398 265.75);
   --primary-foreground: oklch(0.985 0 0);
   --secondary-foreground: oklch(0.2077 0.0398 265.75);
-  --muted: oklch(0.9683 0.0069 247.90);
+  --muted: oklch(0.9683 0.0069 247.9);
   --muted-foreground: oklch(0.4455 0.0374 257.28);
   --accent-foreground: oklch(0.2077 0.0398 265.75);
   --destructive: oklch(0.6368 0.2078 25.33);
@@ -39,12 +39,12 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  --success: oklch(0.7227 0.1920 149.58);
+  --success: oklch(0.7227 0.192 149.58);
   --warning: oklch(0.7686 0.1647 70.08);
   --badge-background: oklch(0.95 0.03 255);
   --badge-foreground: oklch(0.58 0.18 262);
   --badge-icon: oklch(0.58 0.18 262);
-  --badge-border: oklch(0.90 0.03 255);
+  --badge-border: oklch(0.9 0.03 255);
 }
 
 @theme inline {

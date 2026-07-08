@@ -334,12 +334,12 @@ Features that do not support these goals should not be included in the MVP.
 
 ## Roadmap Summary
 
-|Phase|Primary Goal|Historical Data|User Account|
-|---|---|---|---|
-|**Phase 1**|Live Analytics Dashboard|❌|❌|
-|**Phase 2**|Decision Engine Design|❌|❌|
-|**Phase 3**|Clan Tracking & Data Collection|✅|✅|
-|**Phase 4**|Smart Recommendations & Reports|✅|✅|
+| Phase       | Primary Goal                    | Historical Data | User Account |
+| ----------- | ------------------------------- | --------------- | ------------ |
+| **Phase 1** | Live Analytics Dashboard        | ❌              | ❌           |
+| **Phase 2** | Decision Engine Design          | ❌              | ❌           |
+| **Phase 3** | Clan Tracking & Data Collection | ✅              | ✅           |
+| **Phase 4** | Smart Recommendations & Reports | ✅              | ✅           |
 
 ---
 
@@ -351,6 +351,6 @@ Features that do not support these goals should not be included in the MVP.
 
 ## Revision History
 
-| Version | Date | Changes |
-| --------- | ------ | --------- |
-| 1.0 | 2026-07-07 | Initial MVP Roadmap |
+| Version | Date       | Changes             |
+| ------- | ---------- | ------------------- |
+| 1.0     | 2026-07-07 | Initial MVP Roadmap |

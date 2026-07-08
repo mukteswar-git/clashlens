@@ -194,7 +194,7 @@ Member Table
 - Donations Received
 - Donation Ratio
 - Hero Strength
-  
+
 ### Features
 
 #### Search
@@ -411,6 +411,6 @@ No page should duplicate another page's responsibility.
 
 ## Revision History
 
-| Version | Date | Changes |
-| --------- | ------ | --------- |
-| 1.0 | 2026-07-07 | Initial Page Specifications |
+| Version | Date       | Changes                     |
+| ------- | ---------- | --------------------------- |
+| 1.0     | 2026-07-07 | Initial Page Specifications |

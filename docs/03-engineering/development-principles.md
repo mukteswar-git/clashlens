@@ -289,6 +289,6 @@ Every implementation decision should prioritize long-term maintainability over s
 
 ## Revision History
 
-| Version | Date | Changes |
-| --------- | ------ | --------- |
-| 1.0 | 2026-07-07 | Initial Development Principles |
+| Version | Date       | Changes                        |
+| ------- | ---------- | ------------------------------ |
+| 1.0     | 2026-07-07 | Initial Development Principles |

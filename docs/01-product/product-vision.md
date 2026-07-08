@@ -193,6 +193,6 @@ ClashLens will be considered successful when:
 
 ## Revision History
 
-| Version | Date | Changes |
-| --------- | ------ | --------- |
-| 1.0 | 2026-07-07 | Initial Product Vision |
+| Version | Date       | Changes                |
+| ------- | ---------- | ---------------------- |
+| 1.0     | 2026-07-07 | Initial Product Vision |

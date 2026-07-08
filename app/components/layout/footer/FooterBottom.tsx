@@ -26,8 +26,8 @@ export function FooterBottom() {
         </div>
 
         <p className="max-w-md">
-          ClashLens is an independent analytics platform and is not
-          affiliated with, endorsed by, or sponsored by Supercell.
+          ClashLens is an independent analytics platform and is not affiliated
+          with, endorsed by, or sponsored by Supercell.
         </p>
       </div>
     </div>

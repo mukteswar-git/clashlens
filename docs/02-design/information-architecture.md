@@ -243,7 +243,7 @@ Available only within the clan dashboard.
 - Overview
 - Members
 - War
-  
+
 ## Page Relationships
 
 ```text
@@ -354,6 +354,6 @@ Dashboard
 
 ## Revision History
 
-| Version | Date | Changes |
-| --------- | ------ | --------- |
-| 1.0 | 2026-07-07 | Initial Information Architecture |
+| Version | Date       | Changes                          |
+| ------- | ---------- | -------------------------------- |
+| 1.0     | 2026-07-07 | Initial Information Architecture |

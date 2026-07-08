@@ -71,7 +71,8 @@ export function FAQSection() {
             <span className="whitespace-nowrap text-accent">Questions</span>
           </h2>
 
-          <p className="
+          <p
+            className="
             mt-6
             text-base
             leading-7
@@ -79,7 +80,8 @@ export function FAQSection() {
 
             sm:text-lg
             sm:leading-8
-            ">
+            "
+          >
             Everything you need to know about ClashLens. Can&apos;t find the
             answer you&apos;re looking for?{" "}
             <span className="font-bold text-accent">Contact us</span> anytime.

@@ -27,9 +27,7 @@ export function FAQCard({ faq }: FAQCardProps) {
 
           {/* Text */}
           <div className="flex-1">
-            <h3 className="text-xl font-semibold">
-              {faq.question}
-            </h3>
+            <h3 className="text-xl font-semibold">{faq.question}</h3>
           </div>
         </div>
       </AccordionTrigger>

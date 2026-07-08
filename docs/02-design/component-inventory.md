@@ -322,18 +322,18 @@ Reusable 404 state.
 
 ## Component Reuse Matrix
 
-| Component | Landing | Overview | Members | Player | War |
-| ------------ | :-------: | :--------: | :-------: | :------: | :---: |
-| Button | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Card | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Badge | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Search Bar | ✓ | ✓ | ✓ | ✗ | ✗ |
-| Stat Card | ✗ | ✓ | ✗ | ✗ | ✗ |
-| Clan Summary Card | ✗ | ✓ | ✗ | ✗ | ✗ |
-| Member Table | ✗ | ✗ | ✓ | ✗ | ✗ |
-| Hero Card | ✗ | ✗ | ✗ | ✓ | ✗ |
-| War Scoreboard | ✗ | ✓ | ✗ | ✗ | ✓ |
-| Attack Table | ✗ | ✗ | ✗ | ✗ | ✓ |
+| Component         | Landing | Overview | Members | Player | War |
+| ----------------- | :-----: | :------: | :-----: | :----: | :-: |
+| Button            |    ✓    |    ✓     |    ✓    |   ✓    |  ✓  |
+| Card              |    ✓    |    ✓     |    ✓    |   ✓    |  ✓  |
+| Badge             |    ✓    |    ✓     |    ✓    |   ✓    |  ✓  |
+| Search Bar        |    ✓    |    ✓     |    ✓    |   ✗    |  ✗  |
+| Stat Card         |    ✗    |    ✓     |    ✗    |   ✗    |  ✗  |
+| Clan Summary Card |    ✗    |    ✓     |    ✗    |   ✗    |  ✗  |
+| Member Table      |    ✗    |    ✗     |    ✓    |   ✗    |  ✗  |
+| Hero Card         |    ✗    |    ✗     |    ✗    |   ✓    |  ✗  |
+| War Scoreboard    |    ✗    |    ✓     |    ✗    |   ✗    |  ✓  |
+| Attack Table      |    ✗    |    ✗     |    ✗    |   ✗    |  ✓  |
 
 ## Naming Convention
 
@@ -382,6 +382,6 @@ These will be introduced in future phases after historical tracking is implement
 
 ## Revision History
 
-| Version | Date | Changes |
-| --------- | ------ | --------- |
-| 1.0 | 2026-07-07 | Initial Component Inventory |
+| Version | Date       | Changes                     |
+| ------- | ---------- | --------------------------- |
+| 1.0     | 2026-07-07 | Initial Component Inventory |

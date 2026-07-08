@@ -7,7 +7,10 @@ import { FeatureHighlights } from "../feature-highlights/FeatureHighlights";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-16 md:pt-20 lg:pt-28" id="home">
+    <section
+      className="relative overflow-hidden pt-16 md:pt-20 lg:pt-28"
+      id="home"
+    >
       {/* Background image */}
       <Image
         src="/images/hero/background.webp"

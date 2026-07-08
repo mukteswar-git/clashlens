@@ -497,6 +497,6 @@ Every architectural decision should reduce future complexity rather than increas
 
 ## Revision History
 
-| Version | Date | Changes |
-| --------- | ------ | --------- |
-| 1.0 | 2026-07-07 | Initial Technical Architecture |
+| Version | Date       | Changes                        |
+| ------- | ---------- | ------------------------------ |
+| 1.0     | 2026-07-07 | Initial Technical Architecture |

@@ -4,7 +4,6 @@ import { NAV_LINKS } from "./navigation";
 import { scrollToSection } from "@/lib/scroll";
 
 export function DesktopNav() {
-
   return (
     <nav
       className="hidden items-center gap-10 md:flex"

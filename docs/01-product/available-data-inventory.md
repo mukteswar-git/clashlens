@@ -76,40 +76,40 @@ Examples:
 
 ### Basic Information
 
-|Field|Phase|Usage|
-|---|:-:|---|
-|Clan Name|✅|Display|
-|Clan Tag|✅|Unique Identifier|
-|Clan Badge|✅|Clan Summary|
-|Clan Level|✅|Clan Summary|
-|Description|✅|Clan Summary|
-|Clan Type|✅|Open / Invite / Closed|
-|Required Trophies|✅|Clan Summary|
-|Members Count|✅|Clan Summary|
-|War League|✅|Clan Summary|
-|War Frequency|✅|Clan Summary|
-|Location|✅|Clan Summary|
-|Labels|✅|Display|
-|Capital League|🕒|Future Analytics|
-|Capital Points|🕒|Future Analytics|
+| Field             | Phase | Usage                  |
+| ----------------- | :---: | ---------------------- |
+| Clan Name         |  ✅   | Display                |
+| Clan Tag          |  ✅   | Unique Identifier      |
+| Clan Badge        |  ✅   | Clan Summary           |
+| Clan Level        |  ✅   | Clan Summary           |
+| Description       |  ✅   | Clan Summary           |
+| Clan Type         |  ✅   | Open / Invite / Closed |
+| Required Trophies |  ✅   | Clan Summary           |
+| Members Count     |  ✅   | Clan Summary           |
+| War League        |  ✅   | Clan Summary           |
+| War Frequency     |  ✅   | Clan Summary           |
+| Location          |  ✅   | Clan Summary           |
+| Labels            |  ✅   | Display                |
+| Capital League    |  🕒   | Future Analytics       |
+| Capital Points    |  🕒   | Future Analytics       |
 
 ### Member Snapshot
 
 Available for every member.
 
-|Field|Phase|Usage|
-|---|:-:|---|
-|Player Tag|✅|Primary Key|
-|Name|✅|Member Table|
-|Role|✅|Member Table|
-|Town Hall Level|✅|Progress|
-|Experience Level|❌|Ignored|
-|Trophies|✅|Rankings|
-|Best Trophies|✅|Rankings|
-|Builder Base Trophies|✅|Display|
-|Donations|✅|Contribution|
-|Donations Received|✅|Contribution|
-|League|✅|Rankings|
+| Field                 | Phase | Usage        |
+| --------------------- | :---: | ------------ |
+| Player Tag            |  ✅   | Primary Key  |
+| Name                  |  ✅   | Member Table |
+| Role                  |  ✅   | Member Table |
+| Town Hall Level       |  ✅   | Progress     |
+| Experience Level      |  ❌   | Ignored      |
+| Trophies              |  ✅   | Rankings     |
+| Best Trophies         |  ✅   | Rankings     |
+| Builder Base Trophies |  ✅   | Display      |
+| Donations             |  ✅   | Contribution |
+| Donations Received    |  ✅   | Contribution |
+| League                |  ✅   | Rankings     |
 
 ## Player Endpoint
 
@@ -119,43 +119,43 @@ Used when viewing a specific player.
 
 ### Hero Information
 
-|Field|Phase|Usage|
-|---|:-:|---|
-|Barbarian King|✅|Profile|
-|Archer Queen|✅|Profile|
-|Grand Warden|✅|Profile|
-|Royal Champion|✅|Profile|
-|Minion Prince|✅|Profile (when available)|
+| Field          | Phase | Usage                    |
+| -------------- | :---: | ------------------------ |
+| Barbarian King |  ✅   | Profile                  |
+| Archer Queen   |  ✅   | Profile                  |
+| Grand Warden   |  ✅   | Profile                  |
+| Royal Champion |  ✅   | Profile                  |
+| Minion Prince  |  ✅   | Profile (when available) |
 
 ### Hero Equipment
 
-|Field|Phase|Usage|
-|---|:-:|---|
-|Equipment Name|✅|Player Profile|
-|Equipment Level|✅|Player Profile|
+| Field           | Phase | Usage          |
+| --------------- | :---: | -------------- |
+| Equipment Name  |  ✅   | Player Profile |
+| Equipment Level |  ✅   | Player Profile |
 
 ### Pets
 
-|Field|Phase|Usage|
-|---|:-:|---|
-|Pet Name|✅|Profile|
-|Pet Level|✅|Profile|
+| Field     | Phase | Usage   |
+| --------- | :---: | ------- |
+| Pet Name  |  ✅   | Profile |
+| Pet Level |  ✅   | Profile |
 
 ### Troops
 
-|Field|Phase|Usage|
-|---|:-:|---|
-|Troops|✅|Player Progress|
-|Spells|✅|Player Progress|
-|Siege Machines|✅|Player Progress|
+| Field          | Phase | Usage           |
+| -------------- | :---: | --------------- |
+| Troops         |  ✅   | Player Progress |
+| Spells         |  ✅   | Player Progress |
+| Siege Machines |  ✅   | Player Progress |
 
 ### Additional Information
 
-|Field|Phase|Usage|
-|---|:-:|---|
-|Achievements|🕒|Future|
-|Labels|🕒|Future|
-|Builder Base|🕒|Future Expansion|
+| Field        | Phase | Usage            |
+| ------------ | :---: | ---------------- |
+| Achievements |  🕒   | Future           |
+| Labels       |  🕒   | Future           |
+| Builder Base |  🕒   | Future Expansion |
 
 ## War Endpoint
 
@@ -163,25 +163,25 @@ Used when viewing a specific player.
 
 ### War Information
 
-| Field | Phase | Purpose |
-| --- | :-: | --- |
-| War State | ✅ | Display current war status |
-| Team Size | ✅ | Display war format (15v15, 30v30, etc.) |
-| Clan Stars | ✅ | Show clan performance |
-| Opponent Stars | ✅ | Compare against opponent |
-| Destruction Percentage | ✅ | Show war progress |
-| Attacks Used | ✅ | Track attack usage |
-| Remaining Attacks | ✅ | Show attacks still available |
-| Opponent Information | ✅ | Display opponent clan details |
+| Field                  | Phase | Purpose                                 |
+| ---------------------- | :---: | --------------------------------------- |
+| War State              |  ✅   | Display current war status              |
+| Team Size              |  ✅   | Display war format (15v15, 30v30, etc.) |
+| Clan Stars             |  ✅   | Show clan performance                   |
+| Opponent Stars         |  ✅   | Compare against opponent                |
+| Destruction Percentage |  ✅   | Show war progress                       |
+| Attacks Used           |  ✅   | Track attack usage                      |
+| Remaining Attacks      |  ✅   | Show attacks still available            |
+| Opponent Information   |  ✅   | Display opponent clan details           |
 
 ### Member War Data
 
-| Field | Phase | Purpose |
-| --- | :-: | --- |
-| Attacks Used | ✅ | Display attacks used by the member |
-| Stars Earned | ✅ | Display total stars earned |
-| Destruction | ✅ | Display total destruction percentage |
-| Defender Tag | ✅ | Link each attack to the defending base |
+| Field        | Phase | Purpose                                |
+| ------------ | :---: | -------------------------------------- |
+| Attacks Used |  ✅   | Display attacks used by the member     |
+| Stars Earned |  ✅   | Display total stars earned             |
+| Destruction  |  ✅   | Display total destruction percentage   |
+| Defender Tag |  ✅   | Link each attack to the defending base |
 
 ## Derived Metrics
 
@@ -189,17 +189,17 @@ Calculated using live API responses.
 
 No database required.
 
-|Metric|Formula|Phase|
-|---|---|:-:|
-|Donation Ratio|Donations ÷ Received|✅|
-|Total Clan Donations|Sum of all member donations|✅|
-|Total Clan Received|Sum of all received troops|✅|
-|Average Clan Trophies|Mean of member trophies|✅|
-|Average Builder Trophies|Mean of builder trophies|✅|
-|Town Hall Distribution|Count members by TH|✅|
-|League Distribution|Count members by League|✅|
-|Hero Strength|Sum of hero levels|✅|
-|Strongest Heroes Ranking|Sort by Hero Strength|✅|
+| Metric                   | Formula                     | Phase |
+| ------------------------ | --------------------------- | :---: |
+| Donation Ratio           | Donations ÷ Received        |  ✅   |
+| Total Clan Donations     | Sum of all member donations |  ✅   |
+| Total Clan Received      | Sum of all received troops  |  ✅   |
+| Average Clan Trophies    | Mean of member trophies     |  ✅   |
+| Average Builder Trophies | Mean of builder trophies    |  ✅   |
+| Town Hall Distribution   | Count members by TH         |  ✅   |
+| League Distribution      | Count members by League     |  ✅   |
+| Hero Strength            | Sum of hero levels          |  ✅   |
+| Strongest Heroes Ranking | Sort by Hero Strength       |  ✅   |
 
 ## Historical Metrics
 
@@ -207,20 +207,20 @@ The following metrics **cannot** be calculated from live API responses.
 
 These require ClashLens to store historical snapshots.
 
-|Metric|Database Required|
-|---|:-:|
-|War Reliability|✅|
-|War Performance|✅|
-|Activity Score|✅|
-|Promotion Score|✅|
-|Removal Score|✅|
-|Loyalty Score|✅|
-|Clan Health|✅|
-|Contribution Score|✅|
-|Weekly Reports|✅|
-|Monthly Reports|✅|
-|Trends|✅|
-|Predictions|✅|
+| Metric             | Database Required |
+| ------------------ | :---------------: |
+| War Reliability    |        ✅         |
+| War Performance    |        ✅         |
+| Activity Score     |        ✅         |
+| Promotion Score    |        ✅         |
+| Removal Score      |        ✅         |
+| Loyalty Score      |        ✅         |
+| Clan Health        |        ✅         |
+| Contribution Score |        ✅         |
+| Weekly Reports     |        ✅         |
+| Monthly Reports    |        ✅         |
+| Trends             |        ✅         |
+| Predictions        |        ✅         |
 
 ## Phase 1 Features Enabled
 
@@ -315,6 +315,6 @@ Smart Recommendations
 
 ## Revision History
 
-| Version | Date | Changes |
-| --------- | ------ | --------- |
-| 1.0 | 2026-07-07 | Initial Available Data Inventory |
+| Version | Date       | Changes                          |
+| ------- | ---------- | -------------------------------- |
+| 1.0     | 2026-07-07 | Initial Available Data Inventory |
