@@ -1,8 +1,16 @@
 # ClashLens
 
-> Data-driven analytics platform for Clash of Clans clan leaders.
+> Modern analytics and decision-support platform for Clash of Clans clan leaders.
 
 ClashLens is a web application being built with Next.js, TypeScript, and Tailwind CSS to help Clash of Clans clan leaders analyze member activity, war performance, and overall clan health using data from the official Clash of Clans API.
+
+## Live Demo
+
+🌐 **Live Demo:** https://clashlens.vercel.app
+
+## 🎨 Design
+
+🔗 **Figma Design:** https://www.figma.com/design/fRU9Ly1t93PMJQLs2VOckH/MDev?node-id=0-1&t=HGOHCZ7XpHUQBjuC-1
 
 ## Status
 
@@ -16,14 +24,6 @@ ClashLens is a web application being built with Next.js, TypeScript, and Tailwin
 - [ ] Analytics Engine
 
 The responsive landing page has been completed and deployed. Development is now focused on the analytics dashboard and Clash of Clans API integration.
-
-## 🎨 Design
-
-🔗 **Figma:** https://www.figma.com/design/fRU9Ly1t93PMJQLs2VOckH/MDev?node-id=0-1&t=HGOHCZ7XpHUQBjuC-1
-
-## Live Demo
-
-🌐 https://clashlens.vercel.app
 
 ## Screenshots
 
@@ -50,55 +50,66 @@ The responsive landing page has been completed and deployed. Development is now 
 
 ## Planned Features
 
-### Clan Dashboard
+### Live Analytics
 
-* Clan overview and statistics
-* Donation leaderboards
-* Activity summaries
-* War performance snapshots
+- Clan overview
+- Member exploration
+- Player profiles
+- War analytics
 
-### Member Analytics
+### Historical Analytics
 
-* Donation tracking
-* Trophy and league information
-* Activity scoring system
-* Member rankings
+- Historical tracking
+- Trend analysis
+- Weekly reports
 
-### War Analytics
+### Intelligent Insights
 
-* War participation tracking
-* Attack usage monitoring
-* Missed attack detection
-* Performance metrics
+- Promotion recommendations
+- Removal recommendations
+- Clan health analysis
 
-### Future Enhancements
+## 📚 Documentation
 
-* Historical trend analysis
-* Reliability scoring
-* Promotion recommendations
-* Clan health metrics
-* Predictive inactivity alerts
+Project documentation is organized into three categories.
+
+### 📦 Product
+
+- [Product Vision](docs/01-product/product-vision.md)
+- [MVP Roadmap](docs/01-product/mvp-roadmap.md)
+- [Available Data Inventory](docs/01-product/available-data-inventory.md)
+
+### 🎨 Design
+
+- [Information Architecture](docs/02-design/information-architecture.md)
+- [Page Specifications](docs/02-design/page-specifications.md)
+- [Component Inventory](docs/02-design/component-inventory.md)
+
+### ⚙️ Engineering
+
+- [Technical Architecture](docs/03-engineering/technical-architecture.md)
+- [Development Principles](docs/03-engineering/development-principles.md)
 
 ## Tech Stack
 
-* Next.js 16
-* React 19
-* TypeScript
-* Tailwind CSS 4
-* shadcn/ui
-* Lucide React
-* App Router
-* Route Handlers
-* pnpm
-* Vercel
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- shadcn/ui
+- Lucide React
+- App Router
+- Route Handlers
+- pnpm
+- Vercel
 
 ## Project Goals
 
-* Build a production-grade Next.js application
-* Practice modern full-stack development patterns
-* Integrate with a real-world public API
-* Create meaningful analytics and reporting features
-* Deploy on Vercel
+- Build a production-grade Next.js application
+- Integrate with the official Clash of Clans API
+- Create meaningful analytics and decision-support features
+- Practice modern full-stack development patterns
+- Deploy on Vercel
 
 ## Getting Started
 
@@ -128,30 +139,36 @@ pnpm build
 
 ## Roadmap
 
-### Phase 1 — MVP
+### Phase 1 — Live Analytics
 
 - [x] Project setup
 - [x] Responsive landing page
 - [x] Vercel deployment
 - [ ] Clan search
-- [ ] Clash of Clans API integration
-- [ ] Clan dashboard
-- [ ] Member analytics
-- [ ] War analytics
-- [ ] Activity scoring engine
+- [ ] Live clan dashboard
+- [ ] Members page
+- [ ] Player profile
+- [ ] War page
 
-### Phase 2 — Historical Analytics
+### Phase 2 — Decision Engine Design
 
-* [ ] Data persistence
-* [ ] Trend analysis
-* [ ] Weekly reports
-* [ ] Database integration
+- [ ] Evaluation framework
+- [ ] Decision rules
+- [ ] Recommendation criteria
 
-### Phase 3 — Intelligent Insights
+### Phase 3 — Historical Analytics
 
-* [ ] Reliability scoring
-* [ ] Recommendation engine
-* [ ] Predictive analytics
+- [ ] Clan tracking
+- [ ] PostgreSQL integration
+- [ ] Historical reports
+- [ ] Background synchronization
+
+### Phase 4 — Smart Recommendations
+
+- [ ] Promotion recommendations
+- [ ] Removal recommendations
+- [ ] Clan health analysis
+- [ ] Weekly and monthly reports
 
 ## License
 
