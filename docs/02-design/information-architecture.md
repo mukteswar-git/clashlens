@@ -1,6 +1,6 @@
 # Information Architecture
 
-> **Document Version:** 1.0  
+> **Document Version:** 1.1  
 > **Status:** Active  
 > **Last Updated:** July 2026
 
@@ -13,7 +13,7 @@ It describes:
 - Application hierarchy
 - Navigation flow
 - Screen organization
-- Relationships between pages
+- Relationships between application sections
 - Primary user journeys
 
 This document does **not** define UI design or implementation details.
@@ -25,37 +25,21 @@ ClashLens
 │
 ├── Landing
 │
-├── Search
-│
 └── Dashboard
     │
     ├── Overview
-    ├── Members
-    └── War
+    └── Members
 ```
 
 ## Navigation Flow
 
 ```text
-Landing Page
-      │
-      ▼
-Search Clan
-      │
-      ▼
+Landing
+│
+├── Search Clan
+│
+▼
 Dashboard
-      │
-      ├──────────────┐
-      ▼              ▼
-Overview         Members
-                     │
-                     ▼
-              Player Profile
-
-Dashboard
-    │
-    ▼
-   War
 ```
 
 ## User Journey
@@ -137,8 +121,8 @@ Contains
 
 - ClashLens Logo
 - Search Clan
-- Last Updated
 - Refresh Data
+- Last Updated
 
 These actions are available from every dashboard page.
 
@@ -154,8 +138,6 @@ Navigate between dashboard sections.
 Overview
 
 Members
-
-War
 ```
 
 Future pages will be introduced in later phases.
@@ -164,62 +146,64 @@ Future pages will be introduced in later phases.
 
 ### Overview
 
-Purpose
+**Purpose**
 
 Provide a high-level summary of the clan.
 
-Answers:
+**Answers**
 
 - What is the current state of the clan?
 - What are the most important statistics?
-- Who are the current standouts?
+- Who are the current standout members?
+- What is the current war status?
+
+**Includes**
+
+- Clan Summary
+- Town Hall Distribution
+- League Distribution
+- Quick Highlights
+- Current War Snapshot
+
+---
 
 ### Members
 
-Purpose
+**Purpose**
 
-Explore every clan member.
+Compare and analyze every clan member.
 
-Features
+**Features**
 
-- Search
-- Sort
-- Filters
-- Member comparison
+- Member Comparison
+- Compare Progress By:
+  - Heroes
+  - Hero Equipment
+  - Pets
+  - Troops
+  - Spells
+  - Siege Machines
+- Independent Sorting
+- Dynamic Member Rankings
+- Responsive Comparison Table
 
-Users can navigate to an individual player profile.
+---
 
-## Player Profile
+## Current War Snapshot
 
-Purpose
+The application displays a live war summary on the **Overview** page.
 
-Display detailed information about one player.
+**Includes**
 
-Includes
-
-- Heroes
-- Hero Equipment
-- Pets
-- Troops
-- Spells
-- Siege Machines
-- Achievements
-
-## War
-
-### Purpose
-
-Display live war information.
-
-### Includes
-
-- War status
-- Opponent information
-- Stars earned
-- Destruction percentage
-- Attack usage
-- War members
-- Attack details
+- War Status
+- Team Size
+- Clan Stars
+- Opponent Stars
+- Clan Destruction
+- Opponent Destruction
+- Attacks Used
+- Remaining Attacks
+- Opponent Summary
 
 ## Navigation Rules
 
@@ -242,7 +226,6 @@ Available only within the clan dashboard.
 
 - Overview
 - Members
-- War
 
 ## Page Relationships
 
@@ -255,14 +238,6 @@ Dashboard
     ├────────────┐
     ▼            ▼
 Overview     Members
-                  │
-                  ▼
-          Player Profile
-
-Dashboard
-    │
-    ▼
-   War
 ```
 
 ---
@@ -278,7 +253,7 @@ Dashboard
 │
 ├── Overview
 ├── Members
-├── Current War
+├── War Analytics
 ├── Activity
 ├── Donations
 ├── Clan Games
@@ -297,8 +272,6 @@ Information should flow from general to specific.
 Clan
 ↓
 Members
-↓
-Individual Player
 ```
 
 Users should never encounter detailed information before understanding the overall context.
@@ -336,8 +309,6 @@ Landing
 Dashboard
 ├── Overview
 ├── Members
-|   └── Player Profile
-└── War
 ```
 
 ## Architectural Principles
@@ -354,6 +325,7 @@ Dashboard
 
 ## Revision History
 
-| Version | Date       | Changes                          |
-| ------- | ---------- | -------------------------------- |
-| 1.0     | 2026-07-07 | Initial Information Architecture |
+| Version | Date       | Changes                                                                                                   |
+| ------- | ---------- | --------------------------------------------------------------------------------------------------------- |
+| 1.0     | 2026-07-07 | Initial Information Architecture                                                                          |
+| 1.1     | 2026-07-12 | Simplified dashboard architecture, removed Player Profile and War pages, added member comparison workflow |

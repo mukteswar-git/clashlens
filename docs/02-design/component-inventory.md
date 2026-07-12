@@ -1,6 +1,6 @@
 # Component Inventory
 
-> **Document Version:** 1.0  
+> **Document Version:** 1.1  
 > **Status:** Active  
 > **Last Updated:** July 2026
 
@@ -19,10 +19,8 @@ Application
 ├── Layout
 ├── UI
 ├── Common
-├── Dashboard
+├── Overview
 ├── Members
-├── Player
-├── War
 └── Feedback
 ```
 
@@ -30,7 +28,7 @@ Application
 
 These components define the overall application structure.
 
-### App Layout
+### AppLayout
 
 #### Purpose
 
@@ -48,27 +46,23 @@ Shared layout for every dashboard page.
 
 Primary dashboard navigation.
 
-#### Used In
-
-- Dashboard
-
-Contains
+#### Contains
 
 - Navigation Items
 - Active Indicator
 
-### Top Navigation
+### TopNavigation
 
 #### Purpose
 
 Global dashboard actions.
 
-Contains
+#### Contains
 
 - Logo
 - Search Clan
-- Last Updated
 - Refresh
+- Last Updated
 
 ### Container
 
@@ -76,11 +70,9 @@ Contains
 
 Provide consistent content width.
 
-Used throughout the application.
-
 ## 2. UI Components
 
-These are generic reusable building blocks.
+Generic reusable building blocks.
 
 ### Button
 
@@ -93,36 +85,59 @@ Variants
 
 ### Card
 
-Base component used everywhere.
+Base component.
 
-Examples
+Used for
 
-- KPI Card
-- Hero Card
-- Member Card
-- War Card
+- Summary Cards
+- Highlight Cards
+- War Snapshot
+- Distribution Cards
 
 ### Badge
 
 Examples
 
-- League
 - Role
-- Labels
+- League
+- Status
 
 ### Avatar
 
 Displays
 
-- Player
 - Clan
+- Player
 
 ### Input
 
 Used for
 
 - Search
-- Forms
+
+### Progress
+
+Displays percentage-based progression.
+
+Used for
+
+- Heroes
+- Hero Equipment
+- Pets
+- Troops
+- Spells
+- Siege Machines
+
+### Status
+
+Displays live status.
+
+Examples
+
+- Live
+- In War
+- Preparation Day
+- War Ended
 
 ### Tooltip
 
@@ -132,25 +147,23 @@ Displays additional information.
 
 Visual divider.
 
-### Dialog
-
-Reusable modal component.
-
-### Tabs
-
-Reusable navigation.
-
 ## 3. Common Components
 
 Reusable business components.
 
-### Search Bar
+### SearchBar
 
-Purpose
+Used to search clans.
 
-Search clan or members.
+### LoadingSkeleton
 
-### Empty State
+Displayed while data loads.
+
+### ErrorState
+
+Displays API failures.
+
+### EmptyState
 
 Examples
 
@@ -158,184 +171,158 @@ Examples
 - No Active War
 - No Results
 
-### Error State
-
-Displays API errors.
-
-### Loading Skeleton
-
-Shown while loading.
-
-### Stat Card
+### StatCard
 
 Reusable statistics card.
 
-Used for
+Examples
 
-- Donations
 - Members
-- Average Trophies
-- Hero Strength
+- Clan Level
+- War League
+- Capital League
 
-### Distribution Chart
+### DistributionChart
 
 Reusable chart component.
 
 Examples
 
-- TH Distribution
+- Town Hall Distribution
 - League Distribution
 
 ## 4. Overview Components
 
 Used only on the Overview page.
 
-### Clan Summary Card
+### ClanSummaryCard
 
 Displays
 
 - Badge
 - Name
+- Tag
 - Level
 - Members
 - War League
+- Capital League
 
-### Quick Highlight Card
+### QuickHighlightCard
 
 Displays
 
 - Top Donor
-- Strongest Hero
+- Strongest Heroes
 - Highest Trophy Player
+- Highest Town Hall
+- Top Capital Contributor
 
-### War Snapshot Card
+### WarSnapshotCard
 
 Displays
 
+- War State
+- Team Size
 - Stars
 - Destruction
 - Attacks Used
+- Remaining Attacks
+- Opponent Summary
 
-### KPI Grid
+### DistributionSection
 
-Container for multiple KPI cards.
+Container for distribution charts.
 
-## 5. Member Components
+## 5. Members Components
 
-### Member Table
+Used only on the Members page.
 
-Primary member listing.
+### MemberTable
 
-### Member Row
+Main comparison table.
 
-Single table row.
+### MemberRow
 
-### Member Filters
+Displays a single member.
 
-Contains
+### CompareSelect
 
+Allows switching comparison category.
+
+Options
+
+- Heroes
+- Hero Equipment
+- Pets
+- Troops
+- Spells
+- Siege Machines
+
+### SortSelect
+
+Allows sorting members.
+
+Examples
+
+- Progress
+- Donations
 - Town Hall
 - Role
-- League
 
-### Donation Ratio
+### ProgressIndicator
 
-Small reusable badge.
+Displays progression percentage.
 
-### Hero Strength Indicator
+Used for
 
-Displays calculated hero strength.
+- Heroes
+- Hero Equipment
+- Pets
+- Troops
+- Spells
+- Siege Machines
 
-## 6. Player Components
-
-### Hero Card
-
-Displays
-
-- Hero
-- Level
-
-### Equipment Card
-
-Displays hero equipment.
-
-### Pet Card
-
-Displays pets.
-
-### Troop Card
-
-Displays troops.
-
-### Spell Card
-
-Displays spells.
-
-### Achievement Card
-
-Displays achievements.
-
-## 7. War Components
-
-### War Scoreboard
-
-Displays
-
-- Clan
-- Opponent
-- Stars
-- Destruction
-
-### Attack Table
-
-Displays all attacks.
-
-### Attack Row
-
-Displays one attack.
-
-### War Status
-
-Displays
-
-- Preparation Day
-- Battle Day
-- War Ended
-
-## 8. Feedback Components
+## 6. Feedback Components
 
 ### Loading
 
-Reusable loading components.
+Reusable loading component.
 
 ### Error
 
-Reusable error components.
+Reusable error component.
 
 ### Empty
 
-Reusable empty states.
+Reusable empty state.
 
-### Not Found
+### NotFound
 
 Reusable 404 state.
 
 ## Component Reuse Matrix
 
-| Component         | Landing | Overview | Members | Player | War |
-| ----------------- | :-----: | :------: | :-----: | :----: | :-: |
-| Button            |    ✓    |    ✓     |    ✓    |   ✓    |  ✓  |
-| Card              |    ✓    |    ✓     |    ✓    |   ✓    |  ✓  |
-| Badge             |    ✓    |    ✓     |    ✓    |   ✓    |  ✓  |
-| Search Bar        |    ✓    |    ✓     |    ✓    |   ✗    |  ✗  |
-| Stat Card         |    ✗    |    ✓     |    ✗    |   ✗    |  ✗  |
-| Clan Summary Card |    ✗    |    ✓     |    ✗    |   ✗    |  ✗  |
-| Member Table      |    ✗    |    ✗     |    ✓    |   ✗    |  ✗  |
-| Hero Card         |    ✗    |    ✗     |    ✗    |   ✓    |  ✗  |
-| War Scoreboard    |    ✗    |    ✓     |    ✗    |   ✗    |  ✓  |
-| Attack Table      |    ✗    |    ✗     |    ✗    |   ✗    |  ✓  |
+| Component          | Landing | Overview | Members |
+| ------------------ | :-----: | :------: | :-----: |
+| Button             |    ✓    |    ✓     |    ✓    |
+| Card               |    ✓    |    ✓     |    ✓    |
+| Badge              |    ✓    |    ✓     |    ✓    |
+| Avatar             |    ✗    |    ✓     |    ✓    |
+| Input              |    ✓    |    ✓     |    ✗    |
+| SearchBar          |    ✓    |    ✓     |    ✗    |
+| StatCard           |    ✗    |    ✓     |    ✗    |
+| DistributionChart  |    ✗    |    ✓     |    ✗    |
+| ClanSummaryCard    |    ✗    |    ✓     |    ✗    |
+| QuickHighlightCard |    ✗    |    ✓     |    ✗    |
+| WarSnapshotCard    |    ✗    |    ✓     |    ✗    |
+| MemberTable        |    ✗    |    ✗     |    ✓    |
+| MemberRow          |    ✗    |    ✗     |    ✓    |
+| CompareSelect      |    ✗    |    ✗     |    ✓    |
+| SortSelect         |    ✗    |    ✗     |    ✓    |
+| ProgressIndicator  |    ✗    |    ✗     |    ✓    |
+| Status             |    ✗    |    ✓     |    ✓    |
 
-## Naming Convention
+### Naming Convention
 
 Components should use PascalCase.
 
@@ -344,9 +331,15 @@ Examples
 ```text
 Button.tsx
 Sidebar.tsx
+TopNavigation.tsx
+ClanSummaryCard.tsx
+QuickHighlightCard.tsx
+WarSnapshotCard.tsx
 MemberTable.tsx
-HeroCard.tsx
-WarScoreboard.tsx
+MemberRow.tsx
+CompareSelect.tsx
+SortSelect.tsx
+ProgressIndicator.tsx
 ```
 
 ## Component Principles
@@ -364,24 +357,25 @@ Every reusable component should:
 
 These are intentionally excluded from Phase 1.
 
-- Recommendation Card
-- Promotion Card
-- Reliability Indicator
-- Activity Timeline
-- Clan Health Gauge
-- Trend Charts
-- Weekly Report Card
-
-These will be introduced in future phases after historical tracking is implemented.
+- WarAnalyticsCard
+- ActivityTimeline
+- ClanHealthGauge
+- RecommendationCard
+- PromotionCard
+- RemovalRecommendationCard
+- TrendChart
+- WeeklyReportCard
+- MonthlyReportCard
 
 ## Guiding Principle
 
 > Build small, reusable components.
 >
-> Assemble pages from components rather than building large page-specific UI.
+> Assemble pages from reusable components rather than building page-specific UI.
 
 ## Revision History
 
-| Version | Date       | Changes                     |
-| ------- | ---------- | --------------------------- |
-| 1.0     | 2026-07-07 | Initial Component Inventory |
+| Version | Date       | Changes                                                                                                              |
+| ------- | ---------- | -------------------------------------------------------------------------------------------------------------------- |
+| 1.0     | 2026-07-07 | Initial Component Inventory                                                                                          |
+| 1.1     | 2026-07-12 | Removed Player and War components, added member comparison components, aligned inventory with final MVP architecture |

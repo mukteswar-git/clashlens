@@ -1,6 +1,6 @@
 # Available Data Inventory
 
-> **Document Version:** 1.0  
+> **Document Version:** 1.1  
 > **Status:** Active  
 > **Last Updated:** July 2026
 
@@ -70,200 +70,210 @@ Examples:
 - Promotion Score
 - Clan Health
 
-## Clan Endpoint
+# Clan Endpoint
 
 `GET /clans/{clanTag}`
 
-### Basic Information
+## Basic Information
 
-| Field             | Phase | Usage                  |
-| ----------------- | :---: | ---------------------- |
-| Clan Name         |  ✅   | Display                |
-| Clan Tag          |  ✅   | Unique Identifier      |
-| Clan Badge        |  ✅   | Clan Summary           |
-| Clan Level        |  ✅   | Clan Summary           |
-| Description       |  ✅   | Clan Summary           |
-| Clan Type         |  ✅   | Open / Invite / Closed |
-| Required Trophies |  ✅   | Clan Summary           |
-| Members Count     |  ✅   | Clan Summary           |
-| War League        |  ✅   | Clan Summary           |
-| War Frequency     |  ✅   | Clan Summary           |
-| Location          |  ✅   | Clan Summary           |
-| Labels            |  ✅   | Display                |
-| Capital League    |  🕒   | Future Analytics       |
-| Capital Points    |  🕒   | Future Analytics       |
+| Field          | Phase | Usage        |
+| -------------- | :---: | ------------ |
+| Clan Name      |  ✅   | Clan Summary |
+| Clan Tag       |  ✅   | Clan Summary |
+| Clan Badge     |  ✅   | Clan Summary |
+| Clan Level     |  ✅   | Clan Summary |
+| Members Count  |  ✅   | Clan Summary |
+| War League     |  ✅   | Clan Summary |
+| Capital League |  ✅   | Clan Summary |
 
-### Member Snapshot
+---
+
+## Member Snapshot
 
 Available for every member.
 
-| Field                 | Phase | Usage        |
-| --------------------- | :---: | ------------ |
-| Player Tag            |  ✅   | Primary Key  |
-| Name                  |  ✅   | Member Table |
-| Role                  |  ✅   | Member Table |
-| Town Hall Level       |  ✅   | Progress     |
-| Experience Level      |  ❌   | Ignored      |
-| Trophies              |  ✅   | Rankings     |
-| Best Trophies         |  ✅   | Rankings     |
-| Builder Base Trophies |  ✅   | Display      |
-| Donations             |  ✅   | Contribution |
-| Donations Received    |  ✅   | Contribution |
-| League                |  ✅   | Rankings     |
+| Field              | Phase | Usage               |
+| ------------------ | :---: | ------------------- |
+| Player Tag         |  ✅   | Player Identifier   |
+| Name               |  ✅   | Members Table       |
+| Role               |  ✅   | Members Table       |
+| Town Hall Level    |  ✅   | Members Table       |
+| Donations          |  ✅   | Contribution        |
+| Donations Received |  ✅   | Contribution        |
+| League             |  ✅   | League Distribution |
+| Trophies           |  ✅   | Quick Highlights    |
 
-## Player Endpoint
+---
+
+# Player Endpoint
 
 `GET /players/{playerTag}`
 
-Used when viewing a specific player.
+Used to calculate player progression for member comparison.
 
-### Hero Information
+## Hero Information
 
-| Field          | Phase | Usage                    |
-| -------------- | :---: | ------------------------ |
-| Barbarian King |  ✅   | Profile                  |
-| Archer Queen   |  ✅   | Profile                  |
-| Grand Warden   |  ✅   | Profile                  |
-| Royal Champion |  ✅   | Profile                  |
-| Minion Prince  |  ✅   | Profile (when available) |
+| Field          | Phase | Usage                     |
+| -------------- | :---: | ------------------------- |
+| Barbarian King |  ✅   | Hero Progress Calculation |
+| Archer Queen   |  ✅   | Hero Progress Calculation |
+| Grand Warden   |  ✅   | Hero Progress Calculation |
+| Royal Champion |  ✅   | Hero Progress Calculation |
+| Minion Prince  |  ✅   | Hero Progress Calculation |
+| Dragon Duke    |  ✅   | Hero Progress Calculation |
 
-### Hero Equipment
+---
 
-| Field           | Phase | Usage          |
-| --------------- | :---: | -------------- |
-| Equipment Name  |  ✅   | Player Profile |
-| Equipment Level |  ✅   | Player Profile |
+## Hero Equipment
 
-### Pets
+| Field           | Phase | Usage              |
+| --------------- | :---: | ------------------ |
+| Equipment Name  |  ✅   | Equipment Progress |
+| Equipment Level |  ✅   | Equipment Progress |
 
-| Field     | Phase | Usage   |
-| --------- | :---: | ------- |
-| Pet Name  |  ✅   | Profile |
-| Pet Level |  ✅   | Profile |
+---
 
-### Troops
+## Pets
 
-| Field          | Phase | Usage           |
-| -------------- | :---: | --------------- |
-| Troops         |  ✅   | Player Progress |
-| Spells         |  ✅   | Player Progress |
-| Siege Machines |  ✅   | Player Progress |
+| Field     | Phase | Usage        |
+| --------- | :---: | ------------ |
+| Pet Name  |  ✅   | Pet Progress |
+| Pet Level |  ✅   | Pet Progress |
 
-### Additional Information
+---
+
+## Troops
+
+| Field          | Phase | Usage          |
+| -------------- | :---: | -------------- |
+| Troops         |  ✅   | Troop Progress |
+| Spells         |  ✅   | Spell Progress |
+| Siege Machines |  ✅   | Siege Progress |
+
+---
+
+## Additional Information
 
 | Field        | Phase | Usage            |
 | ------------ | :---: | ---------------- |
-| Achievements |  🕒   | Future           |
+| Achievements |  🕒   | Future Analytics |
 | Labels       |  🕒   | Future           |
-| Builder Base |  🕒   | Future Expansion |
+| Builder Base |  🕒   | Future           |
 
-## War Endpoint
+---
+
+# War Endpoint
 
 `GET /clans/{clanTag}/currentwar`
 
-### War Information
+## War Information
 
-| Field                  | Phase | Purpose                                 |
-| ---------------------- | :---: | --------------------------------------- |
-| War State              |  ✅   | Display current war status              |
-| Team Size              |  ✅   | Display war format (15v15, 30v30, etc.) |
-| Clan Stars             |  ✅   | Show clan performance                   |
-| Opponent Stars         |  ✅   | Compare against opponent                |
-| Destruction Percentage |  ✅   | Show war progress                       |
-| Attacks Used           |  ✅   | Track attack usage                      |
-| Remaining Attacks      |  ✅   | Show attacks still available            |
-| Opponent Information   |  ✅   | Display opponent clan details           |
+| Field                | Phase | Usage             |
+| -------------------- | :---: | ----------------- |
+| War State            |  ✅   | Overview Snapshot |
+| Team Size            |  ✅   | Overview Snapshot |
+| Clan Stars           |  ✅   | Overview Snapshot |
+| Clan Destruction     |  ✅   | Overview Snapshot |
+| Attacks Used         |  ✅   | Overview Snapshot |
+| Remaining Attacks    |  ✅   | Overview Snapshot |
+| Opponent Name        |  ✅   | Opponent Summary  |
+| Opponent Badge       |  ✅   | Opponent Summary  |
+| Opponent Clan Level  |  ✅   | Opponent Summary  |
+| Opponent Stars       |  ✅   | Overview Snapshot |
+| Opponent Destruction |  ✅   | Overview Snapshot |
 
-### Member War Data
+---
 
-| Field        | Phase | Purpose                                |
-| ------------ | :---: | -------------------------------------- |
-| Attacks Used |  ✅   | Display attacks used by the member     |
-| Stars Earned |  ✅   | Display total stars earned             |
-| Destruction  |  ✅   | Display total destruction percentage   |
-| Defender Tag |  ✅   | Link each attack to the defending base |
-
-## Derived Metrics
+# Derived Metrics
 
 Calculated using live API responses.
 
 No database required.
 
-| Metric                   | Formula                     | Phase |
-| ------------------------ | --------------------------- | :---: |
-| Donation Ratio           | Donations ÷ Received        |  ✅   |
-| Total Clan Donations     | Sum of all member donations |  ✅   |
-| Total Clan Received      | Sum of all received troops  |  ✅   |
-| Average Clan Trophies    | Mean of member trophies     |  ✅   |
-| Average Builder Trophies | Mean of builder trophies    |  ✅   |
-| Town Hall Distribution   | Count members by TH         |  ✅   |
-| League Distribution      | Count members by League     |  ✅   |
-| Hero Strength            | Sum of hero levels          |  ✅   |
-| Strongest Heroes Ranking | Sort by Hero Strength       |  ✅   |
+| Metric                  | Formula                                                                                  | Phase |
+| ----------------------- | ---------------------------------------------------------------------------------------- | :---: |
+| Town Hall Distribution  | Count members by Town Hall                                                               |  ✅   |
+| League Distribution     | Count members by League                                                                  |  ✅   |
+| Hero Progress           | (Total Hero Levels ÷ Maximum Hero Levels) × 100                                          |  ✅   |
+| Hero Equipment Progress | (Total Current Hero Levels ÷ Total Maximum Hero Levels for the player's Town Hall) × 100 |  ✅   |
+| Pet Progress            | (Total Pet Levels ÷ Maximum Pet Levels) × 100                                            |  ✅   |
+| Troop Progress          | (Total Troop Levels ÷ Maximum Troop Levels) × 100                                        |  ✅   |
+| Spell Progress          | (Total Spell Levels ÷ Maximum Spell Levels) × 100                                        |  ✅   |
+| Siege Machine Progress  | (Total Siege Machine Levels ÷ Maximum Levels) × 100                                      |  ✅   |
 
-## Historical Metrics
+---
 
-The following metrics **cannot** be calculated from live API responses.
+# Member Comparison Metrics
 
-These require ClashLens to store historical snapshots.
+Displayed dynamically in the Members page.
 
-| Metric             | Database Required |
-| ------------------ | :---------------: |
-| War Reliability    |        ✅         |
-| War Performance    |        ✅         |
-| Activity Score     |        ✅         |
-| Promotion Score    |        ✅         |
-| Removal Score      |        ✅         |
-| Loyalty Score      |        ✅         |
-| Clan Health        |        ✅         |
-| Contribution Score |        ✅         |
-| Weekly Reports     |        ✅         |
-| Monthly Reports    |        ✅         |
-| Trends             |        ✅         |
-| Predictions        |        ✅         |
+| Comparison     | Data Source     | Phase |
+| -------------- | --------------- | :---: |
+| Heroes         | Player Endpoint |  ✅   |
+| Hero Equipment | Player Endpoint |  ✅   |
+| Pets           | Player Endpoint |  ✅   |
+| Troops         | Player Endpoint |  ✅   |
+| Spells         | Player Endpoint |  ✅   |
+| Siege Machines | Player Endpoint |  ✅   |
+
+---
+
+# Historical Metrics
+
+The following metrics require historical snapshots and cannot be calculated from live Clash of Clans API responses.
+
+| Metric          | Database Required |
+| --------------- | :---------------: |
+| Activity Score  |        ✅         |
+| War Reliability |        ✅         |
+| War Performance |        ✅         |
+| Promotion Score |        ✅         |
+| Removal Score   |        ✅         |
+| Clan Health     |        ✅         |
+| Weekly Reports  |        ✅         |
+| Monthly Reports |        ✅         |
+| Trends          |        ✅         |
 
 ## Phase 1 Features Enabled
 
-Using only live API data, ClashLens can provide:
+Using only live Clash of Clans API data, ClashLens can provide:
 
 ### Clan
 
 - Clan Summary
-- Labels
 - Town Hall Distribution
 - League Distribution
+- Current War Snapshot
 
 ### Members
 
-- Search
-- Sort
-- Filters
-- Rankings
+- Member Comparison
+- Compare by:
+  - Heroes
+  - Hero Equipment
+  - Pets
+  - Troops
+  - Spells
+  - Siege Machines
+- Dynamic progress calculation
+- Independent sorting
+- Member rankings
 
 ### War
 
-- Live war status
-- Opponent information
-- Attack usage
-- Stars earned
-- Destruction percentage
+- Current War Status
+- Opponent Summary
+- Stars Comparison
+- Destruction Comparison
+- Attack Usage
 
-### Player
+### Quick Highlights
 
-- Hero Progress
-- Hero Equipment
-- Pets
-- Troops
-- Spells
-
-### Leaderboards
-
-- Top Donors
-- Highest Hero Strength
+- Top Donor
+- Strongest Heroes
 - Highest Trophies
-- Highest Best Trophy Count
 - Highest Town Hall
-- Highest Donation Ratio
+- Top Capital Contributor
 
 ## Explicitly Out of Scope
 
@@ -315,6 +325,7 @@ Smart Recommendations
 
 ## Revision History
 
-| Version | Date       | Changes                          |
-| ------- | ---------- | -------------------------------- |
-| 1.0     | 2026-07-07 | Initial Available Data Inventory |
+| Version | Date       | Changes                                                                                                                                  |
+| ------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.0     | 2026-07-07 | Initial Available Data Inventory                                                                                                         |
+| 1.1     | 2026-07-12 | Added member comparison metrics, updated derived metrics, revised war data usage, and aligned Phase 1 features with the final MVP design |

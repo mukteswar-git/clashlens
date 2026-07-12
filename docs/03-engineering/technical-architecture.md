@@ -1,6 +1,6 @@
 # Technical Architecture
 
-> **Document Version:** 1.0  
+> **Document Version:** 1.1  
 > **Status:** Active  
 > **Last Updated:** July 2026
 
@@ -118,8 +118,6 @@ components/
 ├── layout/
 ├── overview/
 ├── members/
-├── player/
-├── war/
 └── charts/
 
 lib/
@@ -160,11 +158,11 @@ Use only when required.
 Examples
 
 - Search Input
-- Filters
-- Sorting
+- Compare Selector
+- Sort Selector
+- Refresh Button
 - Dialogs
-- Theme Switcher
-- Charts requiring interaction
+- Interactive Charts
 
 ### Rule
 
@@ -187,7 +185,7 @@ Route Handler
 Clash of Clans API
   │
   ▼
-Transform Data
+Transform & Calculate Data
   │
   ▼
 Render UI
@@ -204,7 +202,7 @@ All external API requests must go through Next.js Route Handlers, which are resp
 
 - Authenticating requests to external services
 - Validating incoming data
-- Transforming API responses
+- Transform and normalize API responses
 - Handling errors
 - Enabling future caching and rate limiting
 
@@ -283,7 +281,7 @@ Use React state when needed.
 Use search parameters for:
 
 - Clan Tag
-- Filters
+- Compare Mode
 - Sorting
 
 ### Global State
@@ -302,7 +300,7 @@ Only for
 
 - Refresh
 - Interactive updates
-- Live filtering
+- Interactive comparison
 
 ### Avoid Duplicate Requests
 
@@ -372,6 +370,8 @@ Lazy load heavy components when appropriate.
 Avoid unnecessary requests.
 
 ## TypeScript Strategy
+
+Domain models should be shared across the application.
 
 ### Strict Mode
 
@@ -488,6 +488,7 @@ without requiring major restructuring.
 - Global state without necessity
 - Hardcoded values
 - Premature optimization
+- Business logic inside UI components
 
 ## Guiding Principle
 
@@ -497,6 +498,7 @@ Every architectural decision should reduce future complexity rather than increas
 
 ## Revision History
 
-| Version | Date       | Changes                        |
-| ------- | ---------- | ------------------------------ |
-| 1.0     | 2026-07-07 | Initial Technical Architecture |
+| Version | Date       | Changes                                                               |
+| ------- | ---------- | --------------------------------------------------------------------- |
+| 1.0     | 2026-07-07 | Initial Technical Architecture                                        |
+| 1.1     | 2026-07-12 | Updated project structure and aligned architecture with the final MVP |

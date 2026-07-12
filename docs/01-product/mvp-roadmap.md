@@ -1,6 +1,6 @@
 # MVP Roadmap
 
-> **Document Version:** 1.0  
+> **Document Version:** 1.1  
 > **Status:** Active  
 > **Last Updated:** July 2026
 
@@ -71,40 +71,25 @@ This phase validates that players find the platform useful before introducing mo
 #### Overview
 
 - Clan Summary
+- Performance Overview
 - Town Hall Distribution
 - League Distribution
-- Hero Strength Overview
-- Donation Leaderboard
 - Current War Summary
+- Quick Highlights
 
 #### Members
 
-- Search members
+- Member comparison table
+- Compare progression
+  - Heroes
+  - Hero Equipment
+  - Pets
+  - Troops
+  - Spells
+  - Siege Machines
+- Dynamic progress column
 - Sort members
-- Filter members
-- Player profile navigation
-
-#### Player Profile
-
-Display player progression including:
-
-- Heroes
-- Hero Equipment
-- Pets
-- Troops
-- Spells
-- Siege Machines
-- Achievements
-
-#### War
-
-Display:
-
-- War status
-- Opponent clan
-- Stars earned
-- Destruction percentage
-- Attacks used
+- Responsive comparison table
 
 ### User Experience
 
@@ -351,6 +336,7 @@ Features that do not support these goals should not be included in the MVP.
 
 ## Revision History
 
-| Version | Date       | Changes             |
-| ------- | ---------- | ------------------- |
-| 1.0     | 2026-07-07 | Initial MVP Roadmap |
+| Version | Date       | Changes                                                            |
+| ------- | ---------- | ------------------------------------------------------------------ |
+| 1.0     | 2026-07-07 | Initial MVP Roadmap                                                |
+| 1.1     | 2026-07-12 | Revised dashboard scope, member comparison, and feature priorities |

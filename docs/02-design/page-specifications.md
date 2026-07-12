@@ -1,12 +1,12 @@
 # Page Specifications
 
-> **Document Version:** 1.0  
-> **Status:** Active  
+> **Document Version:** 1.1 </br>
+> **Status:** Active </br>
 > **Last Updated:** July 2026
 
 ## Purpose
 
-This document defines the purpose, responsibilities, content, and behavior of every page in ClashLens.
+This document defines the purpose, responsibilities, content, behavior, and success criteria of every page in ClashLens.
 
 It serves as the implementation blueprint during development.
 
@@ -17,8 +17,6 @@ Each page should have a single responsibility and avoid overlapping with other p
 - Landing Page
 - Dashboard Overview
 - Members
-- Player Profile
-- War
 
 ## 1. Landing Page
 
@@ -62,7 +60,7 @@ The user understands:
 
 and proceeds to search for a clan.
 
-## 2. Dashboard Overview
+## 2. Dashboard
 
 ### Purpose
 
@@ -88,298 +86,191 @@ Display
 - Clan Name
 - Clan Tag
 - Clan Level
-- Members
+- Members Count
 - War League
+- Capital League
 - War Frequency
 - Required Trophies
 - Location
 
-#### Key Metrics
-
-Examples
-
-- Total Donations
-- Total Received
-- Average Trophies
-- Average Hero Strength
-- Current War Status
-
-Only metrics describing the entire clan.
+---
 
 #### Distribution Charts
 
+Display
+
 - Town Hall Distribution
 - League Distribution
+
+---
 
 #### Current War Snapshot
 
 Display
 
 - War State
-- Stars
-- Destruction
+- Team Size
+- Clan Stars
+- Opponent Stars
+- Clan Destruction
+- Opponent Destruction
 - Attacks Used
 - Remaining Attacks
+- Opponent Information
 
-This is only a summary.
+This is a high-level summary only.
 
-Detailed war information belongs to the War page.
+---
 
 #### Quick Highlights
 
-Highlight standout members.
+Display standout members.
 
-Examples
+Display
 
 - Top Donor
 - Strongest Heroes
 - Highest Trophy Player
 - Highest Town Hall
+- Top Capital Contributor
 
-Each highlight links to the member profile.
+---
 
 ### Does NOT Include
 
-- Full Member Table
-- Player Progression
-- War Attack Log
-- Hero Comparison Table
+- Member Comparison Table
+- Individual Player Details
+- Detailed War Analytics
+- Historical Statistics
+
+---
 
 ### Primary Action
 
 Navigate to:
 
 - Members
-- War
-- Player Profile
+
+---
 
 ### Success Criteria
 
-Within one minute a leader should understand:
+Within one minute a clan leader should understand:
 
 - Current clan status
 - Current war situation
-- Strongest members
 - Overall clan composition
+- Standout members
 
-## 3. Members
+---
 
-### Purpose
+# Members
 
-Explore every member in the clan.
+## Purpose
+
+Compare and analyze every clan member.
 
 This page answers:
 
-> "How is each member performing right now?"
+> "How do my members compare right now?"
 
-### Data Source
+---
 
-Clan Endpoint
+## Data Source
 
-Player Endpoint (when opening profile)
+- Clan Endpoint
+- Player Endpoint
 
-### Main Component
+---
 
-Member Table
+## Main Component
+
+### Member Comparison Table
 
 #### Columns
 
-- Name
-- Town Hall
-- Role
-- League
-- Trophies
-- Best Trophies
-- Donations
-- Donations Received
-- Donation Ratio
-- Hero Strength
-
-### Features
-
-#### Search
-
-Search by player name.
-
-#### Filters
-
-- Town Hall
-- Role
-- League
-
-#### Sorting
-
-- Donations
-- Hero Strength
-- Town Hall
-- Trophies
-- Donation Ratio
-
-#### Row Click
-
-Open Player Profile.
-
-### Does NOT Include
-
-- Clan Summary
-- Charts
-- War Summary
-
-### Success Criteria
-
-The leader can quickly compare and locate members.
-
-## 4. Player Profile
-
-### Purpose
-
-Display detailed information for one player.
-
-This page answers:
-
-> "How strong is this player?"
-
-### Data Source
-
-Player Endpoint
-
-### Sections
-
-#### Basic Information
-
-- Name
-- Tag
-- Clan
-- Role
-- League
-- Town Hall
-
-#### Heroes
-
-Display
-
-- Barbarian King
-- Archer Queen
-- Grand Warden
-- Royal Champion
-- Minion Prince
-
-#### Hero Equipment
-
-Display all available equipment and levels.
-
-#### Pets
-
-Display all unlocked pets.
-
-#### Troops
-
-Display troop levels.
-
-#### Spells
-
-Display spell levels.
-
-#### Siege Machines
-
-Display siege machine levels.
-
-#### Achievements
-
-Display achievements.
-
-### Does NOT Include
-
-- Clan Charts
-- Rankings
-- Recommendations
-
-### Success Criteria
-
-A leader can understand a player's current progression without opening the game.
-
-## 5. War
-
-### Purpose
-
-Provide detailed information about the current clan war.
-
-This page answers:
-
-> "How is the current war progressing?"
-
-### Data Source
-
-War Endpoint
-
-### Sections
-
-#### War Summary
-
-Display
-
-- Clan
-- Opponent
-- War State
-- Team Size
-
-#### Scoreboard
-
-Display
-
-- Stars
-- Destruction
-- Attacks Used
-- Remaining Attacks
-
-#### Member Performance
-
-For every participant
-
-Display
-
+- Rank
 - Player
-- Attacks Used
-- Stars
-- Destruction
+- Town Hall
+- Role
+- Donations / Received
+- Dynamic Progress (%)
 
-#### Attack Details
+---
 
-Display every attack.
+## Features
 
-### Empty State
+### Comparison
 
-If no active war exists
+Compare member progression by:
 
-Display
+- Heroes
+- Hero Equipment
+- Pets
+- Troops
+- Spells
+- Siege Machines
 
-"No active war found."
+---
 
-Future versions will show historical wars.
+### Sorting
+
+Sort members by:
+
+- Selected Progress Metric
+- Donations
+- Town Hall
+- Role
+
+---
+
+### Responsive Layout
+
+Desktop
+
+- Full comparison table
+
+Tablet
+
+- Simplified comparison table
+
+Mobile
+
+- Compact comparison table
+
+---
 
 ### Does NOT Include
 
-- Donations
-- Hero Comparison
 - Clan Summary
+- Distribution Charts
+- Detailed War Information
+- Individual Player Profile
+
+---
 
 ### Success Criteria
 
-The leader can understand the complete status of the current war.
+Within one minute a clan leader should be able to:
+
+- Identify the strongest members
+- Compare player progression
+- Find top contributors
+- Rank members by progression or contribution
+
+---
 
 ## Navigation Rules
 
 ```text
 Landing
-↓
-Overview
-↓
-Members
-↓
-Player Profile
-Overview
-↓
-War
+    │
+    ▼
+Dashboard
+    │
+    ├────────────┐
+    ▼            ▼
+Overview     Members
 ```
 
 ## General Page Rules
@@ -396,10 +287,10 @@ Every page must:
 
 ## Design Principles
 
-- Overview provides summaries.
-- Members provide exploration.
-- Player Profile provides details.
-- War provides battle information.
+- Overview provides summaries and key insights.
+- Members provide comparison and analysis.
+- Each page has a single responsibility.
+- No page should duplicate another page's responsibility.
 
 No page should duplicate another page's responsibility.
 
@@ -411,6 +302,7 @@ No page should duplicate another page's responsibility.
 
 ## Revision History
 
-| Version | Date       | Changes                     |
-| ------- | ---------- | --------------------------- |
-| 1.0     | 2026-07-07 | Initial Page Specifications |
+| Version | Date       | Changes                                                   |
+| ------- | ---------- | --------------------------------------------------------- |
+| 1.0     | 2026-07-07 | Initial Page Specifications                               |
+| 1.1     | 2026-07-12 | Updated MVP page structure and member comparison workflow |

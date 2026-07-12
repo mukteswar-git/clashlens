@@ -1,6 +1,6 @@
 # Development Principles
 
-> **Document Version:** 1.0  
+> **Document Version:** 1.1  
 > **Status:** Active  
 > **Last Updated:** July 2026
 
@@ -99,6 +99,8 @@ Separate UI rendering from business logic whenever practical.
 
 Fetch data on the server whenever possible.
 
+Avoid client-side fetching unless user interaction or real-time updates require it.
+
 ### Minimize API Requests
 
 Avoid duplicate requests.
@@ -122,6 +124,14 @@ Every API request should have:
 - Loading State
 - Error State
 - Empty State
+
+## API Design
+
+### Trust Nothing
+
+Treat every API response as untrusted.
+
+Always validate required fields and gracefully handle missing or unexpected data.
 
 ## State Management
 
@@ -193,7 +203,7 @@ Use the Next.js Image component whenever possible.
 
 ### Lazy Loading
 
-Load heavy components only when required.
+Load heavy components and third-party libraries only when required.
 
 ### Avoid Unnecessary Rendering
 
@@ -229,10 +239,10 @@ Accessibility is part of quality, not an optional enhancement.
 
 Documentation should evolve alongside the project.
 
-Whenever a significant feature is added:
+Whenever a significant architectural or product decision is made:
 
-- Update documentation first.
-- Then implement.
+- Update the relevant documentation.
+- Keep documentation synchronized with implementation.
 
 Documentation should never become outdated.
 
@@ -269,6 +279,8 @@ Before marking a feature complete, verify:
 - Components are reusable.
 - No unnecessary duplication exists.
 - Documentation is updated.
+- The project builds successfully.
+- Linting passes without errors.
 
 ## Future-Proofing
 
@@ -278,6 +290,7 @@ When designing a feature, ask:
 - Can this be reused?
 - Will this support future phases?
 - Does it align with the product vision?
+- Can another developer understand it easily?
 
 If the answer is "no", reconsider the implementation.
 
@@ -289,6 +302,7 @@ Every implementation decision should prioritize long-term maintainability over s
 
 ## Revision History
 
-| Version | Date       | Changes                        |
-| ------- | ---------- | ------------------------------ |
-| 1.0     | 2026-07-07 | Initial Development Principles |
+| Version | Date       | Changes                                                                             |
+| ------- | ---------- | ----------------------------------------------------------------------------------- |
+| 1.0     | 2026-07-07 | Initial Development Principles                                                      |
+| 1.1     | 2026-07-12 | Refined engineering guidelines and aligned principles with MVP development workflow |
