@@ -75,20 +75,20 @@ Project documentation is organized into three categories.
 
 ### 📦 Product
 
-- [Product Vision](docs/01-product/product-vision.md)
-- [MVP Roadmap](docs/01-product/mvp-roadmap.md)
-- [Available Data Inventory](docs/01-product/available-data-inventory.md)
+- [Product Vision](docs/01-product/01-product-vision.md)
+- [MVP Roadmap](docs/01-product/02-mvp-roadmap.md)
+- [Available Data Inventory](docs/01-product/03-available-data-inventory.md)
 
 ### 🎨 Design
 
-- [Information Architecture](docs/02-design/information-architecture.md)
-- [Page Specifications](docs/02-design/page-specifications.md)
-- [Component Inventory](docs/02-design/component-inventory.md)
+- [Information Architecture](docs/02-design/01-information-architecture.md)
+- [Page Specifications](docs/02-design/02-page-specifications.md)
+- [Component Inventory](docs/02-design/03-component-inventory.md)
 
 ### ⚙️ Engineering
 
-- [Technical Architecture](docs/03-engineering/technical-architecture.md)
-- [Development Principles](docs/03-engineering/development-principles.md)
+- [Technical Architecture](docs/03-engineering/01-technical-architecture.md)
+- [Development Principles](docs/03-engineering/02-development-principles.md)
 
 ## Tech Stack
 
