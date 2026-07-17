@@ -16,14 +16,14 @@ ClashLens is a web application being built with Next.js, TypeScript, and Tailwin
 
 🚧 Currently under development.
 
-- [x] UI/UX Design Completed
-- [x] Landing Page Development
-- [x] Vercel Deployment
-- [ ] Dashboard Development
-- [ ] Clash of Clans API Integration
-- [ ] Analytics Engine
+- ✅ UI/UX Design Completed
+- ✅ Landing Page Development
+- ✅ Vercel Deployment
+- ✅ Clash of Clans API Integration
+- 🚧 Dashboard Development
+- 🚧 Analytics Engine
 
-The responsive landing page has been completed and deployed. Development is now focused on the analytics dashboard and Clash of Clans API integration.
+The responsive landing page has been completed and deployed. Live Clash of Clans data is now successfully integrated. Development is currently focused on building the analytics dashboard and member insights.
 
 ## Screenshots
 
@@ -42,11 +42,11 @@ The responsive landing page has been completed and deployed. Development is now 
 ## Current Features
 
 - Responsive landing page
-- Mobile navigation
-- Feature showcase
-- FAQ section
+- Clan search interface
+- Live Clash of Clans API integration
+- Server-side API route for fetching clan data
+- Responsive interface
 - Modern UI built with Tailwind CSS and shadcn/ui
-- Responsive design for desktop, tablet, and mobile
 
 ## Planned Features
 
@@ -71,7 +71,7 @@ The responsive landing page has been completed and deployed. Development is now 
 
 ## 📚 Documentation
 
-Project documentation is organized into three categories.
+Project documentation is organized into the following categories:
 
 ### 📦 Product
 
@@ -102,6 +102,7 @@ Project documentation is organized into three categories.
 - Route Handlers
 - pnpm
 - Vercel
+- Clash of Clans Public API
 
 ## Project Goals
 
@@ -113,25 +114,37 @@ Project documentation is organized into three categories.
 
 ## Getting Started
 
-Install dependencies:
+### 1. Install dependencies
 
 ```bash
 pnpm install
 ```
 
-Start the development server:
+### 2. Create a local environment file
+
+```bash
+Copy `.env.example` to `.env.local`.
+```
+
+### 3. Configure the environment variables
+
+- Generate an API key from the Clash of Clans Developer Portal.
+- Whitelist your current public IP address.
+- Update `.env.local` with your API token.
+
+### 4. Start the development server
 
 ```bash
 pnpm dev
 ```
 
-Open:
+### 5. Open the application
 
 ```text
 http://localhost:3000
 ```
 
-Build for production:
+### Build for production
 
 ```bash
 pnpm build
@@ -143,8 +156,8 @@ pnpm build
 
 - [x] Project setup
 - [x] Responsive landing page
-- [x] Vercel deployment
-- [ ] Clan search
+- [x] Clash of Clans API integration
+- [ ] Dynamic clan search
 - [ ] Live clan dashboard
 - [ ] Members page
 - [ ] Player profile
