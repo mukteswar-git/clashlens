@@ -122,15 +122,23 @@ pnpm install
 
 ### 2. Create a local environment file
 
-```bash
 Copy `.env.example` to `.env.local`.
+
+```bash
+cp .env.example .env.local
 ```
 
-### 3. Configure the environment variables
+> On Windows (PowerShell):
+
+```powershell
+Copy-Item .env.example .env.local
+```
+
+### 3. Configure environment variables
 
 - Generate an API key from the Clash of Clans Developer Portal.
 - Whitelist your current public IP address.
-- Update `.env.local` with your API token.
+- Add your API token to `.env.local`.
 
 ### 4. Start the development server
 
@@ -138,16 +146,16 @@ Copy `.env.example` to `.env.local`.
 pnpm dev
 ```
 
-### 5. Open the application
+Open http://localhost:3000
 
-```text
-http://localhost:3000
-```
-
-### Build for production
+## Available Scripts
 
 ```bash
-pnpm build
+pnpm dev          # Start development server
+pnpm build        # Create production build
+pnpm lint         # Run ESLint
+pnpm format       # Format code with Prettier
+pnpm format:check # Check formatting
 ```
 
 ## Roadmap
