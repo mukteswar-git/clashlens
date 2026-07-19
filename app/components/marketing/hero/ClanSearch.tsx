@@ -8,13 +8,22 @@ import { encodeTag } from "@/lib/coc/encode-tag";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { MAX_CLAN_TAG_LENGTH } from "@/lib/coc/constants";
 
 export function ClanSearch() {
   const [tag, setTag] = useState("");
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (!tag.trim()) {
+      setError("Please enter a clan tag.");
+      return;
+    }
+
+    setError(null);
 
     const encodedTag = encodeTag(tag);
 
@@ -22,9 +31,10 @@ export function ClanSearch() {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="
+    <div>
+      <form
+        onSubmit={handleSubmit}
+        className="
         flex
         items-center
         max-w-2xl
@@ -37,17 +47,18 @@ export function ClanSearch() {
 
         sm:p-2
       "
-    >
-      <div className="flex items-center px-3 text-muted-foreground sm:px-4">
-        <Hash className="size-4 sm:size-4.5" />
-      </div>
+      >
+        <div className="flex items-center px-3 text-muted-foreground sm:px-4">
+          <Hash className="size-4 sm:size-4.5" />
+        </div>
 
-      <Input
-        type="text"
-        value={tag}
-        onChange={(e) => setTag(e.target.value.toUpperCase())}
-        placeholder="Enter a clan tag"
-        className="
+        <Input
+          type="text"
+          maxLength={MAX_CLAN_TAG_LENGTH}
+          value={tag}
+          onChange={(e) => setTag(e.target.value.toUpperCase())}
+          placeholder="Enter a clan tag"
+          className="
           flex-1
           border-0
           px-0
@@ -59,12 +70,12 @@ export function ClanSearch() {
           sm:text-base
           sm:placeholder:text-base
         "
-      />
+        />
 
-      <Button
-        type="submit"
-        size="lg"
-        className="
+        <Button
+          type="submit"
+          size="lg"
+          className="
           h-11
           rounded-xl
           px-4
@@ -72,13 +83,18 @@ export function ClanSearch() {
           sm:h-12
           sm:px-6
         "
-      >
-        <Search className="size-4 sm:size-5" />
+        >
+          <Search className="size-4 sm:size-5" />
 
-        <span className="hidden xs:inline">Analyze Clan</span>
+          <span className="hidden xs:inline">Analyze Clan</span>
 
-        <span className="xs:hidden">Analyze</span>
-      </Button>
-    </form>
+          <span className="xs:hidden">Analyze</span>
+        </Button>
+      </form>
+
+      <div className="mt-1 min-h-5">
+        {error && <p className="text-sm text-destructive">{error}</p>}
+      </div>
+    </div>
   );
 }
