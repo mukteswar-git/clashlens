@@ -1,13 +1,24 @@
 "use client";
 
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Hash, Search } from "lucide-react";
+
+import { encodeTag } from "@/lib/coc/encode-tag";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Hash, Search } from "lucide-react";
-import { toast } from "sonner";
 
 export function ClanSearch() {
+  const [tag, setTag] = useState("");
+  const router = useRouter();
+
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    const encodedTag = encodeTag(tag);
+
+    router.push(`/dashboard?tag=${encodedTag}`);
   }
 
   return (
@@ -33,6 +44,8 @@ export function ClanSearch() {
 
       <Input
         type="text"
+        value={tag}
+        onChange={(e) => setTag(e.target.value.toUpperCase())}
         placeholder="Enter a clan tag"
         className="
           flex-1
@@ -59,12 +72,6 @@ export function ClanSearch() {
           sm:h-12
           sm:px-6
         "
-        onClick={() =>
-          toast("🚧 Coming Soon", {
-            description:
-              "Clan analytics dashboard is currently under development.",
-          })
-        }
       >
         <Search className="size-4 sm:size-5" />
 
