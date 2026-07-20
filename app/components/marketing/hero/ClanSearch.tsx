@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Hash, Search } from "lucide-react";
 
-import { encodeTag } from "@/lib/coc/encode-tag";
+import { normalizeClanTag } from "@/lib/coc/normalize-tag";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -25,9 +25,10 @@ export function ClanSearch() {
 
     setError(null);
 
-    const encodedTag = encodeTag(tag);
+    const normalizedTag = normalizeClanTag(tag);
+    const routeTag = normalizedTag.slice(1);
 
-    router.push(`/dashboard?tag=${encodedTag}`);
+    router.push(`/dashboard/${routeTag}`);
   }
 
   return (

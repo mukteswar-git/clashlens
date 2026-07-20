@@ -23,7 +23,7 @@ ClashLens is a web application being built with Next.js, TypeScript, and Tailwin
 - 🚧 Dashboard Development
 - 🚧 Analytics Engine
 
-The responsive landing page has been completed and deployed. Live Clash of Clans data is now successfully integrated. Development is currently focused on building the analytics dashboard and member insights.
+The responsive landing page has been completed and deployed. Live Clash of Clans data is successfully integrated, including dynamic clan search and live data retrieval. Current development is focused on the Overview dashboard and the analytics engine that powers clan insights.
 
 ## Screenshots
 
@@ -165,11 +165,9 @@ pnpm format:check # Check formatting
 - [x] Project setup
 - [x] Responsive landing page
 - [x] Clash of Clans API integration
-- [ ] Dynamic clan search
+- [x] Dynamic clan search
 - [ ] Live clan dashboard
 - [ ] Members page
-- [ ] Player profile
-- [ ] War page
 
 ### Phase 2 — Decision Engine Design
 
