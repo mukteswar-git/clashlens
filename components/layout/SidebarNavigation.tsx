@@ -9,7 +9,7 @@ export function SidebarNavigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex-1 px-3 py-4">
+    <nav className="flex-1 px-3 py-2">
       {dashboardNavigation.map((navItem) => {
         const href = `/dashboard/${tag}${navItem.href}`;
 
