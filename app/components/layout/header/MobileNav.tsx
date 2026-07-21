@@ -13,7 +13,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Logo } from "./Logo";
+import { Logo } from "../../../../components/common/Logo";
 
 export function MobileNav() {
   const navLinkClass =

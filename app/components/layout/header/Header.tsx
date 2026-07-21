@@ -1,5 +1,5 @@
 import { Container } from "../Container";
-import { Logo } from "./Logo";
+import { Logo } from "../../../../components/common/Logo";
 import { DesktopNav } from "./DesktopNav";
 import { MobileNav } from "./MobileNav";
 
@@ -11,7 +11,7 @@ export function Header() {
           className="flex h-20 items-center justify-between"
           aria-label="Main navigation"
         >
-          <Logo />
+          <Logo priority />
 
           <DesktopNav />
 
