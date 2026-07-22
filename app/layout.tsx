@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { inter } from "./components/ui/fonts";
 import "./globals.css";
-import { cn } from "@/lib/cn";
+import { cn } from "@/lib/utils";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
