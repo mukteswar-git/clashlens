@@ -2,7 +2,7 @@ import { Container } from "../../layout/Container";
 import Image from "next/image";
 import { Badge } from "../../shared/Badge";
 import { Crown, ShieldCheck } from "lucide-react";
-import { ClanSearch } from "./ClanSearch";
+import { ClanSearch } from "../../../../components/common/clan-search/ClanSearch";
 import { FeatureHighlights } from "../feature-highlights/FeatureHighlights";
 
 export function Hero() {
@@ -46,7 +46,9 @@ export function Hero() {
               ClashLens helps you track member activity, donations, war
               performance, and clan health with powerful data-driven analytics.
             </p>
-            <ClanSearch />
+            <div className="mx-auto w-full max-w-2xl">
+              <ClanSearch />
+            </div>
             <div className="flex flex-wrap items-center gap-1 sm:gap-3 text-[10px] sm:text-xs lg:text-sm text-muted-foreground">
               <ShieldCheck className="size-3 sm:size-4 text-primary" />
 

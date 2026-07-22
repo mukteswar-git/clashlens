@@ -1,5 +1,5 @@
 import { Container } from "../Container";
-import { Logo } from "../../../../components/common/Logo";
+import { Logo } from "../../../../components/common/logo/Logo";
 import { DesktopNav } from "./DesktopNav";
 import { MobileNav } from "./MobileNav";
 

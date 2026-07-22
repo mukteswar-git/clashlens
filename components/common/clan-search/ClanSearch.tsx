@@ -1,5 +1,11 @@
 "use client";
 
+type ClanSearchProps = {
+  placeholder?: string;
+  buttonText?: string;
+  showError?: boolean;
+};
+
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Hash, Search } from "lucide-react";
@@ -10,7 +16,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MAX_CLAN_TAG_LENGTH } from "@/lib/coc/constants";
 
-export function ClanSearch() {
+export function ClanSearch({
+  placeholder = "Enter a clan tag",
+  buttonText = "Analyze Clan",
+  showError = true,
+}: ClanSearchProps) {
   const [tag, setTag] = useState("");
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
@@ -38,7 +48,7 @@ export function ClanSearch() {
         className="
         flex
         items-center
-        max-w-2xl
+        w-full
         rounded-2xl
         border
         border-border
@@ -58,7 +68,7 @@ export function ClanSearch() {
           maxLength={MAX_CLAN_TAG_LENGTH}
           value={tag}
           onChange={(e) => setTag(e.target.value.toUpperCase())}
-          placeholder="Enter a clan tag"
+          placeholder={placeholder}
           className="
           flex-1
           border-0
@@ -87,15 +97,17 @@ export function ClanSearch() {
         >
           <Search className="size-4 sm:size-5" />
 
-          <span className="hidden xs:inline">Analyze Clan</span>
+          <span className="hidden xs:inline">{buttonText}</span>
 
           <span className="xs:hidden">Analyze</span>
         </Button>
       </form>
 
-      <div className="mt-1 min-h-5">
-        {error && <p className="text-sm text-destructive">{error}</p>}
-      </div>
+      {showError && (
+        <div className="mt-1 min-h-5">
+          {error && <p className="text-sm text-destructive">{error}</p>}
+        </div>
+      )}
     </div>
   );
 }

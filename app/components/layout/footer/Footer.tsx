@@ -1,7 +1,7 @@
 import { Container } from "../Container";
 import { legalLinks, productLinks, resourceLinks } from "./footer-data";
 import { FooterLinks } from "./FooterLinks";
-import { Logo } from "../../../../components/common/Logo";
+import { Logo } from "../../../../components/common/logo/Logo";
 
 export function Footer() {
   return (

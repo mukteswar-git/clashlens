@@ -1,4 +1,4 @@
-import { Logo } from "@/components/common/Logo";
+import { Logo } from "@/components/common/logo/Logo";
 
 export function SidebarHeader() {
   return (
