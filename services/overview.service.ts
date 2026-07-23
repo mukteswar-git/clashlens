@@ -16,6 +16,7 @@ export async function getOverviewData(tag: string) {
     clan,
     war,
     stats: getOverviewStats(clan),
+    performance: getPerformanceMetrics(clan),
   };
 }
 
@@ -30,7 +31,24 @@ function getOverviewStats(clan: Clan) {
 function calculateWinRate(clan: Clan): number | null {
   const totalWars = clan.warWins + clan.warLosses + clan.warTies;
 
-  if (totalWars === 0) return null;
+  if (totalWars === 0) {
+    return null;
+  }
 
   return Math.round((clan.warWins / totalWars) * 100);
+}
+
+function getPerformanceMetrics(clan: Clan) {
+  const totalDonations = clan.memberList.reduce(
+    (sum, member) => sum + member.donations,
+    0
+  );
+
+  const averageDonations =
+    clan.members > 0 ? Math.round(totalDonations / clan.members) : 0;
+
+  return {
+    averageDonations,
+    warWinStreak: clan.warWinStreak,
+  };
 }
