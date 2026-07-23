@@ -1,5 +1,6 @@
 import { ClanSummary } from "@/components/dashboard/overview/ClanSummary";
-import { getOverviewData } from "@/services/overview";
+import { OverviewStats } from "@/components/dashboard/overview/OverviewStats";
+import { getOverviewData } from "@/services/overview.service";
 
 type DashboardPageProps = {
   params: Promise<{
@@ -23,7 +24,15 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
 
   return (
     <main className="container mx-auto py-10">
-      <ClanSummary clan={overview.clan} />
+      <div className="flex gap-6">
+        <div className="basis-[40%]">
+          <ClanSummary clan={overview.clan} />
+        </div>
+
+        <div className="basis-[60%]">
+          <OverviewStats stats={overview.stats} />
+        </div>
+      </div>
     </main>
   );
 }
