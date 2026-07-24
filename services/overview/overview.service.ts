@@ -1,8 +1,10 @@
 import { getClan, getCurrentWar } from "@/lib/api";
 import { Clan } from "@/types/clan";
+import { getTownHallDistribution } from "./distribution.service";
 
 export async function getOverviewData(tag: string) {
   const clan = await getClan(tag);
+  const townHallDistribution = getTownHallDistribution(clan.memberList);
 
   let war = null;
 
@@ -12,11 +14,14 @@ export async function getOverviewData(tag: string) {
     war = null;
   }
 
+  console.log(townHallDistribution);
+
   return {
     clan,
     war,
     stats: getOverviewStats(clan),
     performance: getPerformanceMetrics(clan),
+    townHallDistribution,
   };
 }
 

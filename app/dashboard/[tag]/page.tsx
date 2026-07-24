@@ -1,7 +1,8 @@
 import { ClanSummary } from "@/components/dashboard/overview/ClanSummary";
 import { OverviewStats } from "@/components/dashboard/overview/OverviewStats";
 import { PerformanceOverview } from "@/components/overview/PerformanceOverview";
-import { getOverviewData } from "@/services/overview.service";
+import { TownHallDistribution } from "@/components/overview/TownHallDistribution";
+import { getOverviewData } from "@/services/overview/overview.service";
 
 type DashboardPageProps = {
   params: Promise<{
@@ -36,6 +37,8 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
       </div>
 
       <PerformanceOverview performance={overview.performance} />
+
+      <TownHallDistribution data={overview.townHallDistribution} />
     </main>
   );
 }
