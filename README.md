@@ -124,11 +124,13 @@ pnpm install
 
 Copy `.env.example` to `.env.local`.
 
+**macOS / Linux**
+
 ```bash
 cp .env.example .env.local
 ```
 
-> On Windows (PowerShell):
+**Windows (PowerShell)**
 
 ```powershell
 Copy-Item .env.example .env.local
@@ -146,17 +148,19 @@ Copy-Item .env.example .env.local
 pnpm dev
 ```
 
-Open http://localhost:3000
+Open **http://localhost:3000** in your browser.
 
 ## Available Scripts
 
-```bash
-pnpm dev          # Start development server
-pnpm build        # Create production build
-pnpm lint         # Run ESLint
-pnpm format       # Format code with Prettier
-pnpm format:check # Check formatting
-```
+| Command             | Description                              |
+| ------------------- | ---------------------------------------- |
+| `pnpm dev`          | Start the development server             |
+| `pnpm build`        | Create a production build                |
+| `pnpm start`        | Start the production server              |
+| `pnpm lint`         | Run ESLint                               |
+| `pnpm format`       | Format the project with Prettier         |
+| `pnpm format:check` | Check formatting without modifying files |
+| `pnpm check`        | Format the project and run ESLint        |
 
 ## Roadmap
 

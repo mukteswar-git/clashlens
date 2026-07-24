@@ -1,4 +1,5 @@
 export interface DistributionItem {
-  value: number;
+  label: string;
   count: number;
+  iconUrl?: string;
 }

@@ -15,7 +15,7 @@ export function getTownHallDistribution(
   return [...distribution.entries()]
     .sort((a, b) => b[0] - a[0])
     .map(([value, count]) => ({
-      value,
+      label: `TH${value}`,
       count,
     }));
 }

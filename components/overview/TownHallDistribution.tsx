@@ -6,11 +6,5 @@ type TownHallDistributionProps = {
 };
 
 export function TownHallDistribution({ data }: TownHallDistributionProps) {
-  return (
-    <DistributionChart
-      title="Town Hall Distribution"
-      data={data}
-      formatLabel={(value) => `TH${value}`}
-    />
-  );
+  return <DistributionChart title="Town Hall Distribution" data={data} />;
 }

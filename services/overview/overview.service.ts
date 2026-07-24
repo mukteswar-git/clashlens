@@ -14,8 +14,6 @@ export async function getOverviewData(tag: string) {
     war = null;
   }
 
-  console.log(townHallDistribution);
-
   return {
     clan,
     war,

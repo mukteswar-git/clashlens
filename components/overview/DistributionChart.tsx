@@ -4,14 +4,9 @@ import { DistributionItem } from "@/types/overview";
 type DistributionChartProps = {
   title: string;
   data: DistributionItem[];
-  formatLabel: (value: number) => string;
 };
 
-export function DistributionChart({
-  title,
-  data,
-  formatLabel,
-}: DistributionChartProps) {
+export function DistributionChart({ title, data }: DistributionChartProps) {
   if (data.length === 0) {
     return (
       <Card>
@@ -26,8 +21,7 @@ export function DistributionChart({
     );
   }
 
-  // const maxCount = Math.max(...data.map((item) => item.count));
-
+  const totalMembers = data.reduce((sum, item) => sum + item.count, 0);
   return (
     <Card>
       <CardHeader>
@@ -36,13 +30,12 @@ export function DistributionChart({
 
       <CardContent className="space-y-4">
         {data.map((item) => {
-          const totalMembers = data.reduce((sum, item) => sum + item.count, 0);
           const width = Math.max((item.count / totalMembers) * 100, 4);
 
           return (
-            <div key={item.value} className="space-y-1">
+            <div key={item.label} className="space-y-1">
               <div className="flex items-center justify-between text-sm">
-                <span>{formatLabel(item.value)}</span>
+                <span>{item.label}</span>
                 <span className="text-muted-foreground">{item.count}</span>
               </div>
 
