@@ -6,9 +6,27 @@ export interface BadgeUrls {
   large: string;
 }
 
+export interface LeagueIconUrls {
+  small: string;
+  tiny: string;
+}
+
 export interface League {
   id: number;
   name: string;
+  iconUrls: LeagueIconUrls;
+}
+
+export interface LeagueTierIconUrls {
+  small: string;
+  medium: string;
+  large: string;
+}
+
+export interface LeagueTier {
+  id: number;
+  name: string;
+  iconUrls: LeagueTierIconUrls;
 }
 
 export interface Location {
@@ -35,13 +53,19 @@ export interface ClanMember {
   tag: string;
   name: string;
   role: ClanRole;
+
   townHallLevel: number;
   expLevel: number;
+
   league: League;
+  leagueTier: LeagueTier;
+
   trophies: number;
   builderBaseTrophies: number;
+
   donations: number;
   donationsReceived: number;
+
   clanRank: number;
 }
 

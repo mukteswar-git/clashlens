@@ -22,7 +22,7 @@ export function PerformanceCard({
           alt={title}
           width={64}
           height={64}
-          className="object-contain shrink-0"
+          className="w-16 h-auto shrink-0 object-contain"
         />
 
         <div>

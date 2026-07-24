@@ -66,11 +66,10 @@ export function Hero() {
           {/* Right */}
           <div className="flex justify-center">
             <Image
-              src="/images/hero/dashboard-preview.webp"
+              src="/images/hero/dashboard-preview-new.webp"
               alt="Dashboard Image"
-              height={1200}
+              height={1600}
               width={900}
-              className="h-auto w-full max-w-md drop-shadow-2xl"
             />
           </div>
         </div>

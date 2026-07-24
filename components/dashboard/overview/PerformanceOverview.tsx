@@ -22,14 +22,14 @@ export function PerformanceOverview({ performance }: PerformanceOverviewProps) {
       title: "Avg. Donations per Member",
       subtitle: "Current Season",
       value: performance.averageDonations,
-      icon: "/coc/icons/clan-castle.webp",
+      icon: "/coc/icons/clan-castle-new.webp",
     },
     {
       id: "war-win-streak",
       title: "War Win Streak",
       subtitle: "Current Streak",
       value: performance.warWinStreak,
-      icon: "/coc/icons/war-streak.webp",
+      icon: "/coc/icons/war-streak-new.webp",
     },
   ];
 

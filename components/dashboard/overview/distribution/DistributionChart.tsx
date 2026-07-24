@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { DistributionItem } from "@/types/overview";
+import Image from "next/image";
 
 type DistributionChartProps = {
   title: string;
@@ -35,7 +36,17 @@ export function DistributionChart({ title, data }: DistributionChartProps) {
           return (
             <div key={item.label} className="space-y-1">
               <div className="flex items-center justify-between text-sm">
-                <span>{item.label}</span>
+                <div className="flex items-center gap-2">
+                  {item.iconUrl && (
+                    <Image
+                      src={item.iconUrl}
+                      alt={item.label}
+                      width={20}
+                      height={20}
+                    />
+                  )}
+                  <span>{item.label}</span>
+                </div>
                 <span className="text-muted-foreground">{item.count}</span>
               </div>
 
