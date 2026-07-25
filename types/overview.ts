@@ -1,3 +1,4 @@
+import { ClanMember } from "./clan";
 import { WarState } from "./war";
 
 export interface DistributionItem {
@@ -26,4 +27,11 @@ export interface WarSnapshotData {
     destruction: number;
     attacks: number;
   };
+}
+
+export interface QuickHighlightsData {
+  topDonor: ClanMember;
+  highestTrophies: ClanMember;
+  highestTownHall: ClanMember;
+  leader: ClanMember;
 }

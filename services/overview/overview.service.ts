@@ -1,14 +1,15 @@
 import { getClan, getCurrentWar } from "@/lib/api";
-import { Clan } from "@/types/clan";
+import { Clan, ClanMember } from "@/types/clan";
 import { getTownHallDistribution } from "./distribution.service";
 import { getLeagueDistribution } from "./distribution.service";
-import { WarSnapshotData } from "@/types/overview";
+import { QuickHighlightsData, WarSnapshotData } from "@/types/overview";
 import { War } from "@/types/war";
 
 export async function getOverviewData(tag: string) {
   const clan = await getClan(tag);
   const townHallDistribution = getTownHallDistribution(clan.memberList);
   const leagueDistribution = getLeagueDistribution(clan.memberList);
+  const quickHighlights = getQuickHighlights(clan.memberList);
 
   const war = await getCurrentWar(tag);
 
@@ -20,6 +21,7 @@ export async function getOverviewData(tag: string) {
     townHallDistribution,
     leagueDistribution,
     warSnapshot: getWarSnapshot(war),
+    quickHighlights,
   };
 }
 
@@ -74,5 +76,42 @@ function getWarSnapshot(war: War): WarSnapshotData {
       destruction: war.opponent.destructionPercentage,
       attacks: war.opponent.attacks,
     },
+  };
+}
+
+function getHighestMember(
+  members: ClanMember[],
+  selector: (member: ClanMember) => number
+): ClanMember {
+  let best = members[0];
+
+  for (const member of members) {
+    if (selector(member) > selector(best)) {
+      best = member;
+    }
+  }
+
+  return best;
+}
+
+function getQuickHighlights(members: ClanMember[]): QuickHighlightsData {
+  const topDonor = getHighestMember(members, (member) => member.donations);
+
+  const highestTrophies = getHighestMember(
+    members,
+    (member) => member.trophies
+  );
+
+  const highestTownHall = getHighestMember(
+    members,
+    (member) => member.townHallLevel
+  );
+
+  const leader = members.find((member) => member.role === "leader")!;
+  return {
+    topDonor,
+    highestTrophies,
+    highestTownHall,
+    leader,
   };
 }
