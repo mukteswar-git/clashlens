@@ -2,19 +2,15 @@ import { getClan, getCurrentWar } from "@/lib/api";
 import { Clan } from "@/types/clan";
 import { getTownHallDistribution } from "./distribution.service";
 import { getLeagueDistribution } from "./distribution.service";
+import { WarSnapshotData } from "@/types/overview";
+import { War } from "@/types/war";
 
 export async function getOverviewData(tag: string) {
   const clan = await getClan(tag);
   const townHallDistribution = getTownHallDistribution(clan.memberList);
   const leagueDistribution = getLeagueDistribution(clan.memberList);
 
-  let war = null;
-
-  try {
-    war = await getCurrentWar(tag);
-  } catch {
-    war = null;
-  }
+  const war = await getCurrentWar(tag);
 
   return {
     clan,
@@ -23,6 +19,7 @@ export async function getOverviewData(tag: string) {
     performance: getPerformanceMetrics(clan),
     townHallDistribution,
     leagueDistribution,
+    warSnapshot: getWarSnapshot(war),
   };
 }
 
@@ -56,5 +53,26 @@ function getPerformanceMetrics(clan: Clan) {
   return {
     averageDonations,
     warWinStreak: clan.warWinStreak,
+  };
+}
+
+function getWarSnapshot(war: War): WarSnapshotData {
+  return {
+    state: war.state,
+    teamSize: war.teamSize,
+    clan: {
+      name: war.clan.name,
+      badgeUrl: war.clan.badgeUrls.medium,
+      stars: war.clan.stars,
+      destruction: war.clan.destructionPercentage,
+      attacks: war.clan.attacks,
+    },
+    opponent: {
+      name: war.opponent.name,
+      badgeUrl: war.opponent.badgeUrls.medium,
+      stars: war.opponent.stars,
+      destruction: war.opponent.destructionPercentage,
+      attacks: war.opponent.attacks,
+    },
   };
 }

@@ -3,6 +3,7 @@ import { OverviewStats } from "@/components/dashboard/overview/OverviewStats";
 import { PerformanceOverview } from "@/components/dashboard/overview/PerformanceOverview";
 import { LeagueDistributionChart } from "@/components/dashboard/overview/distribution/LeagueDistributionChart";
 import { TownHallDistributionChart } from "@/components/dashboard/overview/distribution/TownHallDistributionChart";
+import { WarSnapshot } from "@/components/dashboard/overview/war/WarSnapshot";
 import { getOverviewData } from "@/services/overview/overview.service";
 
 type DashboardPageProps = {
@@ -42,6 +43,8 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
       <TownHallDistributionChart data={overview.townHallDistribution} />
 
       <LeagueDistributionChart distribution={overview.leagueDistribution} />
+
+      <WarSnapshot war={overview.warSnapshot} />
     </main>
   );
 }
