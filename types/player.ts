@@ -24,6 +24,8 @@ export interface Player {
   tag: string;
   name: string;
 
+  badges: BadgeUrls; // ← Add this
+
   townHallLevel: number;
   townHallWeaponLevel: number;
 
@@ -44,5 +46,4 @@ export interface Player {
   pets: ProgressionItem[];
   troops: ProgressionItem[];
   spells: ProgressionItem[];
-  siegeMachines: ProgressionItem[];
 }
