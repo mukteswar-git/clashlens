@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Swords, Users } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import {
@@ -11,9 +12,7 @@ import {
 import { WAR_STATE_LABELS } from "@/lib/coc/constants";
 import { WarSnapshotData } from "@/types/overview";
 
-import { Users } from "lucide-react";
 import { WarStatsColumn } from "./WarStatsColumn";
-import { Swords } from "lucide-react";
 
 type WarSnapshotProps = {
   war: WarSnapshotData;
@@ -23,7 +22,7 @@ export function WarSnapshot({ war }: WarSnapshotProps) {
   if (war.state === "notInWar") {
     return (
       <Card>
-        <CardHeader className="flex flex-row items-center justify-between">
+        <CardHeader className="flex flex-row items-center justify-between gap-4">
           <CardTitle>Current War</CardTitle>
 
           <Badge variant="secondary">{WAR_STATE_LABELS[war.state]}</Badge>
@@ -31,7 +30,7 @@ export function WarSnapshot({ war }: WarSnapshotProps) {
 
         <CardContent className="flex min-h-80 flex-col items-center justify-center gap-4">
           <div className="rounded-full bg-muted p-4">
-            <Swords className="h-8 w-8 text-muted-foreground" />
+            <Swords className="size-8 text-muted-foreground" />
           </div>
 
           <div className="text-center">
@@ -48,26 +47,33 @@ export function WarSnapshot({ war }: WarSnapshotProps) {
 
   return (
     <Card>
-      <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle>Current War Snapshot</CardTitle>
+      <CardHeader className="flex flex-row items-center justify-between gap-4 max-[320px]:flex-col max-[320px]:items-start">
+        <CardTitle className="text-lg md:text-xl">
+          Current War Snapshot
+        </CardTitle>
 
-        <Badge variant="secondary">{WAR_STATE_LABELS[war.state]}</Badge>
+        <Badge variant="secondary" className="max-[320px]:self-start">
+          {WAR_STATE_LABELS[war.state]}
+        </Badge>
       </CardHeader>
 
       <CardContent>
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid grid-cols-2 gap-6 md:gap-12">
           {/* Clan */}
           <div className="flex flex-col items-center">
             <Image
               src={war.clan.badgeUrl}
               alt={war.clan.name}
-              width={96}
-              height={96}
+              width={80}
+              height={80}
+              className="md:h-24 md:w-24"
             />
 
-            <h3 className="mt-4 text-xl font-bold">{war.clan.name}</h3>
+            <h3 className="mt-3 text-lg font-bold text-center md:mt-4 md:text-xl">
+              {war.clan.name}
+            </h3>
 
-            <div className="mt-8">
+            <div className="mt-6 md:mt-8">
               <WarStatsColumn
                 stars={war.clan.stars}
                 attacks={war.clan.attacks}
@@ -82,13 +88,16 @@ export function WarSnapshot({ war }: WarSnapshotProps) {
             <Image
               src={war.opponent.badgeUrl}
               alt={war.opponent.name}
-              width={96}
-              height={96}
+              width={80}
+              height={80}
+              className="md:h-24 md:w-24"
             />
 
-            <h3 className="mt-4 text-xl font-bold">{war.opponent.name}</h3>
+            <h3 className="mt-3 text-lg font-bold text-center md:mt-4 md:text-xl">
+              {war.opponent.name}
+            </h3>
 
-            <div className="mt-8">
+            <div className="mt-6 md:mt-8">
               <WarStatsColumn
                 stars={war.opponent.stars}
                 attacks={war.opponent.attacks}
@@ -100,13 +109,14 @@ export function WarSnapshot({ war }: WarSnapshotProps) {
         </div>
       </CardContent>
 
-      <CardFooter className="flex items-center justify-between">
+      <CardFooter className="flex items-center justify-between gap-4 border-t">
         <div className="flex items-center gap-2">
-          <Users className="h-4 w-4 text-muted-foreground" />
-          <span className="text-muted-foreground">Team Size</span>
+          <Users className="size-4 text-muted-foreground" />
+
+          <span className="text-sm text-muted-foreground">Team Size</span>
         </div>
 
-        <span className="font-medium">
+        <span className="text-sm font-medium">
           {war.teamSize} vs {war.teamSize}
         </span>
       </CardFooter>

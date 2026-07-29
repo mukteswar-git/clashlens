@@ -16,7 +16,7 @@ interface CompareSelectProps {
 export function CompareSelect({ value, onValueChange }: CompareSelectProps) {
   return (
     <Select value={value} onValueChange={onValueChange}>
-      <SelectTrigger className="w-40">
+      <SelectTrigger className="w-full sm:w-36 md:w-40">
         <SelectValue placeholder="Compare" />
       </SelectTrigger>
 

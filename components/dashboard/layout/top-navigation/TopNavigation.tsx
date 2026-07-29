@@ -1,23 +1,43 @@
-import { RefreshCw } from "lucide-react";
-
 import { ClanSearch } from "@/components/common/clan-search/ClanSearch";
-import { Button } from "@/components/ui/button";
+import { RefreshButton } from "@/components/common/refresh-button/RefreshButton";
+import { MobileNavigation } from "../mobile-navigation";
 
 export default function TopNavigation() {
   return (
     <header className="border-b border-border bg-background">
-      <div className="flex items-center justify-between gap-6 px-6 py-4">
-        <div className="w-full max-w-xl">
+      <div className="lg:hidden">
+        <MobileNavigation />
+      </div>
+
+      <div className="border-t px-4 py-4">
+        {/* Mobile */}
+        <div className="space-y-3 md:hidden">
           <ClanSearch showError={false} />
+          <RefreshButton />
         </div>
 
-        <div className="flex items-center gap-4">
-          <p className="text-sm text-muted-foreground">Last updated just now</p>
+        {/* Tablet */}
+        <div className="hidden items-center gap-4 md:flex lg:hidden">
+          <div className="flex-1">
+            <ClanSearch showError={false} />
+          </div>
 
-          <Button variant="ghost" size="sm">
-            <RefreshCw className="size-4" />
-            Refresh
-          </Button>
+          <RefreshButton />
+        </div>
+
+        {/* Desktop */}
+        <div className="hidden items-center justify-between gap-6 lg:flex">
+          <div className="w-full max-w-xl">
+            <ClanSearch showError={false} />
+          </div>
+
+          <div className="flex items-center gap-4">
+            <p className="whitespace-nowrap text-sm text-muted-foreground">
+              Last updated just now
+            </p>
+
+            <RefreshButton />
+          </div>
         </div>
       </div>
     </header>

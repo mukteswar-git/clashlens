@@ -20,7 +20,7 @@ export function StatCard({
 }: StatCardProps) {
   return (
     <Card>
-      <CardContent className="flex items-center gap-5 p-6">
+      <CardContent className="flex items-center gap-5 p-5 md:p-6">
         <div className={cn("rounded-full p-4", iconClassName)}>
           <Icon className="h-6 w-6" />
         </div>

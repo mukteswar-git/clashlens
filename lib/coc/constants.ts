@@ -79,3 +79,22 @@ export const ROLE_PRIORITY = {
   admin: 2,
   member: 1,
 } as const;
+
+export const MOBILE_COLUMN_LABELS = {
+  role: "Role",
+  townHall: "TH",
+  league: "League",
+  donations: "Donations",
+  received: "Received",
+  trophies: "Trophies",
+  name: "Name",
+
+  heroes: "Heroes",
+  troops: "Troops",
+  spells: "Spells",
+  equipment: "Equipment",
+} as const;
+
+export const MOBILE_SORT_OPTIONS = SORT_OPTIONS.filter(
+  (option) => option.value !== "name"
+);

@@ -28,13 +28,13 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
   }
 
   return (
-    <main className="container mx-auto flex flex-col gap-8 py-10">
-      <div className="flex gap-6">
-        <div className="basis-[40%]">
+    <main className="mx-auto flex w-full max-w-7xl flex-col gap-8 py-10">
+      <div className="flex flex-col gap-6 xl:flex-row">
+        <div className="xl:basis-[40%]">
           <ClanSummary clan={overview.clan} />
         </div>
 
-        <div className="basis-[60%]">
+        <div className="xl:basis-[60%]">
           <OverviewStats stats={overview.stats} />
         </div>
       </div>

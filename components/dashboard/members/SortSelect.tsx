@@ -6,22 +6,28 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+
 import { SORT_OPTIONS } from "@/lib/coc/constants";
 
 interface SortSelectProps {
   value: SortMetric;
   onValueChange: (value: SortMetric) => void;
+  options?: readonly (typeof SORT_OPTIONS)[number][];
 }
 
-export function SortSelect({ value, onValueChange }: SortSelectProps) {
+export function SortSelect({
+  value,
+  onValueChange,
+  options = SORT_OPTIONS,
+}: SortSelectProps) {
   return (
     <Select value={value} onValueChange={onValueChange}>
-      <SelectTrigger className="w-40">
+      <SelectTrigger className="w-full sm:w-36 md:w-40">
         <SelectValue placeholder="Sort by" />
       </SelectTrigger>
 
       <SelectContent>
-        {SORT_OPTIONS.map((option) => (
+        {options.map((option) => (
           <SelectItem key={option.value} value={option.value}>
             {option.label}
           </SelectItem>

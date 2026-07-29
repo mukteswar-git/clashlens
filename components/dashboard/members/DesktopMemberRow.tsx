@@ -2,7 +2,6 @@ import { TableCell, TableRow } from "@/components/ui/table";
 import { CompareMetric, MemberComparison } from "@/types/member";
 import { PlayerCell } from "./PlayerCell";
 import { TownHallCell } from "./TownHallCell";
-import { DonationCell } from "./DonationCell";
 import { LeagueCell } from "./LeagueCell";
 import { RoleBadge } from "./RoleBadge";
 import { ProgressCell } from "./ProgressCell";
@@ -13,7 +12,11 @@ interface MemberRowProps {
   compareMetric: CompareMetric;
 }
 
-export function MemberRow({ rank, member, compareMetric }: MemberRowProps) {
+export function DesktopMemberRow({
+  rank,
+  member,
+  compareMetric,
+}: MemberRowProps) {
   let progress = 0;
 
   switch (compareMetric) {
@@ -48,11 +51,12 @@ export function MemberRow({ rank, member, compareMetric }: MemberRowProps) {
       <TableCell>
         <LeagueCell league={member.clanMember.leagueTier} />
       </TableCell>
-      <TableCell className="text-center">
-        <DonationCell
-          donated={member.clanMember.donations}
-          received={member.clanMember.donationsReceived}
-        />
+      <TableCell className="text-center font-medium">
+        {member.clanMember.donations.toLocaleString()}
+      </TableCell>
+
+      <TableCell className="text-center text-muted-foreground">
+        {member.clanMember.donationsReceived.toLocaleString()}
       </TableCell>
       <TableCell className="text-center">
         {member.clanMember.trophies}
