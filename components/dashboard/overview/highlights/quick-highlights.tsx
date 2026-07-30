@@ -2,7 +2,7 @@ import { Crown, Gift, Castle, Trophy } from "lucide-react";
 
 import { QuickHighlightsData } from "@/types/overview";
 
-import { HighlightCard } from "./HighlightCard";
+import { HighlightCard } from "./highlight-card";
 
 type QuickHighlightsProps = {
   highlights: QuickHighlightsData;

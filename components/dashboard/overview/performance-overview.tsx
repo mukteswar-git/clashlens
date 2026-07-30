@@ -1,4 +1,4 @@
-import { PerformanceCard } from "./PerformanceCard";
+import { PerformanceCard } from "./performance-card";
 
 type PerformanceMetric = {
   id: string;

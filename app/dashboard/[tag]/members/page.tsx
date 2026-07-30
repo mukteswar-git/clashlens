@@ -1,5 +1,5 @@
 import { ErrorState } from "@/components/common/error-state";
-import { MembersView } from "@/components/dashboard/members/MembersView";
+import { MembersView } from "@/components/dashboard/members/members-view";
 import { getMembersData } from "@/services/overview/members.service";
 
 type MembersPageProps = {

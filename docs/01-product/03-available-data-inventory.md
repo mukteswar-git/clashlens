@@ -1,6 +1,6 @@
 # Available Data Inventory
 
-> **Document Version:** 1.1  
+> **Document Version:** 1.2  
 > **Status:** Active  
 > **Last Updated:** July 2026
 
@@ -76,15 +76,19 @@ Examples:
 
 ## Basic Information
 
-| Field          | Phase | Usage        |
-| -------------- | :---: | ------------ |
-| Clan Name      |  ✅   | Clan Summary |
-| Clan Tag       |  ✅   | Clan Summary |
-| Clan Badge     |  ✅   | Clan Summary |
-| Clan Level     |  ✅   | Clan Summary |
-| Members Count  |  ✅   | Clan Summary |
-| War League     |  ✅   | Clan Summary |
-| Capital League |  ✅   | Clan Summary |
+| Field             | Phase | Usage        |
+| ----------------- | :---: | ------------ |
+| Clan Name         |  ✅   | Clan Summary |
+| Clan Tag          |  ✅   | Clan Summary |
+| Clan Badge        |  ✅   | Clan Summary |
+| Clan Level        |  ✅   | Clan Summary |
+| Members Count     |  ✅   | Clan Summary |
+| War Frequency     |  ✅   | Clan Summary |
+| War League        |  ✅   | Clan Summary |
+| Capital League    |  ✅   | Clan Summary |
+| Required Trophies |  ✅   | Clan Summary |
+| Location          |  ✅   | Clan Summary |
+| Capital Points    |  ✅   | Clan Summary |
 
 ---
 
@@ -190,16 +194,24 @@ Calculated using live API responses.
 
 No database required.
 
-| Metric                  | Formula                                                                                  | Phase |
-| ----------------------- | ---------------------------------------------------------------------------------------- | :---: |
-| Town Hall Distribution  | Count members by Town Hall                                                               |  ✅   |
-| League Distribution     | Count members by League                                                                  |  ✅   |
-| Hero Progress           | (Total Hero Levels ÷ Maximum Hero Levels) × 100                                          |  ✅   |
-| Hero Equipment Progress | (Total Current Hero Levels ÷ Total Maximum Hero Levels for the player's Town Hall) × 100 |  ✅   |
-| Pet Progress            | (Total Pet Levels ÷ Maximum Pet Levels) × 100                                            |  ✅   |
-| Troop Progress          | (Total Troop Levels ÷ Maximum Troop Levels) × 100                                        |  ✅   |
-| Spell Progress          | (Total Spell Levels ÷ Maximum Spell Levels) × 100                                        |  ✅   |
-| Siege Machine Progress  | (Total Siege Machine Levels ÷ Maximum Levels) × 100                                      |  ✅   |
+| Metric                  | Formula / Calculation                                                                          | Phase |
+| ----------------------- | ---------------------------------------------------------------------------------------------- | :---: |
+| Town Hall Distribution  | Count members by Town Hall                                                                     |  ✅   |
+| League Distribution     | Count members by League                                                                        |  ✅   |
+| Average Donations       | Total Donations ÷ Total Members                                                                |  ✅   |
+| Hero Progress           | (Total Hero Levels ÷ Maximum Hero Levels for the player's Town Hall) × 100                     |  ✅   |
+| Hero Equipment Progress | (Total Hero Equipment Levels ÷ Maximum Hero Equipment Levels for the player's Town Hall) × 100 |  ✅   |
+| Pet Progress            | (Total Pet Levels ÷ Maximum Pet Levels for the player's Town Hall) × 100                       |  ✅   |
+| Troop Progress          | (Total Troop Levels ÷ Maximum Troop Levels for the player's Town Hall) × 100                   |  ✅   |
+| Spell Progress          | (Total Spell Levels ÷ Maximum Spell Levels for the player's Town Hall) × 100                   |  ✅   |
+| Siege Machine Progress  | (Total Siege Machine Levels ÷ Maximum Siege Machine Levels) × 100                              |  ✅   |
+| Top Donor               | Member with the highest donation count                                                         |  ✅   |
+| Highest Hero Progress   | Member with the highest Hero Progress percentage                                               |  ✅   |
+| Highest Trophy Player   | Member with the highest home village trophy count                                              |  ✅   |
+| Highest Town Hall       | Member with the highest Town Hall level                                                        |  ✅   |
+| Top Capital Contributor | Member with the highest Capital Raid contribution (when available)                             |  ✅   |
+| War Attack Usage        | Total Attacks Used ÷ Maximum Available Attacks                                                 |  ✅   |
+| Remaining War Attacks   | Maximum Available Attacks − Attacks Used                                                       |  ✅   |
 
 ---
 
@@ -241,6 +253,7 @@ Using only live Clash of Clans API data, ClashLens can provide:
 ### Clan
 
 - Clan Summary
+- Performance Overview
 - Town Hall Distribution
 - League Distribution
 - Current War Snapshot
@@ -270,7 +283,7 @@ Using only live Clash of Clans API data, ClashLens can provide:
 ### Quick Highlights
 
 - Top Donor
-- Strongest Heroes
+- Highest Hero Progress
 - Highest Trophies
 - Highest Town Hall
 - Top Capital Contributor
@@ -329,3 +342,4 @@ Smart Recommendations
 | ------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | 1.0     | 2026-07-07 | Initial Available Data Inventory                                                                                                         |
 | 1.1     | 2026-07-12 | Added member comparison metrics, updated derived metrics, revised war data usage, and aligned Phase 1 features with the final MVP design |
+| 1.2     | 2026-07-30 | Updated available data inventory to match the public Phase 1 release.                                                                    |

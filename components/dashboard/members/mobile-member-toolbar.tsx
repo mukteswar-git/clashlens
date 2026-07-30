@@ -3,8 +3,8 @@
 import { MOBILE_SORT_OPTIONS } from "@/lib/coc/constants";
 import { CompareMetric, SortMetric } from "@/types/member";
 
-import { CompareSelect } from "./CompareSelect";
-import { SortSelect } from "./SortSelect";
+import { CompareSelect } from "./compare-select";
+import { SortSelect } from "./sort-select";
 
 interface MobileMemberToolbarProps {
   memberCount: number;

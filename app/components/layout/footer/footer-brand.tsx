@@ -1,4 +1,4 @@
-import { Logo } from "../../../../components/common/logo/Logo";
+import { Logo } from "../../../../components/common/logo/logo";
 
 export function FooterBrand() {
   return (

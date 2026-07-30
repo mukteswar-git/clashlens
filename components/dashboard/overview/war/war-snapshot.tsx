@@ -12,7 +12,7 @@ import {
 import { WAR_STATE_LABELS } from "@/lib/coc/constants";
 import { WarSnapshotData } from "@/types/overview";
 
-import { WarStatsColumn } from "./WarStatsColumn";
+import { WarStatsColumn } from "./war-stats-column";
 
 type WarSnapshotProps = {
   war: WarSnapshotData;

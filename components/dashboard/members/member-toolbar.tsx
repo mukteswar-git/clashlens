@@ -1,7 +1,7 @@
 import { CardHeader, CardTitle } from "@/components/ui/card";
 import { CompareMetric, SortMetric } from "@/types/member";
-import { CompareSelect } from "./CompareSelect";
-import { SortSelect } from "./SortSelect";
+import { CompareSelect } from "./compare-select";
+import { SortSelect } from "./sort-select";
 
 interface MemberToolbarProps {
   memberCount: number;

@@ -6,7 +6,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { CompareMetric, MemberComparison, SortMetric } from "@/types/member";
-import { DesktopMemberRow } from "./DesktopMemberRow";
+import { DesktopMemberRow } from "./desktop-member-row";
 import { sortMembers } from "@/lib/members/sort-members";
 import { COMPARE_OPTIONS } from "@/lib/coc/constants";
 

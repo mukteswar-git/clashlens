@@ -1,6 +1,6 @@
 # Development Principles
 
-> **Document Version:** 1.1  
+> **Document Version:** 1.2  
 > **Status:** Active  
 > **Last Updated:** July 2026
 
@@ -69,7 +69,9 @@ Do not convert an entire page into a Client Component unnecessarily.
 
 ### Route-Based Organization
 
-Organize code according to application routes rather than file types.
+Organize application code around features and routes rather than unrelated file types.
+
+Group components, services, and utilities according to the part of the application they support.
 
 ## Component Principles
 
@@ -92,6 +94,14 @@ If a component may be reused, place it in a shared location.
 ### Presentation vs Logic
 
 Separate UI rendering from business logic whenever practical.
+
+### Naming Consistency
+
+Use consistent naming conventions throughout the project.
+
+- Directories use kebab-case.
+- Component files use kebab-case.
+- React components use PascalCase.
 
 ## Data Fetching Principles
 
@@ -116,6 +126,12 @@ Handle:
 - Missing fields
 - Empty responses
 - Invalid data
+
+### Keep Fetching Centralized
+
+Centralize API communication inside reusable services.
+
+Pages and components should avoid implementing API requests directly whenever practical.
 
 ### Graceful Failures
 
@@ -213,6 +229,12 @@ Prevent avoidable re-renders through proper component design.
 
 Do not place expensive logic inside render functions.
 
+### Avoid Over-Optimization
+
+Optimize only when there is measurable benefit.
+
+Prefer simple, maintainable code over premature optimization.
+
 ## Error Handling
 
 Every page should handle:
@@ -237,7 +259,7 @@ Accessibility is part of quality, not an optional enhancement.
 
 ### Documentation
 
-Documentation should evolve alongside the project.
+Documentation should describe the current implementation rather than intended future designs.
 
 Whenever a significant architectural or product decision is made:
 
@@ -266,6 +288,10 @@ fix: handle invalid clan tag
 refactor: extract hero card component
 ```
 
+### Refactor Separately
+
+Prefer dedicated refactoring commits instead of mixing refactoring with new features whenever practical.
+
 ### Never Commit Broken Code
 
 The project should build successfully before every commit.
@@ -281,6 +307,7 @@ Before marking a feature complete, verify:
 - Documentation is updated.
 - The project builds successfully.
 - Linting passes without errors.
+- Type checking passes without errors.
 
 ## Future-Proofing
 
@@ -306,3 +333,4 @@ Every implementation decision should prioritize long-term maintainability over s
 | ------- | ---------- | ----------------------------------------------------------------------------------- |
 | 1.0     | 2026-07-07 | Initial Development Principles                                                      |
 | 1.1     | 2026-07-12 | Refined engineering guidelines and aligned principles with MVP development workflow |
+| 1.2     | 2026-07-30 | Refined development principles to reflect the production Phase 1 implementation.    |

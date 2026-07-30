@@ -1,8 +1,8 @@
-import { Container } from "@/app/components/layout/Container";
+import { Container } from "@/app/components/layout/container";
 import Image from "next/image";
-import { FeatureCard } from "./FeatureCard";
+import { FeatureCard } from "./feature-card";
 import { FEATURES } from "./feature-data";
-import { Badge } from "../../shared/Badge";
+import { Badge } from "../../shared/badge";
 import { BarChart3 } from "lucide-react";
 
 export function FeaturesSection() {

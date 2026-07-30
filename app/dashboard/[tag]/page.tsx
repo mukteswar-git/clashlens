@@ -1,10 +1,10 @@
-import { ClanSummary } from "@/components/dashboard/overview/ClanSummary";
-import { OverviewStats } from "@/components/dashboard/overview/OverviewStats";
-import { PerformanceOverview } from "@/components/dashboard/overview/PerformanceOverview";
-import { LeagueDistributionChart } from "@/components/dashboard/overview/distribution/LeagueDistributionChart";
-import { TownHallDistributionChart } from "@/components/dashboard/overview/distribution/TownHallDistributionChart";
-import { QuickHighlights } from "@/components/dashboard/overview/highlights/QuickHighlights";
-import { WarSnapshot } from "@/components/dashboard/overview/war/WarSnapshot";
+import { ClanSummary } from "@/components/dashboard/overview/clan-summary";
+import { OverviewStats } from "@/components/dashboard/overview/overview-stats";
+import { PerformanceOverview } from "@/components/dashboard/overview/performance-overview";
+import { LeagueDistributionChart } from "@/components/dashboard/overview/distribution/league-distribution-chart";
+import { TownHallDistributionChart } from "@/components/dashboard/overview/distribution/town-hall-distribution-chart";
+import { QuickHighlights } from "@/components/dashboard/overview/highlights/quick-highlights";
+import { WarSnapshot } from "@/components/dashboard/overview/war/war-snapshot";
 import { getOverviewData } from "@/services/overview/overview.service";
 import { ErrorState } from "@/components/common/error-state";
 

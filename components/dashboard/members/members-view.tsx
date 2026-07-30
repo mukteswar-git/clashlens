@@ -4,10 +4,10 @@ import { useState } from "react";
 
 import { Card, CardContent } from "@/components/ui/card";
 
-import { MemberToolbar } from "./MemberToolbar";
-import { MobileMemberToolbar } from "./MobileMemberToolbar";
-import { DesktopMemberTable } from "./DesktopMemberTable";
-import { MobileMemberTable } from "./MobileMemberTable";
+import { MemberToolbar } from "./member-toolbar";
+import { MobileMemberToolbar } from "./mobile-member-toolbar";
+import { DesktopMemberTable } from "./desktop-member-table";
+import { MobileMemberTable } from "./mobile-member-table";
 
 import {
   CompareMetric,

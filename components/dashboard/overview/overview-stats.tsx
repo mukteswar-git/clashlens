@@ -1,5 +1,5 @@
 import { Swords, Trophy, Users } from "lucide-react";
-import { StatCard } from "@/components/common/stat-card/StatCard";
+import { StatCard } from "@/components/common/stat-card/stat-card";
 
 type OverviewStatsProps = {
   stats: {

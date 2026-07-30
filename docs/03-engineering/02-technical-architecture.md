@@ -1,51 +1,61 @@
 # Technical Architecture
 
-> **Document Version:** 1.1  
+> **Document Version:** 2.0  
 > **Status:** Active  
 > **Last Updated:** July 2026
 
 ## Purpose
 
-This document defines the technical architecture of ClashLens.
+This document describes the technical architecture of ClashLens.
 
-It explains:
+It defines:
 
-- Overall system design
+- Overall system architecture
 - Project structure
 - Rendering strategy
 - Data flow
+- Service layer
 - API communication
 - State management
 - Error handling
 - Performance strategy
-- Future scalability
+- Scalability
 
-This document acts as the engineering blueprint of the project.
+This document reflects the current production implementation of Phase 1.
 
-## System Overview
+---
 
-### Current Architecture (Phase 1)
+# System Overview
+
+## Current Architecture (Phase 1)
 
 ```text
                     User
-                     │
-                     ▼
+                      │
+                      ▼
               Next.js Frontend
-                     │
-      ┌──────────────┴──────────────┐
-      ▼                             ▼
-Server Components          Client Components
-      │                             │
-      └──────────────┬──────────────┘
-                     ▼
-         Next.js Route Handlers
-               (/api/clans)
-                     │
-                     ▼
-      Clash of Clans Public API
+                      │
+      ┌───────────────┴───────────────┐
+      ▼                               ▼
+Server Components             Client Components
+      │                               │
+      └───────────────┬───────────────┘
+                      ▼
+               Service Layer
+                      │
+                      ▼
+              Internal API Client
+                      │
+                      ▼
+          Next.js Route Handlers
+                      │
+                      ▼
+        Clash of Clans Public API
 ```
 
-### Future Architecture (Phase 3+)
+---
+
+## Future Architecture (Phase 3+)
 
 ```text
                       User
@@ -54,24 +64,27 @@ Server Components          Client Components
                 Next.js Frontend
                         │
                         ▼
-                 Route Handlers
+                 Service Layer
                         │
-                        ▼
-                 PostgreSQL Database
-                        ▲
-                        │
-                Synchronization Service
-                        ▲
-                        │
-               Scheduled Cron Jobs
-                        │
-                        ▼
-            Clash of Clans Public API
+          ┌─────────────┴─────────────┐
+          ▼                           ▼
+   PostgreSQL Database      Clash of Clans API
+          ▲                           ▲
+          │                           │
+     Background Jobs          Scheduled Sync
+          │
+          ▼
+Historical Analytics
+          │
+          ▼
+Recommendation Engine
 ```
 
-## Technology Stack
+---
 
-### Frontend
+# Technology Stack
+
+## Frontend
 
 - Next.js (App Router)
 - React
@@ -79,426 +92,530 @@ Server Components          Client Components
 - Tailwind CSS
 - shadcn/ui
 
-### Icons
+---
+
+## Icons
 
 - Lucide React
 
-### Package Manager
+---
+
+## Package Manager
 
 - pnpm
 
-### Future Backend
+---
+
+## Future Backend
 
 - PostgreSQL
 - Prisma ORM
 
-### Deployment
+---
+
+## Deployment
 
 - Vercel
 
-## Planned Project Structure
+---
+
+# Project Structure
 
 ```text
 app/
-│
-├── (marketing)/
+├── api/
+├── components/
+│   ├── layout/
+│   ├── marketing/
+│   ├── shared/
+│   └── ui/
 │
 ├── dashboard/
-│
-├── api/
+│   └── [tag]/
+│       ├── page.tsx
+│       └── members/
 │
 ├── globals.css
 ├── layout.tsx
 └── page.tsx
 
 components/
-│
-├── ui/
 ├── common/
-├── layout/
-├── overview/
-├── members/
-└── charts/
+├── dashboard/
+│   ├── layout/
+│   ├── overview/
+│   └── members/
+└── ui/
 
 lib/
-│
 ├── api/
-├── constants/
-├── utils/
-└── validations/
-
-hooks/
-
-types/
+├── coc/
+├── members/
+└── navigation/
 
 services/
+└── overview/
 
-public/
+types/
 
 docs/
 ```
 
-## Rendering Strategy
+---
 
-### Default
+# Folder Responsibilities
 
-Use **Server Components** by default.
+## app/
 
-Reasons
+Application routes and page composition.
 
-- Better performance
-- Smaller JavaScript bundle
-- Better SEO
-- Faster initial page load
+---
 
-### Client Components
+## app/components/
 
-Use only when required.
+Landing page and marketing components.
 
-Examples
+---
 
-- Search Input
-- Compare Selector
-- Sort Selector
+## components/dashboard/
+
+Dashboard-specific reusable components.
+
+---
+
+## components/common/
+
+Shared application components.
+
+Examples:
+
+- Clan Search
 - Refresh Button
-- Dialogs
-- Interactive Charts
+- Stat Card
+- Error State
 
-### Rule
+---
 
-If no browser interaction is required,
+## components/ui/
 
-the component should remain a Server Component.
+Reusable UI primitives built with shadcn/ui.
 
-## Data Flow
+---
+
+## lib/
+
+Shared utilities and helper functions.
+
+Examples:
+
+- API client
+- Clan tag utilities
+- Navigation
+- Member utilities
+
+---
+
+## services/
+
+Business logic and data aggregation.
+
+Responsibilities include:
+
+- Combining API responses
+- Computing derived metrics
+- Preparing page-specific data
+- Separating business logic from UI
+
+---
+
+## types/
+
+Shared domain models used throughout the application.
+
+---
+
+## docs/
+
+Project documentation.
+
+---
+
+# Rendering Strategy
+
+## Server Components
+
+Server Components are the default.
+
+Benefits include:
+
+- Smaller JavaScript bundles
+- Faster initial page load
+- Better SEO
+- Secure server-side API access
+
+---
+
+## Client Components
+
+Client Components are used only when browser interaction is required.
+
+Examples:
+
+- Clan Search
+- Compare Select
+- Sort Select
+- Refresh Button
+- Mobile Navigation
+
+---
+
+## Guideline
+
+If browser interactivity is not required, the component should remain a Server Component.
+
+---
+
+# Data Flow
 
 ```text
 User
-  │
-  ▼
-Next.js Frontend
-  │
-  ▼
-Route Handler
-  │
-  ▼
+ │
+ ▼
+Server Component
+ │
+ ▼
+Service Layer
+ │
+ ▼
+Internal API Client
+ │
+ ▼
+Next.js Route Handler
+ │
+ ▼
 Clash of Clans API
-  │
-  ▼
-Transform & Calculate Data
-  │
-  ▼
+ │
+ ▼
+Transform & Derive Metrics
+ │
+ ▼
 Render UI
-  │
-  ▼
-Browser
 ```
 
-## API Layer
+---
 
-UI components should never communicate directly with external APIs.
+# API Layer
 
-All external API requests must go through Next.js Route Handlers, which are responsible for:
+UI components never communicate directly with external APIs.
 
-- Authenticating requests to external services
-- Validating incoming data
-- Transform and normalize API responses
-- Handling errors
-- Enabling future caching and rate limiting
+All API requests pass through:
 
 ```text
-UI Components
-      │
-      ▼
-Route Handlers
-      │
-      ▼
+UI
+ │
+ ▼
+Service Layer
+ │
+ ▼
+Internal API Client
+ │
+ ▼
+Route Handler
+ │
+ ▼
 Clash of Clans API
 ```
 
-Advantages
+The API layer is responsible for:
 
-- API token remains secure on the server
-- Centralized error handling
-- Centralized response transformation
+- Authentication
 - Request validation
-- Easier future backend integration
-- Support for caching and rate limiting
+- Response transformation
+- Error handling
+- Future caching
+- Rate limiting
 
-## Folder Responsibilities
+---
 
-### app/
+# Service Layer
 
-Application routes.
+Business logic is isolated inside reusable services.
 
-### components/
+Responsibilities include:
 
-Reusable UI components.
+- Aggregating multiple API responses
+- Computing derived metrics
+- Preparing page-specific data
+- Keeping UI components focused on rendering
 
-No API logic.
+Examples include:
 
-### lib/
+- Overview Service
+- Members Service
+- Distribution Service
 
-Pure utility functions.
+---
 
-Examples
+# State Management
 
-- formatNumbers()
-- calculateDonationRatio()
+## Local State
 
-### services/
+Preferred for component-specific interactions.
 
-Business logic.
+---
 
-Examples
+## URL State
 
-- Clan Service
-- Player Service
-- War Service
-
-### hooks/
-
-Reusable React hooks.
-
-### types/
-
-Shared TypeScript interfaces.
-
-### public/
-
-Images and static assets.
-
-## State Management
-
-### Local State
-
-Default choice.
-
-Use React state when needed.
-
-### URL State
-
-Use search parameters for:
+Used for:
 
 - Clan Tag
-- Compare Mode
-- Sorting
 
-### Global State
+Future versions may also use URL state for filtering and sorting.
 
-Avoid unless multiple unrelated pages require it.
+---
 
-## Data Fetching
+## Global State
 
-### Fetch on the Server
+Avoid unless multiple unrelated features require shared state.
 
-Preferred.
+---
 
-### Client Fetching
+# Data Fetching
 
-Only for
+## Server First
 
-- Refresh
-- Interactive updates
-- Interactive comparison
+Data is fetched on the server whenever possible.
 
-### Avoid Duplicate Requests
+---
 
-Reuse already available data whenever possible.
+## Client Fetching
 
-## Error Handling
+Reserved for interactive features such as:
 
-Every request should handle
+- Refreshing live data
+- User-triggered updates
+
+---
+
+## Avoid Duplicate Requests
+
+Reuse previously fetched data whenever possible.
+
+---
+
+# Error Handling
+
+Every page should support:
 
 - Loading
 - Success
 - Empty
 - Error
 
-No page should crash because of an API failure.
+API failures should never cause the application to crash.
 
-## Caching Strategy
+---
 
-### Phase 1
+# Caching Strategy
 
-Leverage Next.js caching and revalidation.
+## Phase 1
 
-Suitable for live clan data that updates periodically.
+Leverage Next.js request caching and on-demand refresh for live data.
 
-### Phase 3
+---
+
+## Future
 
 Introduce database-backed caching and synchronization for tracked clans.
 
-## Environment Variables
+---
 
-Store all secrets in environment variables.
+# Environment Variables
 
-Examples
+Sensitive values must remain server-side.
+
+Examples:
 
 ```env
 COC_API_TOKEN=
-
 COC_API_BASE_URL=
-
 NEXT_PUBLIC_APP_URL=
 ```
 
-Never expose private API keys to the client.
+Never expose API secrets to the client.
 
-## Performance Strategy
+---
 
-### Images
+# Performance Strategy
 
-Always use
+## Server Rendering
 
-Next.js Image Component.
+Render data on the server whenever practical.
 
-### Components
+---
 
-Keep components small.
+## Images
 
-### Imports
+Use the Next.js Image component whenever possible.
+
+---
+
+## Components
+
+Keep components focused and lightweight.
+
+---
+
+## Imports
 
 Prefer tree-shakable imports.
 
-### Code Splitting
+---
 
-Lazy load heavy components when appropriate.
+## API Usage
 
-### API
+Avoid unnecessary network requests.
 
-Avoid unnecessary requests.
+---
 
-## TypeScript Strategy
+# TypeScript Strategy
 
-Domain models should be shared across the application.
+## Strict Typing
 
-### Strict Mode
+Always use strict typing.
 
-Always enabled.
+Avoid `any` whenever possible.
 
-### Shared Types
+---
 
-Centralize interfaces inside
+## Shared Domain Models
 
-types/
+Store reusable interfaces inside the `types` directory.
 
-Avoid duplicate interfaces.
+Avoid duplicate definitions.
 
-### No any
+---
 
-Avoid using any.
+# Styling Strategy
 
-Prefer explicit typing.
-
-## Styling Strategy
+The application follows:
 
 - Tailwind CSS
-- Design Tokens
-- Mobile First
-- Responsive by default
+- Mobile-first design
+- Responsive layouts
+- Design system consistency
 
-Avoid
+Avoid:
 
 - Inline styles
-- Hardcoded colors
+- Hardcoded design values
 - Duplicate utility combinations
 
-## Security
+---
 
-- API Token remains server-side.
+# Security
+
+- Keep API tokens server-side.
 - Validate user input.
 - Sanitize URL parameters.
-- Never trust external responses.
+- Never trust external API responses.
 
-## Logging
+---
 
-Development
+# Logging
 
-- Console logging allowed.
+## Development
 
-Production
+Console logging is acceptable.
 
-- Structured logging only.
+---
 
-Avoid leaving debug logs in production code.
+## Production
 
-## Testing Strategy
+Use structured logging only.
 
-Phase 1
+Remove debugging statements before deployment.
+
+---
+
+# Testing Strategy
+
+## Phase 1
 
 Manual testing.
 
-Future
+---
+
+## Future
 
 - Unit Tests
 - Component Tests
 - Integration Tests
 
-## Scalability
+---
 
-The architecture should support:
+# Naming Conventions
+
+| Item             | Convention          |
+| ---------------- | ------------------- |
+| Directories      | kebab-case          |
+| Component Files  | kebab-case          |
+| React Components | PascalCase          |
+| Utility Files    | kebab-case          |
+| Shared Types     | `types/`            |
+| Route Files      | Next.js conventions |
+
+---
+
+# Scalability
+
+The architecture is designed to support:
 
 - Authentication
 - PostgreSQL
-- Historical Analytics
-- Recommendation Engine
-- Background Jobs
-- Scheduled Synchronization
+- Historical analytics
+- Background jobs
+- Scheduled synchronization
+- Recommendation engine
 
-without requiring major restructuring.
+without requiring significant restructuring.
 
-## Future Architecture
+---
 
-```text
-                        User
-                          │
-                          ▼
-                  Next.js Frontend
-                          │
-                          ▼
-                   Route Handlers
-                    │          │
-          Read/Write│          │Fetch Live Data
-                    ▼          ▼
-               PostgreSQL   Clash of Clans API
-                    │
-                    ▼
-          Historical Analytics
-                    │
-                    ▼
-         Recommendation Engine
-```
-
-## Architectural Principles
+# Architectural Principles
 
 - Server First
+- Feature-Based Organization
 - Component Reusability
 - Type Safety
 - Mobile First
-- Performance First
 - Progressive Enhancement
 - Clear Separation of Responsibilities
 
-## What We Avoid
+---
+
+# What We Avoid
 
 - Large page components
 - Duplicate business logic
 - Direct API calls from UI
-- Global state without necessity
+- Unnecessary global state
 - Hardcoded values
 - Premature optimization
 - Business logic inside UI components
 
-## Guiding Principle
+---
 
-> Build today in a way that supports tomorrow.
+# Guiding Principle
 
-Every architectural decision should reduce future complexity rather than increase it.
+> Build software that is simple to understand, easy to extend, and capable of supporting future phases without major architectural changes.
 
-## Revision History
+---
 
-| Version | Date       | Changes                                                               |
-| ------- | ---------- | --------------------------------------------------------------------- |
-| 1.0     | 2026-07-07 | Initial Technical Architecture                                        |
-| 1.1     | 2026-07-12 | Updated project structure and aligned architecture with the final MVP |
+# Revision History
+
+| Version | Date       | Changes                                                                                                                                                           |
+| ------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.0     | 2026-07-07 | Initial Technical Architecture                                                                                                                                    |
+| 1.1     | 2026-07-12 | Updated project structure and aligned architecture with the MVP implementation                                                                                    |
+| 2.0     | 2026-07-30 | Rewritten to reflect the production Phase 1 architecture, including the service layer, current project structure, rendering strategy, and component organization. |

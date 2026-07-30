@@ -1,9 +1,9 @@
 import { Accordion } from "@/components/ui/accordion";
-import { FAQCard } from "./FAQCard";
+import { FAQCard } from "./faq-card";
 import { faqs } from "./faq-data";
-import { Container } from "../../layout/Container";
+import { Container } from "../../layout/container";
 import Image from "next/image";
-import { Badge } from "../../shared/Badge";
+import { Badge } from "../../shared/badge";
 import { CircleHelp } from "lucide-react";
 
 export function FAQSection() {

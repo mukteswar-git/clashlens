@@ -5,7 +5,7 @@ import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { SidebarNavigation, SidebarFooter } from "../sidebar";
-import { Logo } from "@/components/common/logo/Logo";
+import { Logo } from "@/components/common/logo/logo";
 
 export function MobileSidebar() {
   return (

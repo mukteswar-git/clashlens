@@ -1,92 +1,115 @@
 # Page Specifications
 
-> **Document Version:** 1.1 </br>
-> **Status:** Active </br>
+> **Document Version:** 2.0  
+> **Status:** Active  
 > **Last Updated:** July 2026
 
 ## Purpose
 
-This document defines the purpose, responsibilities, content, behavior, and success criteria of every page in ClashLens.
+This document defines the purpose, responsibilities, data sources, content, and success criteria for every page in ClashLens.
 
-It serves as the implementation blueprint during development.
+Each page should have a single responsibility and contribute to a clear, predictable user experience.
 
-Each page should have a single responsibility and avoid overlapping with other pages.
+This document reflects the current Phase 1 implementation.
 
-## Phase 1 Pages
+---
 
-- Landing Page
+# Phase 1 Pages
+
+- Landing
 - Dashboard Overview
 - Members
 
-## 1. Landing Page
+---
 
-### Purpose
+# 1. Landing
 
-Introduce ClashLens and encourage users to search for a clan.
+## Purpose
 
-### Primary User
+Introduce ClashLens and encourage users to explore live Clash of Clans analytics by searching for a clan.
 
-First-time visitor
+---
 
-### Primary Goal
+## Primary User
 
-Convert a visitor into an active user by encouraging them to search a public clan.
+- First-time visitors
+- Returning visitors searching for another clan
 
-### Sections
+---
 
+## Primary Goal
+
+Convert a visitor into an active user by encouraging them to search for a public clan.
+
+---
+
+## Sections
+
+- Header
 - Hero
-- Trusted Metrics
 - Features
-- Analytics Preview
+- Feature Highlights
 - FAQ
-- About
 - Footer
 
-### Primary Action
+---
 
-Search Clan
+## Primary Actions
 
-### Data Source
+- Search Clan
+- View Features
+
+---
+
+## Data Source
 
 None
 
-### Success Criteria
+---
 
-The user understands:
+## Success Criteria
+
+The visitor should understand:
 
 - What ClashLens is
-- Who it is for
-- Why it is useful
+- Who it is built for
+- What problems it solves
 
-and proceeds to search for a clan.
+and proceed to search for a clan.
 
-## 2. Dashboard
+---
 
-### Purpose
+# 2. Dashboard Overview
 
-Provide a high-level summary of the clan.
+## Purpose
+
+Provide a high-level summary of the current clan.
 
 This page answers:
 
-> "What is the current state of this clan?"
+> **"What is the current state of this clan?"**
 
-### Data Sources
+---
+
+## Data Sources
 
 - Clan Endpoint
-- Player Endpoint (derived data where needed)
+- Player Endpoint (derived metrics)
 - Current War Endpoint
 
-### Sections
+---
 
-#### Clan Summary
+## Sections
 
-Display
+### Clan Summary
+
+Displays
 
 - Clan Badge
 - Clan Name
 - Clan Tag
 - Clan Level
-- Members Count
+- Member Count
 - War League
 - Capital League
 - War Frequency
@@ -95,18 +118,57 @@ Display
 
 ---
 
-#### Distribution Charts
+### Overview Statistics
 
-Display
+Displays summary statistics.
+
+Examples
+
+- Members
+- War Wins
+- Win Rate
+- Trophies
+
+---
+
+### Performance Overview
+
+Displays key performance metrics.
+
+Examples
+
+- Average Donations
+- Average Raid Medals
+- War Win Streak
+
+---
+
+### Distribution Charts
+
+Displays
 
 - Town Hall Distribution
 - League Distribution
 
 ---
 
-#### Current War Snapshot
+### Quick Highlights
 
-Display
+Displays standout members.
+
+Examples
+
+- Top Donor
+- Highest Hero Progress
+- Highest Trophy Player
+- Highest Town Hall
+- Top Capital Contributor
+
+---
+
+### Current War Snapshot
+
+Displays
 
 - War State
 - Team Size
@@ -116,93 +178,81 @@ Display
 - Opponent Destruction
 - Attacks Used
 - Remaining Attacks
-- Opponent Information
+- Opponent Summary
 
-This is a high-level summary only.
-
----
-
-#### Quick Highlights
-
-Display standout members.
-
-Display
-
-- Top Donor
-- Strongest Heroes
-- Highest Trophy Player
-- Highest Town Hall
-- Top Capital Contributor
+This section provides only a live summary of the current war.
 
 ---
 
-### Does NOT Include
+## Does NOT Include
 
-- Member Comparison Table
-- Individual Player Details
-- Detailed War Analytics
-- Historical Statistics
-
----
-
-### Primary Action
-
-Navigate to:
-
-- Members
+- Member comparison
+- Individual player profiles
+- Historical analytics
+- War history
+- Recommendations
 
 ---
 
-### Success Criteria
+## Primary Actions
 
-Within one minute a clan leader should understand:
+- Refresh Live Data
+- Search Another Clan
+- Navigate to Members
 
-- Current clan status
-- Current war situation
-- Overall clan composition
+---
+
+## Success Criteria
+
+Within one minute, a clan leader should understand:
+
+- Overall clan health
+- Current war status
+- Clan composition
 - Standout members
+- Overall performance
 
 ---
 
-# Members
+# 3. Members
 
 ## Purpose
 
-Compare and analyze every clan member.
+Compare every clan member using live player progression and contribution metrics.
 
 This page answers:
 
-> "How do my members compare right now?"
+> **"How do my members compare right now?"**
 
 ---
 
-## Data Source
+## Data Sources
 
 - Clan Endpoint
 - Player Endpoint
 
 ---
 
-## Main Component
+## Main View
 
 ### Member Comparison Table
 
-#### Columns
+Displays
 
 - Rank
 - Player
 - Town Hall
 - Role
-- Donations / Received
-- Dynamic Progress (%)
+- Donations
+- Donations Received
+- League
+- Selected Progress Metric
 
 ---
 
-## Features
+## Comparison Metrics
 
-### Comparison
-
-Compare member progression by:
+Members can be compared by:
 
 - Heroes
 - Hero Equipment
@@ -213,9 +263,9 @@ Compare member progression by:
 
 ---
 
-### Sorting
+## Sorting
 
-Sort members by:
+Supports sorting by:
 
 - Selected Progress Metric
 - Donations
@@ -224,85 +274,100 @@ Sort members by:
 
 ---
 
-### Responsive Layout
+## Responsive Layout
 
-Desktop
+### Desktop
 
-- Full comparison table
+Full comparison table.
 
-Tablet
+### Tablet
 
-- Simplified comparison table
+Optimized comparison table.
 
-Mobile
+### Mobile
 
-- Compact comparison table
-
----
-
-### Does NOT Include
-
-- Clan Summary
-- Distribution Charts
-- Detailed War Information
-- Individual Player Profile
+Compact member cards optimized for touch interaction.
 
 ---
 
-### Success Criteria
+## Does NOT Include
 
-Within one minute a clan leader should be able to:
+- Clan summary
+- Distribution charts
+- War analytics
+- Historical progression
+- Individual player profiles
 
-- Identify the strongest members
+---
+
+## Success Criteria
+
+Within one minute, a clan leader should be able to:
+
 - Compare player progression
-- Find top contributors
-- Rank members by progression or contribution
+- Identify the strongest members
+- Identify top contributors
+- Sort members by different criteria
 
 ---
 
-## Navigation Rules
+# Navigation Flow
 
 ```text
 Landing
     │
     ▼
-Dashboard
+Dashboard Overview
     │
-    ├────────────┐
-    ▼            ▼
-Overview     Members
+    ▼
+Members
 ```
 
-## General Page Rules
+---
+
+# Global Behavior
 
 Every page must:
 
-- Have one primary purpose.
-- Avoid duplicate information.
-- Load independently.
-- Handle loading states.
-- Handle API failures.
+- Load live data from the Clash of Clans API.
+- Display loading states.
+- Handle API failures gracefully.
 - Handle empty states.
-- Be responsive.
+- Support responsive layouts.
+- Maintain consistent navigation.
 
-## Design Principles
+---
 
-- Overview provides summaries and key insights.
-- Members provide comparison and analysis.
-- Each page has a single responsibility.
-- No page should duplicate another page's responsibility.
+# Page Responsibilities
 
-No page should duplicate another page's responsibility.
+| Page     | Primary Responsibility                           |
+| -------- | ------------------------------------------------ |
+| Landing  | Introduce the product and encourage clan search  |
+| Overview | Summarize the current state of the clan          |
+| Members  | Compare clan members using live progression data |
 
-## Guiding Principle
+---
 
-> Every page should answer one important question.
->
-> If a page answers multiple unrelated questions, it should be redesigned.
+# Design Principles
 
-## Revision History
+- Every page has a single responsibility.
+- Information should progress from summary to detail.
+- Avoid duplicate information across pages.
+- Prioritize clarity over feature density.
+- Keep navigation simple and predictable.
 
-| Version | Date       | Changes                                                   |
-| ------- | ---------- | --------------------------------------------------------- |
-| 1.0     | 2026-07-07 | Initial Page Specifications                               |
-| 1.1     | 2026-07-12 | Updated MVP page structure and member comparison workflow |
+---
+
+# Guiding Principle
+
+> Every page should answer one primary question clearly and efficiently. Additional detail should support that purpose rather than compete with it.
+
+---
+
+# Revision History
+
+| Version | Date       | Changes                                                                                                                                                |
+| ------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1.0     | 2026-07-07 | Initial Page Specifications                                                                                                                            |
+| 1.1     | 2026-07-12 | Updated MVP page structure and member comparison workflow                                                                                              |
+| 2.0     | 2026-07-30 | Rewritten to reflect the production Phase 1 implementation, including Performance Overview, live dashboard behavior, and current navigation structure. |

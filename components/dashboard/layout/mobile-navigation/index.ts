@@ -1,2 +1,2 @@
-export * from "./MobileNavigation";
-export * from "./MobileSidebar";
+export * from "./mobile-navigation";
+export * from "./mobile-sidebar";

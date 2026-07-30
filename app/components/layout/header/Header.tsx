@@ -1,7 +1,7 @@
-import { Container } from "../Container";
-import { Logo } from "../../../../components/common/logo/Logo";
-import { DesktopNav } from "./DesktopNav";
-import { MobileNav } from "./MobileNav";
+import { Container } from "../container";
+import { Logo } from "../../../../components/common/logo/logo";
+import { DesktopNav } from "./desktop-nav";
+import { MobileNav } from "./mobile-nav";
 
 export function Header() {
   return (

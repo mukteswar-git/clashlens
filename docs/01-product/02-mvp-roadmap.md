@@ -1,12 +1,12 @@
 # MVP Roadmap
 
-> **Document Version:** 1.1  
+> **Document Version:** 1.2  
 > **Status:** Active  
 > **Last Updated:** July 2026
 
 ## Purpose
 
-This roadmap defines the planned evolution of ClashLens from a live clan viewer into a complete decision-support platform for Clash of Clans clan leaders.
+This roadmap defines the planned evolution of ClashLens from a live clan analytics platform into a complete decision-support platform for Clash of Clans clan leaders.
 
 Each phase is independently usable while laying the foundation for future capabilities.
 
@@ -29,7 +29,7 @@ Phase 4
 Smart Recommendations
 ```
 
-## Phase 1 — Live Analytics MVP
+## Phase 1 — Live Analytics MVP (✅ Released)
 
 ### Objective
 
@@ -49,7 +49,21 @@ Users should receive value immediately without creating an account.
 
 This phase validates that players find the platform useful before introducing more advanced features.
 
-### Core Features
+### Delivered Features
+
+- Responsive landing page
+- Clan search
+- Live dashboard
+- Overview page
+- Members page
+- Current war snapshot
+- Performance overview
+- Town Hall distribution
+- League distribution
+- Member progression comparison
+- Responsive UI
+- Refresh data
+- Last updated indicator
 
 #### Landing Page
 
@@ -94,10 +108,13 @@ This phase validates that players find the platform useful before introducing mo
 ### User Experience
 
 - Responsive Design
-- Skeleton Loading
+- Loading Skeletons
 - Error States
 - Empty States
+- Refresh Data
+- Last Updated Indicator
 - Optimized Performance
+- Accessibility
 
 ### Technical Scope
 
@@ -211,6 +228,8 @@ Advanced Analytics Unlock
 - Prisma ORM
 - Scheduled Data Synchronization
 - Background Jobs
+- Scheduled Data Synchronization
+- Snapshot Storage
 
 ### Historical Data
 
@@ -340,3 +359,4 @@ Features that do not support these goals should not be included in the MVP.
 | ------- | ---------- | ------------------------------------------------------------------ |
 | 1.0     | 2026-07-07 | Initial MVP Roadmap                                                |
 | 1.1     | 2026-07-12 | Revised dashboard scope, member comparison, and feature priorities |
+| 1.2     | 2026-07-30 | Marked Phase 1 as publicly released and refined future roadmap.    |

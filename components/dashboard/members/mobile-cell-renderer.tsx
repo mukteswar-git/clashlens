@@ -2,9 +2,9 @@ import Image from "next/image";
 
 import { MemberComparison, MobileColumn } from "@/types/member";
 
-import { ProgressCell } from "./ProgressCell";
-import { RoleBadge } from "./RoleBadge";
-import { TownHallCell } from "./TownHallCell";
+import { ProgressCell } from "./progress-cell";
+import { RoleBadge } from "./role-badge";
+import { TownHallCell } from "./town-hall-cell";
 
 interface MobileCellRendererProps {
   member: MemberComparison;

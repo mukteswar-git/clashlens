@@ -1,5 +1,5 @@
-import { ClanSearch } from "@/components/common/clan-search/ClanSearch";
-import { RefreshButton } from "@/components/common/refresh-button/RefreshButton";
+import { ClanSearch } from "@/components/common/clan-search/clan-search";
+import { RefreshButton } from "@/components/common/refresh-button/refresh-button";
 import { MobileNavigation } from "../mobile-navigation";
 
 export default function TopNavigation() {

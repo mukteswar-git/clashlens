@@ -1,6 +1,6 @@
 # Information Architecture
 
-> **Document Version:** 1.1  
+> **Document Version:** 1.2  
 > **Status:** Active  
 > **Last Updated:** July 2026
 
@@ -27,6 +27,10 @@ ClashLens
 │
 └── Dashboard
     │
+    ├── Shared Layout
+    │   ├── Top Navigation
+    │   └── Sidebar
+    │
     ├── Overview
     └── Members
 ```
@@ -40,6 +44,9 @@ Landing
 │
 ▼
 Dashboard
+│
+├── Overview
+└── Members
 ```
 
 ## User Journey
@@ -62,16 +69,18 @@ No account is required.
 
 No setup is required.
 
-### Returning Visitor
+### Returning User Journey
 
 ```text
 Open Website
 ↓
 Search Clan
 ↓
-View Dashboard
+Open Dashboard
 ↓
-Explore Updated Clan Data
+Refresh Live Data (Optional)
+↓
+Explore Overview and Members
 ```
 
 ## Landing Page
@@ -123,6 +132,7 @@ Contains
 - Search Clan
 - Refresh Data
 - Last Updated
+- Current Clan
 
 These actions are available from every dashboard page.
 
@@ -160,6 +170,7 @@ Provide a high-level summary of the clan.
 **Includes**
 
 - Clan Summary
+- Performance Overview
 - Town Hall Distribution
 - League Distribution
 - Quick Highlights
@@ -175,7 +186,7 @@ Compare and analyze every clan member.
 
 **Features**
 
-- Member Comparison
+- Member Comparison Table
 - Compare Progress By:
   - Heroes
   - Hero Equipment
@@ -195,7 +206,7 @@ The application displays a live war summary on the **Overview** page.
 
 **Includes**
 
-- War Status
+- War State
 - Team Size
 - Clan Stars
 - Opponent Stars
@@ -203,7 +214,9 @@ The application displays a live war summary on the **Overview** page.
 - Opponent Destruction
 - Attacks Used
 - Remaining Attacks
-- Opponent Summary
+- Opponent Name
+- Opponent Badge
+- Opponent Clan Level
 
 ## Navigation Rules
 
@@ -218,7 +231,8 @@ Navigation
 
 Actions
 
-- Refresh clan data
+- Search Clan
+- Refresh Live Data
 
 ### Dashboard Navigation
 
@@ -271,6 +285,8 @@ Information should flow from general to specific.
 ```text
 Clan
 ↓
+Overview
+↓
 Members
 ```
 
@@ -300,15 +316,18 @@ Users should reach any major section within two clicks.
 Landing
 │
 ├── Hero
+├── Trusted Metrics
 ├── Features
+├── Analytics Preview
 ├── FAQ
+├── About
 └── Footer
 
 ↓
 
 Dashboard
 ├── Overview
-├── Members
+└── Members
 ```
 
 ## Architectural Principles
@@ -329,3 +348,4 @@ Dashboard
 | ------- | ---------- | --------------------------------------------------------------------------------------------------------- |
 | 1.0     | 2026-07-07 | Initial Information Architecture                                                                          |
 | 1.1     | 2026-07-12 | Simplified dashboard architecture, removed Player Profile and War pages, added member comparison workflow |
+| 1.2     | 2026-07-30 | Updated navigation and dashboard structure to match the public Phase 1 release.                           |

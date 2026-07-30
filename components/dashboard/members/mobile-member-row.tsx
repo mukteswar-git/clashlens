@@ -2,8 +2,8 @@ import { TableCell, TableRow } from "@/components/ui/table";
 
 import { CompareMetric, MemberComparison, SortMetric } from "@/types/member";
 
-import { PlayerCell } from "./PlayerCell";
-import { MobileCellRenderer } from "./MobileCellRenderer";
+import { PlayerCell } from "./player-cell";
+import { MobileCellRenderer } from "./mobile-cell-renderer";
 
 import Image from "next/image";
 

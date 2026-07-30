@@ -1,10 +1,10 @@
 import { TableCell, TableRow } from "@/components/ui/table";
 import { CompareMetric, MemberComparison } from "@/types/member";
-import { PlayerCell } from "./PlayerCell";
-import { TownHallCell } from "./TownHallCell";
-import { LeagueCell } from "./LeagueCell";
-import { RoleBadge } from "./RoleBadge";
-import { ProgressCell } from "./ProgressCell";
+import { PlayerCell } from "./player-cell";
+import { TownHallCell } from "./town-hall-cell";
+import { LeagueCell } from "./league-cell";
+import { RoleBadge } from "./role-badge";
+import { ProgressCell } from "./progress-cell";
 
 interface MemberRowProps {
   rank: number;

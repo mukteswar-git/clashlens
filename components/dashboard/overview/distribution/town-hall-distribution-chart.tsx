@@ -1,4 +1,4 @@
-import { DistributionChart } from "./DistributionChart";
+import { DistributionChart } from "./distribution-chart";
 import { DistributionItem } from "@/types/overview";
 
 type TownHallDistributionChartProps = {

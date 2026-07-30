@@ -1,4 +1,4 @@
-import { Container } from "../../layout/Container";
+import { Container } from "../../layout/container";
 import {
   ShieldCheck,
   Clock3,
@@ -6,7 +6,7 @@ import {
   UserRoundCheck,
 } from "lucide-react";
 
-import { FeatureHighlightCard } from "./FeatureHighlightCard";
+import { FeatureHighlightCard } from "./feature-highlight-card";
 
 const featureHighlights = [
   {

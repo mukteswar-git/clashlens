@@ -11,7 +11,7 @@ import { sortMembers } from "@/lib/members/sort-members";
 
 import { CompareMetric, MemberComparison, SortMetric } from "@/types/member";
 
-import { MobileMemberRow } from "./MobileMemberRow";
+import { MobileMemberRow } from "./mobile-member-row";
 
 interface MobileMemberTableProps {
   members: MemberComparison[];

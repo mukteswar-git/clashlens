@@ -2,7 +2,7 @@
 
 import { dashboardNavigation } from "@/lib/navigation/dashboardNavigation";
 import { useParams, usePathname } from "next/navigation";
-import { SidebarNavigationItem } from "./SidebarNavigationItem";
+import { SidebarNavigationItem } from "./sidebar-navigation-item";
 
 export function SidebarNavigation() {
   const { tag } = useParams<{ tag: string }>();

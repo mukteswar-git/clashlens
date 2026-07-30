@@ -1,6 +1,6 @@
-import { SidebarFooter } from "./SidebarFooter";
-import { SidebarHeader } from "./SidebarHeader";
-import { SidebarNavigation } from "./SidebarNavigation";
+import { SidebarFooter } from "./sidebar-footer";
+import { SidebarHeader } from "./sidebar-header";
+import { SidebarNavigation } from "./sidebar-navigation";
 
 export default function Sidebar() {
   return (

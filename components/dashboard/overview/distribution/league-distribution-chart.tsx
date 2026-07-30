@@ -1,4 +1,4 @@
-import { DistributionChart } from "@/components/dashboard/overview/distribution/DistributionChart";
+import { DistributionChart } from "@/components/dashboard/overview/distribution/distribution-chart";
 import { DistributionItem } from "@/types/overview";
 
 type LeagueDistributionChartProps = {

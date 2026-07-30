@@ -1,9 +1,9 @@
-import { Container } from "../../layout/Container";
+import { Container } from "../../layout/container";
 import Image from "next/image";
-import { Badge } from "../../shared/Badge";
+import { Badge } from "../../shared/badge";
 import { Crown, ShieldCheck } from "lucide-react";
-import { ClanSearch } from "../../../../components/common/clan-search/ClanSearch";
-import { FeatureHighlights } from "../feature-highlights/FeatureHighlights";
+import { ClanSearch } from "../../../../components/common/clan-search/clan-search";
+import { FeatureHighlights } from "../feature-highlights/feature-highlights";
 
 export function Hero() {
   return (

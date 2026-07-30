@@ -1,8 +1,8 @@
 "use client";
 
-import { Logo } from "@/components/common/logo/Logo";
+import { Logo } from "@/components/common/logo/logo";
 
-import { MobileSidebar } from "./MobileSidebar";
+import { MobileSidebar } from "./mobile-sidebar";
 
 export function MobileNavigation() {
   return (

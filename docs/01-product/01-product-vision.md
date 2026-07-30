@@ -1,12 +1,12 @@
 # Product Vision
 
-> **Document Version:** 1.0  
+> **Document Version:** 1.1  
 > **Status:** Active  
 > **Last Updated:** July 2026
 
 ## Vision
 
-**ClashLens aims to become the most trusted decision-support platform for Clash of Clans clan leaders.**
+**ClashLens aims to become the most trusted analytics and decision-support platform for Clash of Clans clan leaders.**
 
 Instead of simply displaying game statistics, ClashLens transforms live and historical clan data into meaningful insights, helping leaders make faster, more objective, and data-driven decisions.
 
@@ -14,7 +14,7 @@ Instead of simply displaying game statistics, ClashLens transforms live and hist
 
 Help clan leaders spend less time managing their clans and more time enjoying the game.
 
-By automating repetitive analysis and presenting clear recommendations, ClashLens enables leaders to:
+By organizing live clan data into clear analytics today and intelligent recommendations in future phases, ClashLens enables leaders to::
 
 - Understand the current state of their clan.
 - Monitor member contributions.
@@ -132,10 +132,11 @@ Users should feel confident that every recommendation is supported by real evide
 
 ClashLens is:
 
-- A clan analytics platform.
+- A live clan analytics platform.
+- A decision-support platform.
 - A clan management assistant.
-- A decision-support system.
 - A historical analytics platform.
+- A productivity tool for clan leaders.
 - A productivity tool for clan leaders.
 
 It is **not**:
@@ -148,7 +149,7 @@ It is **not**:
 
 ## Unique Value Proposition
 
-Most Clash of Clans tools focus on displaying data.
+Most Clash of Clans tools expose raw statistics. ClashLens organizes those statistics into meaningful analytics today and will evolve into a transparent decision-support platform through historical tracking and explainable recommendations.
 
 ClashLens focuses on helping leaders answer questions such as:
 
@@ -193,6 +194,7 @@ ClashLens will be considered successful when:
 
 ## Revision History
 
-| Version | Date       | Changes                |
-| ------- | ---------- | ---------------------- |
-| 1.0     | 2026-07-07 | Initial Product Vision |
+| Version | Date       | Changes                                                                         |
+| ------- | ---------- | ------------------------------------------------------------------------------- |
+| 1.0     | 2026-07-07 | Initial Product Vision                                                          |
+| 1.1     | 2026-07-30 | Refined product positioning and aligned vision with the public Phase 1 release. |
