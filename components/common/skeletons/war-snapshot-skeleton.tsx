@@ -13,10 +13,7 @@ function WarClanSkeleton() {
       {/* Stats */}
       <div className="space-y-4">
         {Array.from({ length: 3 }).map((_, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center space-y-2"
-          >
+          <div key={index} className="flex flex-col items-center space-y-2">
             <Skeleton className="h-8 w-16" />
             <Skeleton className="h-3 w-20" />
           </div>

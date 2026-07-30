@@ -4,9 +4,7 @@ interface MembersTableSkeletonProps {
   rows?: number;
 }
 
-export function MembersTableSkeleton({
-  rows = 12,
-}: MembersTableSkeletonProps) {
+export function MembersTableSkeleton({ rows = 12 }: MembersTableSkeletonProps) {
   return (
     <div className="overflow-x-auto">
       <table className="w-full">

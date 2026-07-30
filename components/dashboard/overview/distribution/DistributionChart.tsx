@@ -50,7 +50,14 @@ export function DistributionChart({ title, data }: DistributionChartProps) {
                 <span className="text-muted-foreground">{item.count}</span>
               </div>
 
-              <div className="bg-muted h-2.5 overflow-hidden rounded-full">
+              <div
+                className="bg-muted h-2.5 overflow-hidden rounded-full"
+                role="progressbar"
+                aria-label={`${item.label} distribution`}
+                aria-valuenow={item.count}
+                aria-valuemin={0}
+                aria-valuemax={totalMembers}
+              >
                 <div
                   className="bg-primary h-full rounded-full transition-all"
                   style={{ width: `${width}%` }}
