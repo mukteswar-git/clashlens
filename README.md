@@ -290,4 +290,4 @@ This project is licensed under the **MIT License**.
 
 **Mukteswar Tripathy**
 
-GitHub: https://github.com/mukteswarAI
+GitHub: https://github.com/mukteswar-git

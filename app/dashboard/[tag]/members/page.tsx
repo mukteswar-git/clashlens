@@ -1,6 +1,13 @@
 import { ErrorState } from "@/components/common/error-state";
 import { MembersView } from "@/components/dashboard/members/members-view";
 import { getMembersData } from "@/services/overview/members.service";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Members",
+  description:
+    "Analyze clan members, compare progression, donations, and activity using live Clash of Clans data.",
+};
 
 type MembersPageProps = {
   params: Promise<{

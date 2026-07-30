@@ -5,6 +5,7 @@ import { Container } from "../../layout/container";
 import Image from "next/image";
 import { Badge } from "../../shared/badge";
 import { CircleHelp } from "lucide-react";
+import Link from "next/link";
 
 export function FAQSection() {
   const midpoint = Math.ceil(faqs.length / 2);
@@ -73,18 +74,23 @@ export function FAQSection() {
 
           <p
             className="
-            mt-6
-            text-base
-            leading-7
-            text-muted-foreground
-
-            sm:text-lg
-            sm:leading-8
+              mt-6
+              text-base
+              leading-7
+              text-muted-foreground
+              sm:text-lg
+              sm:leading-8
             "
           >
             Everything you need to know about ClashLens. Can&apos;t find the
-            answer you&apos;re looking for?{" "}
-            <span className="font-bold text-accent">Contact us</span> anytime.
+            answer you&apos;re looking for? Email us at{" "}
+            <Link
+              href="mailto:clashlens.contact@gmail.com"
+              className="font-semibold text-accent underline underline-offset-4 transition-colors hover:opacity-80"
+            >
+              clashlens.contact@gmail.com
+            </Link>
+            .
           </p>
         </div>
 

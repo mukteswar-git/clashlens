@@ -37,8 +37,25 @@ export function Footer() {
               </p>
 
               <p className="max-w-sm">
-                ClashLens is an independent analytics platform and is not
-                affiliated with, endorsed by, or sponsored by Supercell.
+                Independent analytics platform built for Clash of Clans clan
+                leaders.
+              </p>
+            </div>
+
+            <div className="mt-6 border-t pt-6 text-center text-xs leading-relaxed text-muted-foreground">
+              <p>
+                ClashLens is an independent fan project and is not affiliated
+                with, endorsed, sponsored, or specifically approved by
+                Supercell. Clash of Clans is a trademark of Supercell. Data is
+                provided by the official Clash of Clans API.{" "}
+                <a
+                  href="https://supercell.com/fan-content-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 transition-colors hover:text-foreground"
+                >
+                  Supercell Fan Content Policy
+                </a>
               </p>
             </div>
           </div>

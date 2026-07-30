@@ -38,12 +38,12 @@ export const resourceLinks: FooterLink[] = [
 export const legalLinks: FooterLink[] = [
   {
     label: "Privacy Policy",
-    href: "/privacy",
+    href: "/privacy-policy",
     icon: Shield,
   },
   {
     label: "Terms of Service",
-    href: "/terms",
+    href: "/terms-of-service",
     icon: FileText,
   },
   {

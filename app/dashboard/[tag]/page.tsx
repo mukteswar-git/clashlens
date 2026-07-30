@@ -7,6 +7,13 @@ import { QuickHighlights } from "@/components/dashboard/overview/highlights/quic
 import { WarSnapshot } from "@/components/dashboard/overview/war/war-snapshot";
 import { getOverviewData } from "@/services/overview/overview.service";
 import { ErrorState } from "@/components/common/error-state";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Overview",
+  description:
+    "View live clan statistics, performance metrics, war status, and overall clan health.",
+};
 
 type DashboardPageProps = {
   params: Promise<{
