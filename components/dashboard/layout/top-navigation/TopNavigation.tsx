@@ -32,10 +32,6 @@ export default function TopNavigation() {
           </div>
 
           <div className="flex items-center gap-4">
-            <p className="whitespace-nowrap text-sm text-muted-foreground">
-              Last updated just now
-            </p>
-
             <RefreshButton />
           </div>
         </div>

@@ -13,7 +13,9 @@ type DashboardPageProps = {
   }>;
 };
 
-export default async function DashboardPage({ params }: DashboardPageProps) {
+export default async function DashboardPage({
+  params,
+}: DashboardPageProps) {
   const { tag } = await params;
 
   const overview = await getOverviewData(tag).catch(() => null);
@@ -29,6 +31,7 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
 
   return (
     <main className="mx-auto flex w-full max-w-7xl flex-col gap-8 py-10">
+
       <div className="flex flex-col gap-6 xl:flex-row">
         <div className="xl:basis-[40%]">
           <ClanSummary clan={overview.clan} />
