@@ -1,20 +1,22 @@
 "use client";
 
-type ClanSearchProps = {
-  placeholder?: string;
-  buttonText?: string;
-  showError?: boolean;
-};
-
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Hash, Search } from "lucide-react";
 
 import { normalizeClanTag } from "@/lib/coc/normalize-tag";
+import { MAX_CLAN_TAG_LENGTH } from "@/lib/coc/constants";
+
+import { RecentSearchesContainer } from "@/components/common/recent-searches/recent-searches-container";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { MAX_CLAN_TAG_LENGTH } from "@/lib/coc/constants";
+
+type ClanSearchProps = {
+  placeholder?: string;
+  buttonText?: string;
+  showError?: boolean;
+};
 
 export function ClanSearch({
   placeholder = "Enter a clan tag",
@@ -23,6 +25,7 @@ export function ClanSearch({
 }: ClanSearchProps) {
   const [tag, setTag] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [isFocused, setIsFocused] = useState(false);
   const router = useRouter();
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -42,7 +45,7 @@ export function ClanSearch({
   }
 
   return (
-    <div>
+    <div className="relative">
       <form
         onSubmit={handleSubmit}
         className="
@@ -68,19 +71,23 @@ export function ClanSearch({
           maxLength={MAX_CLAN_TAG_LENGTH}
           value={tag}
           onChange={(e) => setTag(e.target.value.toUpperCase())}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => {
+            setTimeout(() => setIsFocused(false), 150);
+          }}
           placeholder={placeholder}
           className="
-          flex-1
-          border-0
-          px-0
-          text-sm
-          shadow-none
-          placeholder:text-sm
-          focus-visible:ring-0
+            flex-1
+            border-0
+            px-0
+            text-sm
+            shadow-none
+            placeholder:text-sm
+            focus-visible:ring-0
 
-          sm:text-base
-          sm:placeholder:text-base
-        "
+            sm:text-base
+            sm:placeholder:text-base
+          "
         />
 
         <Button
@@ -102,6 +109,8 @@ export function ClanSearch({
           <span className="xs:hidden">Analyze</span>
         </Button>
       </form>
+
+      {isFocused && <RecentSearchesContainer />}
 
       {showError && (
         <div className="mt-1 min-h-5">

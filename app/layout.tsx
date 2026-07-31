@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     template: `%s | ${APP_NAME}`,
   },
 
-  description:
-    "Modern analytics platform for Clash of Clans clan leaders.",
+  description: "Modern analytics platform for Clash of Clans clan leaders.",
 
   applicationName: APP_NAME,
 
@@ -25,8 +24,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: APP_NAME,
-    description:
-      "Modern analytics platform for Clash of Clans clan leaders.",
+    description: "Modern analytics platform for Clash of Clans clan leaders.",
     images: [
       {
         url: "/logo/opengraph-image.png",

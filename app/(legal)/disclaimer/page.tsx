@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   description: "Read the ClashLens disclaimer.",
 };
 
-
 export default function DisclaimerPage() {
   return (
     <LegalLayout

@@ -24,29 +24,39 @@ export function QuickHighlights({ highlights }: QuickHighlightsProps) {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
         <HighlightCard
           title="Top Donor"
-          value={topDonor.name}
-          subtitle={`${topDonor.donations} donations`}
+          value={topDonor?.name ?? "N/A"}
+          subtitle={
+            topDonor ? `${topDonor.donations} donations` : "No donation data"
+          }
           icon={<Gift className="h-6 w-6" />}
         />
 
         <HighlightCard
           title="Highest Trophies"
-          value={highestTrophies.name}
-          subtitle={`${highestTrophies.trophies.toLocaleString()} trophies`}
+          value={highestTrophies?.name ?? "N/A"}
+          subtitle={
+            highestTrophies
+              ? `${highestTrophies.trophies.toLocaleString()} trophies`
+              : "No trophy data"
+          }
           icon={<Trophy className="h-6 w-6" />}
         />
 
         <HighlightCard
           title="Highest Town Hall"
-          value={highestTownHall.name}
-          subtitle={`Town Hall ${highestTownHall.townHallLevel}`}
+          value={highestTownHall?.name ?? "N/A"}
+          subtitle={
+            highestTownHall
+              ? `Town Hall ${highestTownHall.townHallLevel}`
+              : "No Town Hall data"
+          }
           icon={<Castle className="h-6 w-6" />}
         />
 
         <HighlightCard
           title="Clan Leader"
-          value={leader.name}
-          subtitle="Leader"
+          value={leader?.name ?? "N/A"}
+          subtitle={leader ? "Leader" : "No leader found"}
           icon={<Crown className="h-6 w-6" />}
         />
       </div>
