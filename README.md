@@ -15,7 +15,7 @@ ClashLens is a modern analytics platform built with **Next.js**, **TypeScript**,
 
 ## 🌐 Live Demo
 
-**https://clashlens.vercel.app**
+**https://www.clashlens.app**
 
 ---
 
