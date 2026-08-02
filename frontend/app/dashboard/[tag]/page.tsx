@@ -9,6 +9,7 @@ import { getOverview } from "@/lib/backend";
 import { SaveRecentClan } from "@/components/common/recent-searches/save-recent-clan";
 import { ErrorState } from "@/components/common/error-state";
 import type { Metadata } from "next";
+import { normalizeClanTag } from "@/lib/coc/normalize-tag";
 
 export const metadata: Metadata = {
   title: "Overview",
@@ -28,7 +29,7 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
   let overview;
 
   try {
-    overview = await getOverview(tag);
+    overview = await getOverview(normalizeClanTag(tag));
   } catch (error) {
     if (!(error instanceof Error)) {
       throw error;

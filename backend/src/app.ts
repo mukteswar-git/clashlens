@@ -9,11 +9,17 @@ import { errorHandler } from "./middleware/error-handler.js";
 import swaggerUi from "swagger-ui-express";
 import { swaggerSpec } from "./config/swagger.js";
 import { rateLimiter } from "./middleware/rate-limit.js";
+import { env } from "./config/env.js";
 
 const app = express();
 
 app.use(helmet());
-app.use(cors());
+app.use(
+  cors({
+    origin: env.FRONTEND_URL,
+    credentials: true,
+  })
+);
 app.use(rateLimiter);
 app.use(express.json());
 app.use(morgan("dev"));
