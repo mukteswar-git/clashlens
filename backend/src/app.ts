@@ -24,7 +24,9 @@ app.use(
 app.use(rateLimiter);
 app.use(compression());
 app.use(express.json());
-app.use(morgan("dev"));
+if (process.env.NODE_ENV !== "test") {
+  app.use(morgan("dev"));
+}
 
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 

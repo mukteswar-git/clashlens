@@ -3,15 +3,16 @@ import tseslint from "typescript-eslint";
 
 export default [
   {
-    ignores: ["dist", "node_modules", "prisma.config.ts"],
+    ignores: ["dist", "node_modules", "prisma.config.ts", "vitest.config.ts"],
   },
 
   js.configs.recommended,
 
   ...tseslint.configs.recommended,
 
+  // Application source
   {
-    files: ["**/*.ts"],
+    files: ["src/**/*.ts"],
     languageOptions: {
       parserOptions: {
         project: "./tsconfig.json",
@@ -20,6 +21,25 @@ export default [
     rules: {
       "no-console": "off",
 
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+        },
+      ],
+    },
+  },
+
+  // Tests
+  {
+    files: ["tests/**/*.ts"],
+    languageOptions: {
+      parserOptions: {
+        project: "./tsconfig.vitest.json",
+      },
+    },
+    rules: {
       "@typescript-eslint/no-unused-vars": [
         "error",
         {

@@ -2,9 +2,11 @@ import type { ErrorRequestHandler } from "express";
 import { ApiError } from "../utils/api-error.js";
 
 export const errorHandler: ErrorRequestHandler = (error, _req, res, _next) => {
-  console.error(error);
-
   if (error instanceof ApiError) {
+    if (process.env.NODE_ENV !== "test") {
+      console.warn(`${error.code}: ${error.message}`);
+    }
+
     return res.status(error.statusCode).json({
       success: false,
       error: {
@@ -13,6 +15,8 @@ export const errorHandler: ErrorRequestHandler = (error, _req, res, _next) => {
       },
     });
   }
+
+  console.error(error);
 
   return res.status(500).json({
     success: false,
