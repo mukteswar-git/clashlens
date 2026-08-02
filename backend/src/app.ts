@@ -14,7 +14,19 @@ import { env } from "./config/env.js";
 
 const app = express();
 
-app.use(helmet());
+if (process.env.NODE_ENV === "production") {
+  app.set("trust proxy", 1);
+}
+
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        upgradeInsecureRequests: null,
+      },
+    },
+  })
+);
 app.use(
   cors({
     origin: env.FRONTEND_URL,
