@@ -66,7 +66,13 @@ export function ClanSearch({
           <Hash className="size-4 sm:size-4.5" />
         </div>
 
+        <label htmlFor="clan-tag" className="sr-only">
+          Clan Tag
+        </label>
+
         <Input
+          id="clan-tag"
+          name="clanTag"
           type="text"
           maxLength={MAX_CLAN_TAG_LENGTH}
           value={tag}
