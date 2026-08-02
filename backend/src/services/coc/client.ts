@@ -1,4 +1,5 @@
 import { env } from "../../config/env.js";
+import { ApiError } from "../../utils/api-error.js";
 
 export async function apiClient<T>(endpoint: string): Promise<T> {
   const url = `${env.COC_API_BASE_URL}${endpoint}`;
@@ -13,28 +14,44 @@ export async function apiClient<T>(endpoint: string): Promise<T> {
       },
     });
   } catch {
-    throw new Error("NETWORK_ERROR");
+    throw new ApiError(503, "NETWORK_ERROR", "Unable to connect to the Clash of Clans API.");
   }
 
   if (!response.ok) {
     switch (response.status) {
       case 400:
-        throw new Error("BAD_REQUEST");
+        throw new ApiError(
+          400,
+          "BAD_REQUEST",
+          "The request sent to the Clash of Clans API is invalid."
+        );
       case 401:
-        throw new Error("UNAUTHORIZED");
+        throw new ApiError(
+          401,
+          "UNAUTHORIZED",
+          "Authentication with the Clash of Clans API failed."
+        );
       case 403:
-        throw new Error("FORBIDDEN");
+        throw new ApiError(403, "FORBIDDEN", "Access to the Clash of Clans API is forbidden.");
       case 404:
-        throw new Error("NOT_FOUND");
+        throw new ApiError(404, "NOT_FOUND", "Clan not found.");
       case 429:
-        throw new Error("RATE_LIMITED");
+        throw new ApiError(
+          429,
+          "RATE_LIMITED",
+          "The Clash of Clans API rate limit has been exceeded. Please try again later."
+        );
       case 500:
       case 502:
       case 503:
       case 504:
-        throw new Error("SERVER_ERROR");
+        throw new ApiError(503, "SERVER_ERROR", "The Clash of Clans API is currently unavailable.");
       default:
-        throw new Error("UNKNOWN_ERROR");
+        throw new ApiError(
+          response.status,
+          "UNKNOWN_ERROR",
+          "An unexpected error occurred while communicating with the Clash of Clans API."
+        );
     }
   }
 
