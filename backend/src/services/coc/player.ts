@@ -1,6 +1,6 @@
-import { Player } from "@/types/player";
-import { encodeTag } from "../coc/encode-tag";
-import { apiClient } from "./client";
+import type { Player } from "../../types/player.js";
+import { encodeTag } from "../../utils/coc/encode-tag.js";
+import { apiClient } from "./client.js";
 
 export async function getPlayer(tag: string): Promise<Player> {
   const encodedTag = encodeTag(tag);

@@ -1,9 +1,7 @@
-import { ClanMember, LeagueTier } from "@/types/clan";
-import { DistributionItem } from "@/types/overview";
+import { ClanMember, LeagueTier } from "../../types/clan.js";
+import { DistributionItem } from "../../types/overview.js";
 
-export function getTownHallDistribution(
-  members: ClanMember[]
-): DistributionItem[] {
+export function getTownHallDistribution(members: ClanMember[]): DistributionItem[] {
   const distribution = new Map<number, number>();
 
   for (const member of members) {
@@ -20,13 +18,8 @@ export function getTownHallDistribution(
     }));
 }
 
-export function getLeagueDistribution(
-  members: ClanMember[]
-): DistributionItem[] {
-  const distribution = new Map<
-    number,
-    { leagueTier: LeagueTier; count: number }
-  >();
+export function getLeagueDistribution(members: ClanMember[]): DistributionItem[] {
+  const distribution = new Map<number, { leagueTier: LeagueTier; count: number }>();
 
   for (const member of members) {
     const currentDistribution = distribution.get(member.leagueTier.id) ?? {

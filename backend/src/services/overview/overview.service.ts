@@ -1,9 +1,9 @@
-import { getClan, getCurrentWar } from "@/lib/api";
-import { Clan, ClanMember } from "@/types/clan";
-import { getTownHallDistribution } from "./distribution.service";
-import { getLeagueDistribution } from "./distribution.service";
-import { QuickHighlightsData, WarSnapshotData } from "@/types/overview";
-import { War } from "@/types/war";
+import { Clan, ClanMember } from "../../types/clan.js";
+import { QuickHighlightsData, WarSnapshotData } from "../../types/overview.js";
+import { War } from "../../types/war.js";
+import { getClan } from "../coc/clan.js";
+import { getCurrentWar } from "../coc/war.js";
+import { getLeagueDistribution, getTownHallDistribution } from "./distribution.service.js";
 
 export async function getOverviewData(tag: string) {
   const clan = await getClan(tag);
@@ -44,13 +44,9 @@ function calculateWinRate(clan: Clan): number | null {
 }
 
 function getPerformanceMetrics(clan: Clan) {
-  const totalDonations = clan.memberList.reduce(
-    (sum, member) => sum + member.donations,
-    0
-  );
+  const totalDonations = clan.memberList.reduce((sum, member) => sum + member.donations, 0);
 
-  const averageDonations =
-    clan.members > 0 ? Math.round(totalDonations / clan.members) : 0;
+  const averageDonations = clan.members > 0 ? Math.round(totalDonations / clan.members) : 0;
 
   return {
     averageDonations,
@@ -97,15 +93,9 @@ function getHighestMember(
 function getQuickHighlights(members: ClanMember[]): QuickHighlightsData {
   const topDonor = getHighestMember(members, (member) => member.donations);
 
-  const highestTrophies = getHighestMember(
-    members,
-    (member) => member.trophies
-  );
+  const highestTrophies = getHighestMember(members, (member) => member.trophies);
 
-  const highestTownHall = getHighestMember(
-    members,
-    (member) => member.townHallLevel
-  );
+  const highestTownHall = getHighestMember(members, (member) => member.townHallLevel);
 
   const leader = members.find((member) => member.role === "leader")!;
   return {

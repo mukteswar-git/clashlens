@@ -13,12 +13,6 @@ export interface MemberComparison {
 export type CompareMetric = "heroes" | "troops" | "spells" | "equipment";
 
 export type SortMetric =
-  | "role"
-  | "townHall"
-  | "league"
-  | "donations"
-  | "received"
-  | "trophies"
-  | "name";
+  "role" | "townHall" | "league" | "donations" | "received" | "trophies" | "name";
 
 export type MobileColumn = SortMetric | CompareMetric;

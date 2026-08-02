@@ -1,6 +1,6 @@
-import { Clan } from "@/types/clan";
-import { encodeTag } from "../coc/encode-tag";
-import { apiClient } from "./client";
+import type { Clan } from "../../types/clan.js";
+import { encodeTag } from "../../utils/coc/encode-tag.js";
+import { apiClient } from "./client.js";
 
 export async function getClan(tag: string): Promise<Clan> {
   const encodedTag = encodeTag(tag);
