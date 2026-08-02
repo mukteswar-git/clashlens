@@ -27,9 +27,7 @@ export function MobileMemberToolbar({
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
         <div className="space-y-2">
-          <label className="text-sm font-medium text-muted-foreground">
-            Sort By
-          </label>
+          <label className="text-sm font-medium text-muted-foreground">Sort By</label>
 
           <SortSelect
             value={sortMetric}
@@ -39,14 +37,9 @@ export function MobileMemberToolbar({
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-medium text-muted-foreground">
-            Compare
-          </label>
+          <label className="text-sm font-medium text-muted-foreground">Compare</label>
 
-          <CompareSelect
-            value={compareMetric}
-            onValueChange={onCompareChange}
-          />
+          <CompareSelect value={compareMetric} onValueChange={onCompareChange} />
         </div>
       </div>
     </div>

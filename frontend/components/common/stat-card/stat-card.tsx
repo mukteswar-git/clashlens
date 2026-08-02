@@ -11,13 +11,7 @@ type StatCardProps = {
   iconClassName?: string;
 };
 
-export function StatCard({
-  icon: Icon,
-  title,
-  value,
-  description,
-  iconClassName,
-}: StatCardProps) {
+export function StatCard({ icon: Icon, title, value, description, iconClassName }: StatCardProps) {
   return (
     <Card>
       <CardContent className="flex items-center gap-5 p-5 md:p-6">
@@ -30,9 +24,7 @@ export function StatCard({
 
           <h3 className="text-2xl font-bold">{value}</h3>
 
-          {description && (
-            <p className="text-xs text-muted-foreground">{description}</p>
-          )}
+          {description && <p className="text-xs text-muted-foreground">{description}</p>}
         </div>
       </CardContent>
     </Card>

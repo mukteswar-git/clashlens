@@ -34,9 +34,7 @@ export function ClanSummary({ clan }: ClanSummaryProps) {
               </div>
 
               <div>
-                <p className="text-sm text-muted-foreground">
-                  Clan Capital League
-                </p>
+                <p className="text-sm text-muted-foreground">Clan Capital League</p>
 
                 <p className="font-semibold">{clan.capitalLeague.name}</p>
               </div>

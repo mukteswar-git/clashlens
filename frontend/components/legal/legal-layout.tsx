@@ -11,11 +11,7 @@ interface LegalLayoutProps {
   children: ReactNode;
 }
 
-export function LegalLayout({
-  title,
-  description,
-  children,
-}: LegalLayoutProps) {
+export function LegalLayout({ title, description, children }: LegalLayoutProps) {
   return (
     <main className="py-16">
       <Container className="max-w-4xl">

@@ -8,12 +8,7 @@ type PerformanceCardProps = {
   icon: string;
 };
 
-export function PerformanceCard({
-  title,
-  subtitle,
-  value,
-  icon,
-}: PerformanceCardProps) {
+export function PerformanceCard({ title, subtitle, value, icon }: PerformanceCardProps) {
   return (
     <Card>
       <CardContent className="flex items-center gap-5 p-6">

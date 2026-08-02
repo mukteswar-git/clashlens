@@ -1,10 +1,4 @@
-export function Badge({
-  children,
-  icon,
-}: {
-  children: React.ReactNode;
-  icon?: React.ReactNode;
-}) {
+export function Badge({ children, icon }: { children: React.ReactNode; icon?: React.ReactNode }) {
   return (
     <div
       className="

@@ -1,8 +1,16 @@
+# Dependencies
 **/node_modules
+
+# Build output
 **/.next
-**/.vercel
 **/dist
 **/build
-**/coverage
 **/.turbo
-pnpm-lock.yaml
+**/.vercel
+**/coverage
+
+# Package manager
+**/pnpm-lock.yaml
+
+# Generated manifests
+**/.next/**

@@ -7,10 +7,7 @@ import { FeatureHighlights } from "../feature-highlights/feature-highlights";
 
 export function Hero() {
   return (
-    <section
-      className="relative overflow-hidden pt-16 md:pt-20 lg:pt-28"
-      id="home"
-    >
+    <section className="relative overflow-hidden pt-16 md:pt-20 lg:pt-28" id="home">
       {/* Background image */}
       <Image
         src="/images/hero/background.webp"
@@ -43,8 +40,8 @@ export function Hero() {
               <span className="text-accent">Make Smarter Decisions.</span>
             </h1>
             <p className="max-w-md text-base text-muted-foreground">
-              ClashLens helps you track member activity, donations, war
-              performance, and clan health with powerful data-driven analytics.
+              ClashLens helps you track member activity, donations, war performance, and clan health
+              with powerful data-driven analytics.
             </p>
             <div className="mx-auto w-full max-w-2xl">
               <ClanSearch />

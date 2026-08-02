@@ -55,17 +55,11 @@ export function FeaturesSection() {
       <Container className="max-w-6xl flex flex-col gap-8">
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <Badge
-            icon={<BarChart3 className="size-4 text-badge-icon stroke-2" />}
-          >
-            Features
-          </Badge>
+          <Badge icon={<BarChart3 className="size-4 text-badge-icon stroke-2" />}>Features</Badge>
 
           <h2 className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
             Powerful Analytics for{" "}
-            <span className="whitespace-nowrap text-accent">
-              Every Clan Leader
-            </span>
+            <span className="whitespace-nowrap text-accent">Every Clan Leader</span>
           </h2>
 
           <p
@@ -79,8 +73,8 @@ export function FeaturesSection() {
             sm:leading-8
             "
           >
-            ClashLens provides all the insights you need to manage your clan
-            effectively, improve member performance, and build a stronger clan.
+            ClashLens provides all the insights you need to manage your clan effectively, improve
+            member performance, and build a stronger clan.
           </p>
         </div>
 

@@ -5,8 +5,6 @@ type TownHallDistributionChartProps = {
   data: DistributionItem[];
 };
 
-export function TownHallDistributionChart({
-  data,
-}: TownHallDistributionChartProps) {
+export function TownHallDistributionChart({ data }: TownHallDistributionChartProps) {
   return <DistributionChart title="Town Hall Distribution" data={data} />;
 }

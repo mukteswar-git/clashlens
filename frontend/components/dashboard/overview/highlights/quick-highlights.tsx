@@ -16,18 +16,14 @@ export function QuickHighlights({ highlights }: QuickHighlightsProps) {
       <div>
         <h2 className="text-lg font-semibold">Quick Highlights</h2>
 
-        <p className="text-sm text-muted-foreground">
-          Key members at a glance.
-        </p>
+        <p className="text-sm text-muted-foreground">Key members at a glance.</p>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
         <HighlightCard
           title="Top Donor"
           value={topDonor?.name ?? "N/A"}
-          subtitle={
-            topDonor ? `${topDonor.donations} donations` : "No donation data"
-          }
+          subtitle={topDonor ? `${topDonor.donations} donations` : "No donation data"}
           icon={<Gift className="h-6 w-6" />}
         />
 
@@ -46,9 +42,7 @@ export function QuickHighlights({ highlights }: QuickHighlightsProps) {
           title="Highest Town Hall"
           value={highestTownHall?.name ?? "N/A"}
           subtitle={
-            highestTownHall
-              ? `Town Hall ${highestTownHall.townHallLevel}`
-              : "No Town Hall data"
+            highestTownHall ? `Town Hall ${highestTownHall.townHallLevel}` : "No Town Hall data"
           }
           icon={<Castle className="h-6 w-6" />}
         />

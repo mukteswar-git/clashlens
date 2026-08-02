@@ -16,27 +16,27 @@ export default function PrivacyPolicyPage() {
     >
       <LegalSection title="Information We Collect">
         <p>
-          ClashLens does not require users to create an account or submit
-          personal information to use the application.
+          ClashLens does not require users to create an account or submit personal information to
+          use the application.
         </p>
 
         <p>
-          The application processes publicly available Clash of Clans data
-          requested through the official Clash of Clans API.
+          The application processes publicly available Clash of Clans data requested through the
+          official Clash of Clans API.
         </p>
       </LegalSection>
 
       <LegalSection title="How We Use Information">
         <p>
-          Retrieved clan and player data is used solely to display analytics,
-          comparisons, and insights within the application.
+          Retrieved clan and player data is used solely to display analytics, comparisons, and
+          insights within the application.
         </p>
       </LegalSection>
 
       <LegalSection title="Third-Party Services">
         <p>
-          ClashLens uses the official Clash of Clans API provided by Supercell.
-          The availability and accuracy of data depend on this external service.
+          ClashLens uses the official Clash of Clans API provided by Supercell. The availability and
+          accuracy of data depend on this external service.
         </p>
       </LegalSection>
 
@@ -46,15 +46,14 @@ export default function PrivacyPolicyPage() {
 
       <LegalSection title="Changes">
         <p>
-          This Privacy Policy may be updated periodically. Changes will be
-          reflected on this page.
+          This Privacy Policy may be updated periodically. Changes will be reflected on this page.
         </p>
       </LegalSection>
 
       <LegalSection title="Contact">
         <p>
-          Questions regarding this Privacy Policy can be directed through the
-          GitHub repository for ClashLens.
+          Questions regarding this Privacy Policy can be directed through the GitHub repository for
+          ClashLens.
         </p>
       </LegalSection>
     </LegalLayout>

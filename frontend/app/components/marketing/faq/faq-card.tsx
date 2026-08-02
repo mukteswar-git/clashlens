@@ -1,8 +1,4 @@
-import {
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from "@/components/ui/accordion";
+import { AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 import type { FAQ } from "./faq.types";
 
@@ -33,9 +29,7 @@ export function FAQCard({ faq }: FAQCardProps) {
       </AccordionTrigger>
 
       <AccordionContent className="pb-6">
-        <div className="ml-26 text-muted-foreground leading-relaxed">
-          {faq.answer}
-        </div>
+        <div className="ml-26 text-muted-foreground leading-relaxed">{faq.answer}</div>
       </AccordionContent>
     </AccordionItem>
   );

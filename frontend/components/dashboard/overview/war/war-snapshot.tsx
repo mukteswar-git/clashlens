@@ -2,13 +2,7 @@ import Image from "next/image";
 import { Swords, Users } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { WAR_STATE_LABELS } from "@/lib/coc/constants";
 import { WarSnapshotData } from "@/types/overview";
 
@@ -48,9 +42,7 @@ export function WarSnapshot({ war }: WarSnapshotProps) {
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between gap-4 max-[320px]:flex-col max-[320px]:items-start">
-        <CardTitle className="text-lg md:text-xl">
-          Current War Snapshot
-        </CardTitle>
+        <CardTitle className="text-lg md:text-xl">Current War Snapshot</CardTitle>
 
         <Badge variant="secondary" className="max-[320px]:self-start">
           {WAR_STATE_LABELS[war.state]}

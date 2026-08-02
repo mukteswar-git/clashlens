@@ -1,6 +1,6 @@
 import { ErrorState } from "@/components/common/error-state";
 import { MembersView } from "@/components/dashboard/members/members-view";
-import { getMembersData } from "@/services/overview/members.service";
+import { getMembers } from "@/lib/backend";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default async function MembersPage({ params }: MembersPageProps) {
   let members;
 
   try {
-    members = await getMembersData(tag);
+    members = await getMembers(tag);
   } catch (error) {
     if (!(error instanceof Error)) {
       throw error;

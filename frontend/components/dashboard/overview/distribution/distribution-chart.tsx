@@ -38,12 +38,7 @@ export function DistributionChart({ title, data }: DistributionChartProps) {
               <div className="flex items-center justify-between text-sm">
                 <div className="flex items-center gap-2">
                   {item.iconUrl && (
-                    <Image
-                      src={item.iconUrl}
-                      alt={item.label}
-                      width={20}
-                      height={20}
-                    />
+                    <Image src={item.iconUrl} alt={item.label} width={20} height={20} />
                   )}
                   <span>{item.label}</span>
                 </div>

@@ -7,12 +7,7 @@ type HighlightCardProps = {
   icon: React.ReactNode;
 };
 
-export function HighlightCard({
-  title,
-  value,
-  subtitle,
-  icon,
-}: HighlightCardProps) {
+export function HighlightCard({ title, value, subtitle, icon }: HighlightCardProps) {
   return (
     <Card className="h-full transition-colors hover:border-primary/30">
       <CardContent className="flex items-center gap-3 p-4">

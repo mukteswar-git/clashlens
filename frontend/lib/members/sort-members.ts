@@ -1,10 +1,7 @@
 import { ROLE_PRIORITY } from "@/lib/coc/constants";
 import { MemberComparison, SortMetric } from "@/types/member";
 
-export function sortMembers(
-  members: MemberComparison[],
-  sortMetric: SortMetric
-) {
+export function sortMembers(members: MemberComparison[], sortMetric: SortMetric) {
   const sortedMembers = [...members];
 
   sortedMembers.sort((a, b) => {
@@ -28,9 +25,7 @@ export function sortMembers(
         return b.clanMember.trophies - a.clanMember.trophies;
 
       case "role":
-        return (
-          ROLE_PRIORITY[b.clanMember.role] - ROLE_PRIORITY[a.clanMember.role]
-        );
+        return ROLE_PRIORITY[b.clanMember.role] - ROLE_PRIORITY[a.clanMember.role];
 
       default:
         return 0;

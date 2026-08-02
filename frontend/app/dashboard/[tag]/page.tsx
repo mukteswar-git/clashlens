@@ -5,7 +5,7 @@ import { LeagueDistributionChart } from "@/components/dashboard/overview/distrib
 import { TownHallDistributionChart } from "@/components/dashboard/overview/distribution/town-hall-distribution-chart";
 import { QuickHighlights } from "@/components/dashboard/overview/highlights/quick-highlights";
 import { WarSnapshot } from "@/components/dashboard/overview/war/war-snapshot";
-import { getOverviewData } from "@/services/overview/overview.service";
+import { getOverview } from "@/lib/backend";
 import { SaveRecentClan } from "@/components/common/recent-searches/save-recent-clan";
 import { ErrorState } from "@/components/common/error-state";
 import type { Metadata } from "next";
@@ -28,7 +28,7 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
   let overview;
 
   try {
-    overview = await getOverviewData(tag);
+    overview = await getOverview(tag);
   } catch (error) {
     if (!(error instanceof Error)) {
       throw error;

@@ -18,9 +18,7 @@ export function RecentSearches({ recentClans, onSelect }: RecentSearchesProps) {
       <div className="flex items-center gap-2 px-1">
         <History className="size-4 text-muted-foreground" />
 
-        <h3 className="text-sm font-medium text-muted-foreground">
-          Recent Searches
-        </h3>
+        <h3 className="text-sm font-medium text-muted-foreground">Recent Searches</h3>
       </div>
 
       <div className="space-y-1.5">

@@ -29,9 +29,7 @@ export function FeatureCard({
         <div className="min-w-0">
           <h3 className="text-xl font-bold leading-tight">{title}</h3>
 
-          <p className="mt-2 text-sm leading-6 text-muted-foreground">
-            {description}
-          </p>
+          <p className="mt-2 text-sm leading-6 text-muted-foreground">{description}</p>
         </div>
       </div>
 

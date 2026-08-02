@@ -1,10 +1,4 @@
-import {
-  Table,
-  TableBody,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { Table, TableBody, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 import { MOBILE_COLUMN_LABELS } from "@/lib/coc/constants";
 import { sortMembers } from "@/lib/members/sort-members";
@@ -19,11 +13,7 @@ interface MobileMemberTableProps {
   compareBy: CompareMetric;
 }
 
-export function MobileMemberTable({
-  members,
-  sortBy,
-  compareBy,
-}: MobileMemberTableProps) {
+export function MobileMemberTable({ members, sortBy, compareBy }: MobileMemberTableProps) {
   const sortedMembers = sortMembers(members, sortBy);
 
   return (
@@ -35,17 +25,11 @@ export function MobileMemberTable({
 
             <TableHead className="w-32">Player</TableHead>
 
-            <TableHead className="hidden md:table-cell lg:hidden text-center">
-              TH
-            </TableHead>
+            <TableHead className="hidden md:table-cell lg:hidden text-center">TH</TableHead>
 
-            <TableHead className="hidden md:table-cell lg:hidden text-center">
-              League
-            </TableHead>
+            <TableHead className="hidden md:table-cell lg:hidden text-center">League</TableHead>
 
-            <TableHead className="text-center">
-              {MOBILE_COLUMN_LABELS[sortBy]}
-            </TableHead>
+            <TableHead className="text-center">{MOBILE_COLUMN_LABELS[sortBy]}</TableHead>
 
             <TableHead className="min-w-20 text-center">
               {MOBILE_COLUMN_LABELS[compareBy]}

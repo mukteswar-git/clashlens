@@ -12,12 +12,7 @@ interface ErrorStateProps {
   onAction?: () => void;
 }
 
-export function ErrorState({
-  title,
-  description,
-  actionLabel,
-  onAction,
-}: ErrorStateProps) {
+export function ErrorState({ title, description, actionLabel, onAction }: ErrorStateProps) {
   return (
     <Card className="mx-auto flex max-w-lg flex-col items-center gap-6 p-10 text-center">
       <div className="flex h-14 w-14 items-center justify-center rounded-full bg-destructive/10">
@@ -30,9 +25,7 @@ export function ErrorState({
         <p className="text-muted-foreground">{description}</p>
       </div>
 
-      {actionLabel && onAction && (
-        <Button onClick={onAction}>{actionLabel}</Button>
-      )}
+      {actionLabel && onAction && <Button onClick={onAction}>{actionLabel}</Button>}
     </Card>
   );
 }

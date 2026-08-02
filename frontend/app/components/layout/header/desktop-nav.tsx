@@ -5,10 +5,7 @@ import { scrollToSection } from "@/lib/scroll";
 
 export function DesktopNav() {
   return (
-    <nav
-      className="hidden items-center gap-10 md:flex"
-      aria-label="Desktop navigation"
-    >
+    <nav className="hidden items-center gap-10 md:flex" aria-label="Desktop navigation">
       {NAV_LINKS.map((link) => (
         <button
           key={link.href}

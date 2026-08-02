@@ -1,11 +1,4 @@
-import {
-  Activity,
-  HeartPulse,
-  Lightbulb,
-  Swords,
-  Trophy,
-  Gift,
-} from "lucide-react";
+import { Activity, HeartPulse, Lightbulb, Swords, Trophy, Gift } from "lucide-react";
 
 import type { Feature } from "./feature.types";
 
@@ -16,11 +9,7 @@ export const FEATURES: Feature[] = [
     title: "Activity Tracking",
     description: "Monitor member activity and stay updated in real-time.",
     image: "/images/features/activity-tracking.webp",
-    bullets: [
-      "Last Seen & Online Status",
-      "Activity Score Calculation",
-      "Inactive Alerts",
-    ],
+    bullets: ["Last Seen & Online Status", "Activity Score Calculation", "Inactive Alerts"],
   },
   {
     icon: Swords,
@@ -28,11 +17,7 @@ export const FEATURES: Feature[] = [
     title: "War Performance",
     description: "Analyze war statistics and improve your battle strategies.",
     image: "/images/features/war-performance.webp",
-    bullets: [
-      "War Win/Loss Tracking",
-      "Attack Usage Analysis",
-      "Missed Attack Detection",
-    ],
+    bullets: ["War Win/Loss Tracking", "Attack Usage Analysis", "Missed Attack Detection"],
   },
   {
     icon: Gift,
@@ -48,11 +33,7 @@ export const FEATURES: Feature[] = [
     title: "Member Ranking",
     description: "Rank members based on performance and contribution.",
     image: "/images/features/performance-ranking.webp",
-    bullets: [
-      "Performance Ranking",
-      "Trophy & League Tracking",
-      "Custom Leaderboards",
-    ],
+    bullets: ["Performance Ranking", "Trophy & League Tracking", "Custom Leaderboards"],
   },
   {
     icon: HeartPulse,
@@ -60,11 +41,7 @@ export const FEATURES: Feature[] = [
     title: "Clan Health Score",
     description: "Get an overall health score for your clan.",
     image: "/images/features/clan-health-score.webp",
-    bullets: [
-      "Activity Health Score",
-      "Donation Health Score",
-      "War Performance Score",
-    ],
+    bullets: ["Activity Health Score", "Donation Health Score", "War Performance Score"],
   },
   {
     icon: Lightbulb,
@@ -72,10 +49,6 @@ export const FEATURES: Feature[] = [
     title: "Actionable Insights",
     description: "Get smart insights and make better decisions.",
     image: "/images/features/action-insights.webp",
-    bullets: [
-      "Smart Recommendations",
-      "At-risk Member Alerts",
-      "Growth Opportunities",
-    ],
+    bullets: ["Smart Recommendations", "At-risk Member Alerts", "Growth Opportunities"],
   },
 ];

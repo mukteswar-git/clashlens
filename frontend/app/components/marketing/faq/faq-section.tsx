@@ -61,15 +61,10 @@ export function FAQSection() {
       <Container>
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <Badge
-            icon={<CircleHelp className="size-4 text-badge-icon stroke-2" />}
-          >
-            FAQ
-          </Badge>
+          <Badge icon={<CircleHelp className="size-4 text-badge-icon stroke-2" />}>FAQ</Badge>
 
           <h2 className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-            Frequently Asked{" "}
-            <span className="whitespace-nowrap text-accent">Questions</span>
+            Frequently Asked <span className="whitespace-nowrap text-accent">Questions</span>
           </h2>
 
           <p
@@ -82,8 +77,8 @@ export function FAQSection() {
               sm:leading-8
             "
           >
-            Everything you need to know about ClashLens. Can&apos;t find the
-            answer you&apos;re looking for? Email us at{" "}
+            Everything you need to know about ClashLens. Can&apos;t find the answer you&apos;re
+            looking for? Email us at{" "}
             <Link
               href="mailto:clashlens.contact@gmail.com"
               className="font-semibold text-accent underline underline-offset-4 transition-colors hover:opacity-80"

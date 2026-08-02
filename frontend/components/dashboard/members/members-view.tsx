@@ -9,12 +9,7 @@ import { MobileMemberToolbar } from "./mobile-member-toolbar";
 import { DesktopMemberTable } from "./desktop-member-table";
 import { MobileMemberTable } from "./mobile-member-table";
 
-import {
-  CompareMetric,
-  MemberComparison,
-  MobileColumn,
-  SortMetric,
-} from "@/types/member";
+import { CompareMetric, MemberComparison, MobileColumn, SortMetric } from "@/types/member";
 
 interface MembersViewProps {
   members: MemberComparison[];
@@ -64,11 +59,7 @@ export function MembersView({ members }: MembersViewProps) {
 
         {/* Mobile + Tablet Table */}
         <div className="lg:hidden">
-          <MobileMemberTable
-            members={members}
-            sortBy={sortColumn}
-            compareBy={compareColumn}
-          />
+          <MobileMemberTable members={members} sortBy={sortColumn} compareBy={compareColumn} />
         </div>
       </CardContent>
     </Card>

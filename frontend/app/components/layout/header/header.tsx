@@ -7,10 +7,7 @@ export function Header() {
   return (
     <header className="border-b border-border bg-background/80 shadow-sm">
       <Container>
-        <nav
-          className="flex h-20 items-center justify-between"
-          aria-label="Main navigation"
-        >
+        <nav className="flex h-20 items-center justify-between" aria-label="Main navigation">
           <Logo priority />
 
           <DesktopNav />

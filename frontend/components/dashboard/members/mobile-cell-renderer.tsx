@@ -11,10 +11,7 @@ interface MobileCellRendererProps {
   column: MobileColumn;
 }
 
-export function MobileCellRenderer({
-  member,
-  column,
-}: MobileCellRendererProps) {
+export function MobileCellRenderer({ member, column }: MobileCellRendererProps) {
   switch (column) {
     case "role":
       return <RoleBadge role={member.clanMember.role} />;
@@ -37,9 +34,7 @@ export function MobileCellRenderer({
       return <span>{member.clanMember.donations.toLocaleString()}</span>;
 
     case "received":
-      return (
-        <span>{member.clanMember.donationsReceived.toLocaleString()}</span>
-      );
+      return <span>{member.clanMember.donationsReceived.toLocaleString()}</span>;
 
     case "trophies":
       return <span>{member.player.trophies.toLocaleString()}</span>;

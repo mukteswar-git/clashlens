@@ -5,9 +5,7 @@ interface DistributionChartSkeletonProps {
   rows?: number;
 }
 
-export function DistributionChartSkeleton({
-  rows = 8,
-}: DistributionChartSkeletonProps) {
+export function DistributionChartSkeleton({ rows = 8 }: DistributionChartSkeletonProps) {
   return (
     <Card className="space-y-6 p-6">
       {/* Title */}

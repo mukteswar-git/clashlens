@@ -12,11 +12,7 @@ interface MemberRowProps {
   compareMetric: CompareMetric;
 }
 
-export function DesktopMemberRow({
-  rank,
-  member,
-  compareMetric,
-}: MemberRowProps) {
+export function DesktopMemberRow({ rank, member, compareMetric }: MemberRowProps) {
   let progress = 0;
 
   switch (compareMetric) {
@@ -58,9 +54,7 @@ export function DesktopMemberRow({
       <TableCell className="text-center text-muted-foreground">
         {member.clanMember.donationsReceived.toLocaleString()}
       </TableCell>
-      <TableCell className="text-center">
-        {member.clanMember.trophies}
-      </TableCell>
+      <TableCell className="text-center">{member.clanMember.trophies}</TableCell>
 
       <TableCell>
         <ProgressCell value={progress} />

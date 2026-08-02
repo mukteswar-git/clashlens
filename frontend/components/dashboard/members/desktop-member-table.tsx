@@ -1,10 +1,4 @@
-import {
-  Table,
-  TableBody,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { Table, TableBody, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { CompareMetric, MemberComparison, SortMetric } from "@/types/member";
 import { DesktopMemberRow } from "./desktop-member-row";
 import { sortMembers } from "@/lib/members/sort-members";
@@ -16,16 +10,11 @@ interface MemberTableProps {
   sortMetric: SortMetric;
 }
 
-export function DesktopMemberTable({
-  members,
-  compareMetric,
-  sortMetric,
-}: MemberTableProps) {
+export function DesktopMemberTable({ members, compareMetric, sortMetric }: MemberTableProps) {
   const sortedMembers = sortMembers(members, sortMetric);
 
   const compareLabel =
-    COMPARE_OPTIONS.find((option) => option.value === compareMetric)?.label ??
-    "";
+    COMPARE_OPTIONS.find((option) => option.value === compareMetric)?.label ?? "";
 
   return (
     <Table>

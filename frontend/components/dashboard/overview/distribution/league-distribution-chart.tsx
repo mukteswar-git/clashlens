@@ -5,8 +5,6 @@ type LeagueDistributionChartProps = {
   distribution: DistributionItem[];
 };
 
-export function LeagueDistributionChart({
-  distribution,
-}: LeagueDistributionChartProps) {
+export function LeagueDistributionChart({ distribution }: LeagueDistributionChartProps) {
   return <DistributionChart title="League Distribution" data={distribution} />;
 }

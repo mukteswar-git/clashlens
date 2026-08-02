@@ -31,9 +31,7 @@ export function saveRecentClan(clan: RecentClan): void {
   try {
     const recentClans = getRecentClans();
 
-    const filteredClans = recentClans.filter(
-      (recentClan) => recentClan.tag !== clan.tag
-    );
+    const filteredClans = recentClans.filter((recentClan) => recentClan.tag !== clan.tag);
 
     const updatedClans = [clan, ...filteredClans];
 
@@ -53,9 +51,7 @@ export function removeRecentClan(tag: string): void {
   try {
     const recentClans = getRecentClans();
 
-    const filteredClans = recentClans.filter(
-      (recentClan) => recentClan.tag !== tag
-    );
+    const filteredClans = recentClans.filter((recentClan) => recentClan.tag !== tag);
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(filteredClans));
   } catch {

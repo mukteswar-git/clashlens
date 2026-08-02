@@ -14,12 +14,7 @@ interface MobileMemberRowProps {
   compareBy: CompareMetric;
 }
 
-export function MobileMemberRow({
-  member,
-  index,
-  sortBy,
-  compareBy,
-}: MobileMemberRowProps) {
+export function MobileMemberRow({ member, index, sortBy, compareBy }: MobileMemberRowProps) {
   return (
     <TableRow>
       <TableCell className="px-2 py-3">{index + 1}</TableCell>

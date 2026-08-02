@@ -33,8 +33,7 @@ export const faqs: FAQ[] = [
   {
     icon: Users,
     question: "Can I analyze any clan?",
-    answer:
-      "Yes. Any public Clash of Clans clan can be analyzed by entering its clan tag.",
+    answer: "Yes. Any public Clash of Clans clan can be analyzed by entering its clan tag.",
   },
   {
     icon: RefreshCw,

@@ -32,10 +32,7 @@ export function MemberToolbar({
           <div className="flex items-center gap-2">
             <span className="text-sm text-muted-foreground">Compare</span>
 
-            <CompareSelect
-              value={compareMetric}
-              onValueChange={onCompareChange}
-            />
+            <CompareSelect value={compareMetric} onValueChange={onCompareChange} />
           </div>
         </div>
       </div>

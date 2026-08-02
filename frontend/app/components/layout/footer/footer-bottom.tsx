@@ -7,9 +7,7 @@ export function FooterBottom() {
       <div className="flex items-center justify-between gap-8 text-sm text-muted-foreground">
         <div className="flex items-center gap-2">
           <Copyright className="h-4 w-4 text-amber-500" />
-          <span>
-            {new Date().getFullYear()} ClashLens. All rights reserved.
-          </span>
+          <span>{new Date().getFullYear()} ClashLens. All rights reserved.</span>
         </div>
 
         <div className="flex items-center gap-2">
@@ -26,8 +24,8 @@ export function FooterBottom() {
         </div>
 
         <p className="max-w-md">
-          ClashLens is an independent analytics platform and is not affiliated
-          with, endorsed by, or sponsored by Supercell.
+          ClashLens is an independent analytics platform and is not affiliated with, endorsed by, or
+          sponsored by Supercell.
         </p>
       </div>
     </div>

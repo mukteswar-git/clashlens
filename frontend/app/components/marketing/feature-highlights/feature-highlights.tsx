@@ -1,10 +1,5 @@
 import { Container } from "../../layout/container";
-import {
-  ShieldCheck,
-  Clock3,
-  ChartNoAxesCombined,
-  UserRoundCheck,
-} from "lucide-react";
+import { ShieldCheck, Clock3, ChartNoAxesCombined, UserRoundCheck } from "lucide-react";
 
 import { FeatureHighlightCard } from "./feature-highlight-card";
 

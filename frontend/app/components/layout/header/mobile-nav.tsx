@@ -6,12 +6,7 @@ import { NAV_LINKS } from "./navigation";
 import { useState } from "react";
 import { scrollToSection } from "@/lib/scroll";
 
-import {
-  Sheet,
-  SheetContent,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Logo } from "../../../../components/common/logo/logo";
 
@@ -33,18 +28,12 @@ export function MobileNav() {
           </button>
         </SheetTrigger>
 
-        <SheetContent
-          side="right"
-          className="flex w-72 flex-col bg-background px-4 py-4"
-        >
+        <SheetContent side="right" className="flex w-72 flex-col bg-background px-4 py-4">
           <Logo />
 
           <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
 
-          <nav
-            className="mt-6 flex flex-1 flex-col"
-            aria-label="Mobile navigation"
-          >
+          <nav className="mt-6 flex flex-1 flex-col" aria-label="Mobile navigation">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.href}

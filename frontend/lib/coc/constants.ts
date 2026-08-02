@@ -95,6 +95,4 @@ export const MOBILE_COLUMN_LABELS = {
   equipment: "Equipment",
 } as const;
 
-export const MOBILE_SORT_OPTIONS = SORT_OPTIONS.filter(
-  (option) => option.value !== "name"
-);
+export const MOBILE_SORT_OPTIONS = SORT_OPTIONS.filter((option) => option.value !== "name");

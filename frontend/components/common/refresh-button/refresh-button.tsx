@@ -23,9 +23,7 @@ export function RefreshButton() {
       disabled={isPending}
       aria-label="Refresh data"
     >
-      <RefreshCw
-        className={`mr-2 h-4 w-4 ${isPending ? "animate-spin" : ""}`}
-      />
+      <RefreshCw className={`mr-2 h-4 w-4 ${isPending ? "animate-spin" : ""}`} />
 
       {isPending ? "Refreshing..." : "Refresh"}
     </Button>

@@ -35,12 +35,7 @@ export const metadata: Metadata = {
     ],
   },
 
-  keywords: [
-    "Clash of Clans",
-    "Clan Analytics",
-    "ClashLens",
-    "Clan Management",
-  ],
+  keywords: ["Clash of Clans", "Clan Analytics", "ClashLens", "Clan Management"],
 
   authors: [
     {
@@ -56,12 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          inter.className,
-          "min-h-screen bg-background text-foreground"
-        )}
-      >
+      <body className={cn(inter.className, "min-h-screen bg-background text-foreground")}>
         {children}
         <Toaster richColors position="top-center" />
       </body>

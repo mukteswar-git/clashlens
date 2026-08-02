@@ -1,11 +1,11 @@
 import { Clan, ClanMember } from "../../types/clan.js";
-import { QuickHighlightsData, WarSnapshotData } from "../../types/overview.js";
+import { OverviewData, QuickHighlightsData, WarSnapshotData } from "../../types/overview.js";
 import { War } from "../../types/war.js";
 import { getClan } from "../coc/clan.js";
 import { getCurrentWar } from "../coc/war.js";
 import { getLeagueDistribution, getTownHallDistribution } from "./distribution.service.js";
 
-export async function getOverviewData(tag: string) {
+export async function getOverviewData(tag: string): Promise<OverviewData> {
   const clan = await getClan(tag);
   const townHallDistribution = getTownHallDistribution(clan.memberList);
   const leagueDistribution = getLeagueDistribution(clan.memberList);
@@ -15,7 +15,6 @@ export async function getOverviewData(tag: string) {
 
   return {
     clan,
-    war,
     stats: getOverviewStats(clan),
     performance: getPerformanceMetrics(clan),
     townHallDistribution,

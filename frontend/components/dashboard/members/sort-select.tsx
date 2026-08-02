@@ -15,11 +15,7 @@ interface SortSelectProps {
   options?: readonly (typeof SORT_OPTIONS)[number][];
 }
 
-export function SortSelect({
-  value,
-  onValueChange,
-  options = SORT_OPTIONS,
-}: SortSelectProps) {
+export function SortSelect({ value, onValueChange, options = SORT_OPTIONS }: SortSelectProps) {
   return (
     <Select value={value} onValueChange={onValueChange}>
       <SelectTrigger className="w-full sm:w-36 md:w-40">
