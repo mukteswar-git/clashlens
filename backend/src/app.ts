@@ -2,6 +2,7 @@ import cors from "cors";
 import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
+import compression from "compression";
 
 import routes from "./routes/index.js";
 import { errorHandler } from "./middleware/error-handler.js";
@@ -21,6 +22,7 @@ app.use(
   })
 );
 app.use(rateLimiter);
+app.use(compression());
 app.use(express.json());
 app.use(morgan("dev"));
 
