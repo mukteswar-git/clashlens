@@ -6,12 +6,17 @@ import morgan from "morgan";
 import routes from "./routes/index.js";
 import { errorHandler } from "./middleware/error-handler.js";
 
+import swaggerUi from "swagger-ui-express";
+import { swaggerSpec } from "./config/swagger.js";
+
 const app = express();
 
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
+
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use(routes);
 
