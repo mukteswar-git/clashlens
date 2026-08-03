@@ -1,10 +1,10 @@
 const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-if (!BASE_URL) {
-  throw new Error("Missing NEXT_PUBLIC_BACKEND_URL environment variable.");
-}
-
 export async function backendClient<T>(endpoint: string): Promise<T> {
+  if (!BASE_URL) {
+    throw new Error("Missing NEXT_PUBLIC_BACKEND_URL environment variable.");
+  }
+
   try {
     const response = await fetch(`${BASE_URL}${endpoint}`);
 
@@ -28,20 +28,18 @@ export async function backendClient<T>(endpoint: string): Promise<T> {
 
     return response.json() as Promise<T>;
   } catch (error) {
-    if (error instanceof Error) {
-      // Preserve the errors we intentionally threw above.
-      if (
-        [
-          "UNAUTHORIZED",
-          "FORBIDDEN",
-          "NOT_FOUND",
-          "RATE_LIMITED",
-          "SERVER_ERROR",
-          "UNKNOWN_ERROR",
-        ].includes(error.message)
-      ) {
-        throw error;
-      }
+    if (
+      error instanceof Error &&
+      [
+        "UNAUTHORIZED",
+        "FORBIDDEN",
+        "NOT_FOUND",
+        "RATE_LIMITED",
+        "SERVER_ERROR",
+        "UNKNOWN_ERROR",
+      ].includes(error.message)
+    ) {
+      throw error;
     }
 
     throw new Error("NETWORK_ERROR");
