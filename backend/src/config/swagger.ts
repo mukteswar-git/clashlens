@@ -10,8 +10,12 @@ const options: swaggerJsdoc.Options = {
     },
     servers: [
       {
-        url: "http://localhost:5000",
-        description: "Development Server",
+        url: "https://api.clashlens.app",
+        description: "Production Server",
+      },
+      {
+        url: "http://localhost:3001",
+        description: "Local Development",
       },
     ],
   },
