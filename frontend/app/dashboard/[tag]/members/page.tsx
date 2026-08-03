@@ -2,6 +2,7 @@ import { ErrorState } from "@/components/common/error-state";
 import { MembersView } from "@/components/dashboard/members/members-view";
 import { getMembers } from "@/lib/backend";
 import type { Metadata } from "next";
+import { normalizeClanTag } from "@/lib/coc/normalize-tag";
 
 export const metadata: Metadata = {
   title: "Members",
@@ -21,7 +22,7 @@ export default async function MembersPage({ params }: MembersPageProps) {
   let members;
 
   try {
-    members = await getMembers(tag);
+    members = await getMembers(normalizeClanTag(tag));
   } catch (error) {
     if (!(error instanceof Error)) {
       throw error;

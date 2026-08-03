@@ -4,36 +4,47 @@
 
 ![Next.js](https://img.shields.io/badge/Next.js-16-black)
 ![React](https://img.shields.io/badge/React-19-61DAFB)
+![Express](https://img.shields.io/badge/Express-5-000000)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38BDF8)
 ![Status](https://img.shields.io/badge/Status-Phase%201%20Complete-success)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-ClashLens is a modern analytics platform built with **Next.js**, **TypeScript**, and **Tailwind CSS** that helps Clash of Clans clan leaders explore live clan data, compare member progression, and understand overall clan performance using the official Clash of Clans API.
+ClashLens is a modern analytics platform that helps **Clash of Clans clan leaders** explore live clan data, compare member progression, and understand overall clan performance using the official Clash of Clans API.
+
+The project is built as a full-stack monorepo with a **Next.js frontend** and an **Express backend**, following modern architecture and engineering practices.
 
 ---
 
-## 🌐 Live Demo
+# 🌐 Live Demo
+
+Frontend
 
 **https://www.clashlens.app**
 
+Backend API
+
+**Coming Soon**
+
+Swagger Documentation
+
+**Coming Soon**
+
 ---
 
-## 🎨 Design
+# 🎨 Design
 
-**Figma**
+Figma
 
-https://www.figma.com/design/fRU9Ly1t93PMJQLs2VOckH/MDev?node-id=0-1&t=HGOHCZ7XpHUQBjuC-1
+https://www.figma.com/design/fRU9Ly1t93PMJQLs2VOckH/MDev
 
 ---
 
 # Features
 
-## Available Today
+## Analytics Dashboard
 
-### Dashboard
-
-- Live clan overview
+- Live clan search
+- Clan overview
 - Clan summary
 - Performance overview
 - Town Hall distribution
@@ -41,39 +52,52 @@ https://www.figma.com/design/fRU9Ly1t93PMJQLs2VOckH/MDev?node-id=0-1&t=HGOHCZ7Xp
 - Current war snapshot
 - Quick highlights
 
-### Members
+## Members
 
 - Member comparison
 - Progress comparison
 - Sorting
 - Responsive member table
 
-### Platform
+## Backend API
 
-- Live Clash of Clans API integration
-- Server-side data fetching
+- RESTful API
+- Official Clash of Clans API integration
+- Swagger documentation
+- Request validation
+- Global error handling
+- Rate limiting
+- Helmet security
+- Configurable CORS
+- Response compression
+
+## Platform
+
 - Responsive design
 - Mobile-first UI
-- Modern component architecture
+- Server-side rendering
+- Component-based architecture
+- Shared TypeScript domain models
 
 ---
 
-## Planned
+# Planned Features
 
-### Phase 2
+## Phase 2
 
 - Decision support framework
 - Player evaluation engine
 - Recommendation system
 
-### Phase 3
+## Phase 3
 
-- PostgreSQL integration
+- PostgreSQL
+- Prisma ORM
 - Historical clan tracking
 - Trend analysis
-- Background synchronization
+- Scheduled synchronization
 
-### Phase 4
+## Phase 4
 
 - AI-powered recommendations
 - Clan health analysis
@@ -98,145 +122,157 @@ https://www.figma.com/design/fRU9Ly1t93PMJQLs2VOckH/MDev?node-id=0-1&t=HGOHCZ7Xp
 
 ---
 
+# Repository Structure
+
+```text
+clashlens/
+├── frontend/          # Next.js application
+├── backend/           # Express REST API
+├── docs/              # Product & engineering documentation
+├── README.md
+└── pnpm-workspace.yaml
+```
+
+---
+
 # Architecture
 
-- Next.js App Router
-- Server Components by default
-- Client Components for interactive features
-- Route Handlers
-- Feature-based architecture
-- Service layer
-- Shared TypeScript domain models
-- Tailwind CSS + shadcn/ui
+```text
+User
+   │
+   ▼
+Next.js Frontend
+   │
+   ▼
+Express Backend
+   │
+   ▼
+Clash of Clans API
+```
+
+The project follows a layered architecture that separates presentation, API, business logic, and external integrations.
+
+---
+
+# Tech Stack
+
+| Category        | Technology                                  |
+| --------------- | ------------------------------------------- |
+| Frontend        | Next.js 16, React 19, TypeScript            |
+| Backend         | Express 5, TypeScript                       |
+| Styling         | Tailwind CSS 4, shadcn/ui                   |
+| Validation      | Zod                                         |
+| Documentation   | Swagger (OpenAPI)                           |
+| Testing         | Vitest, Supertest                           |
+| Security        | Helmet, CORS, Rate Limiting, Compression    |
+| Package Manager | pnpm Workspace                              |
+| Deployment      | Vercel (Frontend), Railway/Render (Backend) |
+| Data Source     | Clash of Clans Public API                   |
 
 ---
 
 # Documentation
 
-Project documentation is organized into three sections.
+## Package Documentation
 
-## 📦 Product
+- [Frontend README](frontend/README.md)
+- [Backend README](backend/README.md)
+
+## Product
 
 - [Product Vision](docs/01-product/01-product-vision.md)
 - [MVP Roadmap](docs/01-product/02-mvp-roadmap.md)
 - [Available Data Inventory](docs/01-product/03-available-data-inventory.md)
 
-## 🎨 Design
+## Design
 
 - [Information Architecture](docs/02-design/01-information-architecture.md)
 - [Page Specifications](docs/02-design/02-page-specifications.md)
 - [Component Inventory](docs/02-design/03-component-inventory.md)
 
-## ⚙️ Engineering
+## Engineering
 
 - [Technical Architecture](docs/03-engineering/01-technical-architecture.md)
 - [Development Principles](docs/03-engineering/02-development-principles.md)
 
 ---
 
-# Tech Stack
+# Getting Started
 
-| Category        | Technology                |
-| --------------- | ------------------------- |
-| Framework       | Next.js 16                |
-| UI              | React 19                  |
-| Language        | TypeScript                |
-| Styling         | Tailwind CSS 4            |
-| Components      | shadcn/ui                 |
-| Icons           | Lucide React              |
-| Routing         | App Router                |
-| API             | Route Handlers            |
-| Package Manager | pnpm                      |
-| Deployment      | Vercel                    |
-| Data Source     | Clash of Clans Public API |
+## 1. Clone the repository
 
----
+```bash
+git clone https://github.com/mukteswar-git/clashlens.git
+cd clashlens
+```
 
-# Project Structure
+## 2. Install dependencies
+
+```bash
+pnpm install
+```
+
+## 3. Configure environment variables
+
+Frontend
 
 ```text
-app/
-components/
-services/
-lib/
-types/
-docs/
-public/
+frontend/.env.local
+```
+
+Backend
+
+```text
+backend/.env
+```
+
+Refer to the package-specific READMEs for the required environment variables.
+
+## 4. Start the applications
+
+Backend
+
+```bash
+cd backend
+pnpm dev
+```
+
+Frontend
+
+```bash
+cd frontend
+pnpm dev
+```
+
+Visit:
+
+Frontend
+
+```text
+http://localhost:3000
+```
+
+Backend
+
+```text
+http://localhost:5000
+```
+
+Swagger
+
+```text
+http://localhost:5000/docs
 ```
 
 ---
 
 # Project Goals
 
-- Build a production-grade Next.js application
-- Apply modern React and App Router architecture
+- Build a production-grade full-stack application
+- Follow modern Next.js and Express architecture
 - Integrate with the official Clash of Clans API
 - Provide meaningful analytics for clan leaders
-- Build a scalable foundation for future historical analytics and intelligent recommendations
-
----
-
-# Getting Started
-
-## 1. Install dependencies
-
-```bash
-pnpm install
-```
-
-## 2. Create a local environment file
-
-Copy `.env.example` to `.env.local`.
-
-### macOS / Linux
-
-```bash
-cp .env.example .env.local
-```
-
-### Windows (PowerShell)
-
-```powershell
-Copy-Item .env.example .env.local
-```
-
-## 3. Configure environment variables
-
-Generate an API key from the Clash of Clans Developer Portal.
-
-Add your credentials to `.env.local`.
-
-```env
-COC_API_TOKEN=
-COC_API_BASE_URL=
-NEXT_PUBLIC_APP_URL=
-```
-
-## 4. Start the development server
-
-```bash
-pnpm dev
-```
-
-Visit:
-
-```
-http://localhost:3000
-```
-
----
-
-# Available Scripts
-
-| Command             | Description                  |
-| ------------------- | ---------------------------- |
-| `pnpm dev`          | Start the development server |
-| `pnpm build`        | Create a production build    |
-| `pnpm start`        | Start the production server  |
-| `pnpm lint`         | Run ESLint                   |
-| `pnpm format`       | Format the project           |
-| `pnpm format:check` | Check formatting             |
-| `pnpm check`        | Run project checks           |
+- Build a scalable foundation for historical analytics and intelligent recommendations
 
 ---
 
@@ -244,13 +280,15 @@ http://localhost:3000
 
 ## ✅ Phase 1 — Live Analytics
 
-- [x] Responsive landing page
-- [x] Live clan search
-- [x] Clash of Clans API integration
+- [x] Next.js frontend
+- [x] Express backend
+- [x] Live Clash of Clans API integration
 - [x] Dashboard overview
 - [x] Members page
-- [x] Responsive interface
-- [x] Vercel deployment
+- [x] Swagger documentation
+- [x] Security middleware
+- [x] Basic API testing
+- [x] Responsive UI
 
 ---
 
@@ -264,7 +302,8 @@ http://localhost:3000
 
 ## 📈 Phase 3 — Historical Analytics
 
-- [ ] PostgreSQL integration
+- [ ] PostgreSQL
+- [ ] Prisma ORM
 - [ ] Historical clan tracking
 - [ ] Trend analysis
 - [ ] Scheduled synchronization
@@ -282,7 +321,7 @@ http://localhost:3000
 
 # License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
@@ -291,3 +330,7 @@ This project is licensed under the **MIT License**.
 **Mukteswar Tripathy**
 
 GitHub: https://github.com/mukteswar-git
+
+---
+
+If you find this project useful, consider giving it a ⭐ on GitHub.
