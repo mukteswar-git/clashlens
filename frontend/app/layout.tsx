@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { APP_NAME, APP_URL } from "@/lib/constants";
 import { inter } from "./components/ui/fonts";
@@ -53,6 +54,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(inter.className, "min-h-screen bg-background text-foreground")}>
         {children}
+        <Analytics />
         <Toaster richColors position="top-center" />
       </body>
     </html>
