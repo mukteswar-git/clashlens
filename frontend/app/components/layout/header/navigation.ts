@@ -12,3 +12,5 @@ export const NAV_LINKS = [
     href: "#faq",
   },
 ] as const;
+
+export const TRY_IT_OUT_HREF = "/dashboard/2RQJ20G2P";

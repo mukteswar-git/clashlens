@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Menu } from "lucide-react";
-import { NAV_LINKS } from "./navigation";
+import { NAV_LINKS, TRY_IT_OUT_HREF } from "./navigation";
 import { useState } from "react";
 import { scrollToSection } from "@/lib/scroll";
 
@@ -53,12 +53,12 @@ export function MobileNav() {
 
             <div className="mt-auto pt-6">
               <Link
-                href="#home"
+                href={TRY_IT_OUT_HREF}
                 onClick={() => {
-                  setTimeout(() => setOpen(false), 100);
+                  setOpen(false);
                 }}
               >
-                <Button className="w-full">Analyze Clan</Button>
+                <Button className="w-full">Try It Out</Button>
               </Link>
             </div>
           </nav>
