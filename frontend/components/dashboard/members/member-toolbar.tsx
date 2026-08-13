@@ -1,4 +1,7 @@
 import { CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
+
 import { CompareMetric, SortMetric } from "@/types/member";
 import { CompareSelect } from "./compare-select";
 import { SortSelect } from "./sort-select";
@@ -9,6 +12,7 @@ interface MemberToolbarProps {
   sortMetric: SortMetric;
   onCompareChange: (value: CompareMetric) => void;
   onSortChange: (value: SortMetric) => void;
+  onExtract: () => void;
 }
 
 export function MemberToolbar({
@@ -17,6 +21,7 @@ export function MemberToolbar({
   sortMetric,
   onCompareChange,
   onSortChange,
+  onExtract,
 }: MemberToolbarProps) {
   return (
     <CardHeader>
@@ -29,11 +34,17 @@ export function MemberToolbar({
 
             <SortSelect value={sortMetric} onValueChange={onSortChange} />
           </div>
+
           <div className="flex items-center gap-2">
             <span className="text-sm text-muted-foreground">Compare</span>
 
             <CompareSelect value={compareMetric} onValueChange={onCompareChange} />
           </div>
+
+          <Button type="button" variant="outline" size="sm" onClick={onExtract}>
+            <Download />
+            Extract
+          </Button>
         </div>
       </div>
     </CardHeader>
