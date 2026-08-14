@@ -21,6 +21,16 @@ export function Logo({ href = "/", width = 160, priority = false }: LogoProps) {
         width={width}
         height={height}
         priority={priority}
+        className="dark:hidden"
+      />
+
+      <Image
+        src="/logo/dark-logo.svg"
+        alt="ClashLens"
+        width={width}
+        height={height}
+        priority={priority}
+        className="hidden dark:block"
       />
     </Link>
   );

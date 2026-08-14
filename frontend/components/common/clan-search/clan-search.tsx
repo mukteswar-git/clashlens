@@ -85,12 +85,14 @@ export function ClanSearch({
           className="
             flex-1
             border-0
+            bg-transparent
+            dark:bg-transparent
             px-0
             text-sm
             shadow-none
             placeholder:text-sm
             focus-visible:ring-0
-
+            
             sm:text-base
             sm:placeholder:text-base
           "

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { NAV_LINKS, TRY_IT_OUT_HREF } from "./navigation";
 import { scrollToSection } from "@/lib/scroll";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/common/theme-toggle/theme-toggle";
 
 export function DesktopNav() {
   return (
@@ -18,6 +19,8 @@ export function DesktopNav() {
           {link.label}
         </button>
       ))}
+
+      <ThemeToggle />
 
       <Button asChild className="h-9 rounded-md px-4 text-sm font-medium shadow-sm">
         <Link href={TRY_IT_OUT_HREF}>Try It Out</Link>

@@ -1,12 +1,14 @@
 import { ClanSearch } from "@/components/common/clan-search/clan-search";
 import { RefreshButton } from "@/components/common/refresh-button/refresh-button";
 import { MobileNavigation } from "../mobile-navigation";
+import { ThemeToggle } from "@/components/common/theme-toggle/theme-toggle";
 
 export default function TopNavigation() {
   return (
     <header className="border-b border-border bg-background">
-      <div className="lg:hidden">
+      <div className="flex items-center justify-between pr-6 lg:hidden">
         <MobileNavigation />
+        <ThemeToggle />
       </div>
 
       <div className="border-t px-4 py-4">
@@ -32,6 +34,7 @@ export default function TopNavigation() {
           </div>
 
           <div className="flex items-center gap-4">
+            <ThemeToggle />
             <RefreshButton />
           </div>
         </div>

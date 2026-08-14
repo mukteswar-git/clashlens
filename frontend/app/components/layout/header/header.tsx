@@ -2,6 +2,7 @@ import { Container } from "../container";
 import { Logo } from "../../../../components/common/logo/logo";
 import { DesktopNav } from "./desktop-nav";
 import { MobileNav } from "./mobile-nav";
+import { ThemeToggle } from "@/components/common/theme-toggle/theme-toggle";
 
 export function Header() {
   return (
@@ -12,7 +13,10 @@ export function Header() {
 
           <DesktopNav />
 
-          <MobileNav />
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
+            <MobileNav />
+          </div>
         </nav>
       </Container>
     </header>
