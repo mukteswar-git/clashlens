@@ -9,11 +9,19 @@ type StatCardProps = {
   value: string | number;
   description?: string;
   iconClassName?: string;
+  className?: string;
 };
 
-export function StatCard({ icon: Icon, title, value, description, iconClassName }: StatCardProps) {
+export function StatCard({
+  icon: Icon,
+  title,
+  value,
+  description,
+  iconClassName,
+  className,
+}: StatCardProps) {
   return (
-    <Card>
+    <Card className={cn(className)}>
       <CardContent className="flex items-center gap-5 p-5 md:p-6">
         <div className={cn("rounded-full p-4", iconClassName)}>
           <Icon className="h-6 w-6" />

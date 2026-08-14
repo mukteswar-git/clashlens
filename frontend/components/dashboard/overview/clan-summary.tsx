@@ -9,7 +9,7 @@ type ClanSummaryProps = {
 
 export function ClanSummary({ clan }: ClanSummaryProps) {
   return (
-    <Card className="h-full">
+    <Card className="w-full md:w-120 md:shrink-0">
       <CardContent className="p-6">
         <div className="flex flex-col items-center gap-5 text-center md:flex-row md:items-start md:text-left">
           <Image
@@ -21,7 +21,7 @@ export function ClanSummary({ clan }: ClanSummaryProps) {
             className="h-20 w-20 shrink-0 md:h-24 md:w-24"
           />
 
-          <div className="flex-1 w-full">
+          <div className="w-full flex-1">
             <h2 className="text-xl font-bold md:text-2xl">{clan.name}</h2>
 
             <p className="mt-1 text-sm text-muted-foreground">{clan.tag}</p>
@@ -29,13 +29,11 @@ export function ClanSummary({ clan }: ClanSummaryProps) {
             <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-x-6 md:gap-y-3">
               <div>
                 <p className="text-sm text-muted-foreground">Clan War League</p>
-
                 <p className="font-medium">{clan.warLeague.name}</p>
               </div>
 
               <div>
                 <p className="text-sm text-muted-foreground">Clan Capital League</p>
-
                 <p className="font-semibold">{clan.capitalLeague.name}</p>
               </div>
             </div>

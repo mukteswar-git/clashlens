@@ -103,20 +103,20 @@ export default async function DashboardPage({ params }: DashboardPageProps) {
       />
 
       <main className="mx-auto flex w-full max-w-7xl flex-col gap-8 py-10">
-        <div className="flex flex-col gap-6 xl:flex-row">
-          <div className="xl:basis-[40%]">
-            <ClanSummary clan={overview.clan} />
-          </div>
+        <div className="flex flex-wrap items-start justify-center gap-4">
+          <ClanSummary clan={overview.clan} />
 
-          <div className="xl:basis-[60%]">
-            <OverviewStats stats={overview.stats} />
-          </div>
+          <OverviewStats stats={overview.stats} />
         </div>
 
         <PerformanceOverview performance={overview.performance} />
+
         <TownHallDistributionChart data={overview.townHallDistribution} />
+
         <LeagueDistributionChart distribution={overview.leagueDistribution} />
+
         <WarSnapshot war={overview.warSnapshot} />
+
         <QuickHighlights highlights={overview.quickHighlights} />
       </main>
     </>
