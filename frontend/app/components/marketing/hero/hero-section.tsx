@@ -7,16 +7,19 @@ import { FeatureHighlights } from "../feature-highlights/feature-highlights";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-16 md:pt-20 lg:pt-28" id="home">
+    <section className="relative isolate overflow-hidden pt-16 md:pt-20 lg:pt-28" id="home">
       {/* Background image */}
-      <Image
-        src="/images/hero/background.webp"
-        alt=""
-        fill
-        priority
-        className="-z-20 object-cover object-bottom select-none pointer-events-none"
-      />
-      <div className="absolute inset-0 -z-10 bg-linear-to-b from-white via-white/60 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <Image
+          src="/images/hero/background.webp"
+          alt=""
+          fill
+          priority
+          className="object-cover object-bottom opacity-35 select-none dark:opacity-20"
+        />
+
+        <div className="absolute inset-0 bg-linear-to-b from-background via-background/80 to-background/20" />
+      </div>
       <Container className="flex flex-col gap-14 lg:gap-20">
         <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Left */}

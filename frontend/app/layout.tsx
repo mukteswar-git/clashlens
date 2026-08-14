@@ -5,7 +5,7 @@ import { APP_NAME, APP_URL } from "@/lib/constants";
 import { inter } from "./components/ui/fonts";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { Toaster } from "sonner";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 
 export const metadata: Metadata = {
   metadataBase: new URL(APP_URL),
@@ -52,12 +52,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={cn(inter.className, "min-h-screen bg-background text-foreground")}>
-        {children}
-        <Analytics />
-        <SpeedInsights />
-        <Toaster richColors position="top-center" />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Analytics />
+          <SpeedInsights />
+        </ThemeProvider>
       </body>
     </html>
   );
